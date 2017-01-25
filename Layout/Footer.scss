@@ -1,0 +1,377 @@
+.site-footer {
+    display: inline-block;
+    text-align: center;
+    border-top:1px solid $borderColor;
+    padding-bottom: 60px;
+    .ems-footer-cargo {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 20px 10px;
+        width: 100%;
+        &-item{
+            display: inline-block;
+            width: 25%;
+            text-align: left;
+            vertical-align: top;
+            padding: 26px 10px;
+        }
+        &-icon {
+            float: left;
+            i{
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                text-align: center;
+                &:before{
+                    color: #ffffff;
+                }
+            }
+            i.icon-ico_moto {
+                background: $gold;
+                padding: 9px 10px;
+                &:before{
+                    font-size: 22px;
+                }
+            }
+            i.icon-ico_fast {
+                background: $lBlue;
+                padding: 10px;
+                &:before{
+                    font-size: 20px;
+                }
+            }
+            i.icon-ico_cargo {
+                background: $dBlue;
+                padding: 10px;
+                &:before{
+                    font-size: 20px;
+                }
+            }
+            i.icon-ico_easy {
+                background: $green;
+                padding: 7px;
+                &:before{
+                    font-size: 26px;
+                }
+            }
+        }
+        &-text{
+            padding: 12px 0 0 50px;
+            h3{
+                margin: 0;
+                font-family: $fM;
+                font-size: 14px;
+                line-height: 1;
+                color: $title;
+                font-weight: normal;
+                padding-bottom: 5px;
+            }
+            p{
+                margin: 0;
+                font-size: 12px;
+                color: $text;
+            }
+        }
+    }
+    .ems-footer-social {
+        background: $lBlue;
+        width: $siteContainerWidthFull;
+        text-align: center;
+        margin-bottom: 60px;
+        > ul {
+            display: inline-block;
+            max-width: 790px;
+            width: 100%;
+            padding: 38px 20px;
+            text-align: center;
+        }
+        > ul > li {
+            width: 20%;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            & a {
+                display: block;
+                padding: 10px;
+                i{
+                    display: inline-block;
+                    &:before{
+                        color: #ffffff;
+                    }
+                }
+                i.icon-ico_twitter{
+                    &:before{
+                        font-size: 22px;
+                    }
+                }
+                i.icon-ico_facebook{
+                    &:before{
+                        font-size: 20px;
+                    }
+                }
+                i.icon-ico_youtube{
+                    &:before{
+                        font-size: 24px;
+                    }
+                }
+                i.icon-ico_instagram{
+                    &:before{
+                        font-size: 22px;
+                    }
+                }
+                i.icon-ico_google{
+                    &:before{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+    .ems-footer-call{
+        &-inner{
+            width: 100%;
+            max-width: 730px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .ems-store-btn, .ems-call-btn{
+            display: inline-block;
+            vertical-align: top;
+            width: 50%;
+            & > a{
+                display: block;
+                width: 100%;
+                border: 1px solid $borderColor;
+                text-align: center;
+                padding: 15px 0;
+                border-radius: 3px;
+                i, span{
+                    display: inline-block;
+                    vertical-align: middle;
+                    color: $text;
+                }
+                span{ font-family: $fM; margin-left: 10px; }
+                i:before { font-size: 17px; color: $text; }
+                &:hover {
+                    border: 1px solid $lBlue;
+                }
+            }
+        }
+        .ems-call-btn {
+            padding-left: 25px;
+        }
+        .ems-store-btn{
+            padding-right: 25px;
+        }
+    }
+}
+
+/*Bülten*/
+.mod-newsletter {
+    display: none;
+    &-header{
+        padding-bottom: 15px;
+        span{
+            i.icon-ico_ftMail, span{
+                display: inline-block;
+                vertical-align: middle;
+            }
+            i.icon-ico_ftMail{
+                margin-right: 10px;
+                &:before{
+                    font-size: 22px;
+                    color: $text;
+                }
+            }
+            span{
+                font-family: $fM;
+                color: $text;
+            }
+        }
+    }
+    &-inner{
+        max-width: 420px;
+        padding: 0 20px;
+        width: 100%;
+        margin: 60px auto;
+        position: relative;
+        .ems-form{
+            .ems-field {
+                margin: 0;
+                input { padding-right: 80px; }
+            }
+            & .submit{
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 1;
+                a.btnBultenGonder{
+                    background: none;
+                    padding: 0 15px;
+                    height: 50px;
+                    line-height: 52px;
+                    span{
+                        color: $title;
+                    }
+                }
+            }
+        }
+    }
+    &-footer {
+        .ems-message {
+            margin-top: 10px;
+            padding: 10px;
+        }
+    }
+}
+
+
+/* Footer Menu */
+.ems-footer-menu {
+    width: 100%;
+    max-width: 940px;
+    padding: 0 20px 25px 20px;
+    margin: 75px auto 0 auto;
+    .ems-menu-list {
+        width:15%;
+        display: inline-block;
+        vertical-align: top;
+        h5 {
+            font-family: $fM;
+            color:$text; 
+            margin: 0 0 15px 0;
+            font-size: 14px;
+            font-weight: normal;
+            a{
+                font-family: $fM;
+                color:$text;
+                font-size: 14px;
+            }
+        }
+    }
+    .ems-menu-list-double {
+    width: 42.5%;
+        > ul{ width: 50%; display: inline-block; vertical-align: top; }
+    }
+    ul {
+        width: 100%;
+        li {
+            a {
+                font-size:12px;
+                color: $text;
+                line-height: 1;
+                display: block;
+                padding: 10px 10px 10px 0;
+                &:hover {
+                    color: $title;
+                }
+            }  
+        }
+    }
+}
+
+.ems-footer-copyright{
+    border-top: 1px solid $borderColor;
+    width: 100%;
+    margin-top: 35px;
+    &-inner{
+        padding-top: 38px;
+        .ems-col{
+            h1 {
+                font-weight: normal;
+                font-family: $fM;
+                font-size: 12px;
+                color: $sText;
+                margin: 0;
+            }
+            p{
+                font-size: 12px;
+                color: $sText;
+                margin: 0;
+            }
+        }
+        .ems-col-left {
+            padding-top: 10px;
+            h1{
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+.mobilAltMenu {display:none;}
+.ems-login .mobilAltMenu ul li.user {display:none;}
+.ems-login .mobilAltMenu ul li.userLogin {display:block;}
+
+/*Mobile Gecis*/
+@media screen and (max-width:$breakpointSM) {
+    .site-footer {
+        padding-bottom: 35px;
+        border-bottom: 4px solid $lBlue;
+        .ems-footer-cargo{
+            &-item{
+                width: 50%;
+                text-align: center;
+            }
+            &-icon{
+                float: none;
+                margin-bottom: 13px;
+            }
+            &-text{
+                padding: 0;
+            }
+        }
+        .ems-footer-call{
+            &-inner {
+                padding: 0 40px 40px 40px;
+            }
+            .ems-store-btn, .ems-call-btn {
+                width: 100%;
+                padding: 0;
+                > a {
+                    /*border: none;*/
+                    background: $vlightBg;
+                    padding: 17px 0;
+                    border-color: $vlightBg;  
+                }
+            }
+            .ems-store-btn {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .ems-footer-menu { 
+        display: none; 
+    }
+    .mod-newsletter {
+        &-inner {
+            max-width: 100%;
+            padding: 40px;
+            margin: 0;
+            .ems-form {
+                .ems-field {
+                    input {
+                        border:1px solid $lightBg;
+                        background: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+    .ems-footer-copyright{
+        margin-top: 0;
+        border: none;
+        &-inner{
+            padding: 0;
+            .ems-col-left, .ems-col-right {
+                float: none;
+                padding: 0;
+                text-align: center;
+            }
+            .ems-col-right {
+                margin-top: 30px;
+            }
+        }
+    }
+}

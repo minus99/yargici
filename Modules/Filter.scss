@@ -1,0 +1,274 @@
+.kutuOzellikFiltre { 
+    text-align: left;
+* table {width:100%;}
+    .urunKiyaslamaOzellik_ozellik {
+        width:100%;
+        .urunKiyaslamaOzellik_ozellikAd {
+            width: 100%;
+            font-size:12px;
+            font-family: $fM;
+            padding: 19px 0 19px 0;
+            text-align: left;
+            display: inline-block;
+            position:relative;
+            cursor:pointer;
+            &:before { 
+                content: "\e933";
+                font-family: 'icomoon';
+                font-size: 8px;
+                color: $sText;
+                position: absolute;
+                top: 24px;
+                right:5px;
+            }
+            &.kapali:before {
+                content: "\e936";
+                font-family: 'icomoon';
+                font-size: 8px;
+                color: $sText;
+                position: absolute;
+                top: 24px;
+                right:5px;
+            }
+            
+        }
+        .urunKiyaslamaOzellik_ozellikIcerik {padding-bottom: 15px;}
+        a.urunKiyaslamaOzellik {
+            font-size:14px;
+            color: $text;
+            line-height: 26px;
+                &:before {
+                    content:'';
+                    width: 10px;
+                    height: 10px;
+                    border: 1px solid $sText;
+                    display: inline-block;
+                    margin: 6px 8px 0 0;
+                    float: left;
+                }
+                &.link_selected {
+                     &:before {
+                    border-color: $lBlue;
+                    background: $lBlue;
+                    }
+                }
+            }
+            span {color: $text;}
+            &.fiyat .urunKiyaslamaOzellik_ozellik  {
+                i:before {
+                    content: 't';
+                    font-family: 'tl';
+                    font-size: 12px;
+                    font-weight: normal;
+                    margin-right: 2px;
+                    display: inline-block;
+                }
+            }
+    }
+     .urunKiyaslamaOzellik_ozellik.color {
+         font-size:0;
+        span { 
+            display:none;
+        }
+        tr {
+            float: left;
+            padding: 0 4px 10px 4px ;
+        }
+        tr:nth-child(1), tr:nth-child(5n + 1) {
+            padding-left:0px;
+        }
+        tr:nth-child(5n) {
+            padding-right:0px;
+        }
+
+        a {
+            width:35px;
+            height: 35px;
+            display: block;
+            color: #fff;
+            background: #e3e3e3;
+            font-size: 0;
+            position: relative; 
+            span {display:none;}
+            &.link_selected:after { 
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    box-shadow: 0 0 0 3px $marineBlue inset;
+            }
+        }
+        a.urunKiyaslamaOzellik {
+            &:before {
+            display:none;
+            }
+        }
+    }
+    .urunKiyaslamaOzellik_ozellik.marka {
+        a.urunKiyaslamaOzellik {
+            img {display:none;}
+        }
+    }
+
+    .kutuHeaderOzellikFiltre, .ayiracOzellik, .urunKiyaslamaOzellik_temizle {
+        display: none !important;
+    }
+
+    .kutuFooterOzellikFiltre {
+        .urunKiyaslamaOzellik_tumunuTemizle {
+            display:block !important;
+            /*margin-top:20px;*/
+         a {
+            font-size:18px;
+            font-family: $fontSite;
+            border:1px solid #002553;
+            padding:10px;
+            width: 100%;
+            color:$marineBlue;
+            display:block;
+            text-align:center;
+            
+        }
+        }
+    }
+
+    .kutuBodyOzellikFiltre {
+    > table > tbody > tr {
+        border-bottom:1px solid $borderColor; 
+        display:block;
+            td {
+                width: 100%;
+                display: block;
+            }
+            &:last-child {
+            border: 0;
+            }
+        }
+
+    }
+
+}
+
+/* Stok İndirim & Yeni Ürün Check */
+
+.prdSortMenu {
+    width:100%;
+    margin-bottom: 30px;
+    span {
+        width:100%;
+        display:inline-block;
+    }
+    input[type="checkbox"] {
+        display:none;
+    }
+    label {
+        font-size: 16px;
+        cursor: pointer; 
+        &:before {  
+            content:'';
+            width: 8px;
+            height: 8px; 
+            background-color: #bcc7d5;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+        input[type="checkbox"]:checked + label:before {
+            background-color: #0262b7; 
+        }
+    &:before {
+        content:'';
+        border-top: 1px solid #d8d8d8;
+        width: 100%;
+        font-size: 17px;
+        color: #002b5c;
+        font-family: "DR";
+        padding: 19px 0 0px 0;
+        text-align: left;
+        display: inline-block; 
+        position: relative;
+    } 
+} 
+
+
+/*
+.kutuOzellikFiltre {
+    color: #333;
+    line-height: 1;
+    a {text-decoration: none;}
+    table {width: 100%;}
+    #dvUrunKiyaslamaOzellik {
+        .urunKiyaslamaOzellik_ozellikAd {
+            position: relative;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 20px 0;
+            > span {display: none !important;}
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+            }
+            &.kapali {
+                &:after {
+                    content: ""
+                } 
+            }
+        }
+        .urunKiyaslamaOzellik_ozellikIcerik {
+            padding-bottom: 10px;
+            .urunKiyaslamaOzellik_ozellik {
+                font-size: 14px;
+                .urunKiyaslamaOzellik {
+                    position: relative;
+                    display: inline-block;
+                    padding: 2px 0 2px 20px;
+                    margin: 2px 0;
+                    &.link_selected {
+                        font-weight: bold;
+                    }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        margin-top: -7px;
+                    }
+                }
+                .filter-qty {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .ayiracOzellikGrup {
+        border-bottom: 1px solid #ebebeb;
+    }   
+    .kutuHeaderOzellikFiltre, .ayiracOzellik, .urunKiyaslamaOzellik_temizle {
+        display: none !important;
+    }
+}
+*/
+
+@media screen and (max-width:960px) {
+
+    .prdSortMenu {
+        label {
+            font-size: 18px;
+            padding: 18px 20px;
+            width:100%;
+            border-top: 1px solid $borderColor;
+            display: block;
+            &:before {
+                width: 15px;
+                height: 15px; 
+            }
+        }
+        &:before {
+            display:none;
+        }
+
+    }
+}

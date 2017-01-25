@@ -1,0 +1,286 @@
+.btn-search {
+    display: block;
+    padding: 23.5px 0;
+    background: $colorRed;
+    text-decoration: none;
+    text-align: center;
+    > span {
+        display: block;
+        margin-top: 9px;
+        font-family: $fontSite;
+        font-size: $fontSizeDefault;
+        color: #FFF;
+        opacity: .5;
+    }
+}
+
+.mod-mini-search {
+    &-header, &-footer, .search-all { display: none; }
+    &-body {
+        position:relative;
+        .ems-field {
+            margin: 0;
+        }
+        .ems-field.submit {
+            position:absolute;
+            right:0;
+            top: 0;
+            display: none;
+            a {
+                display: block;
+                background: inherit;
+                line-height: 1;
+                padding: 0;
+                &:before{
+                    font-family: 'icomoon';
+                    content: '\e91e';
+                    font-size: 16px;
+                    color: #ffffff;
+                }
+                span{ display: none; }
+            }
+        }
+        .ems-field.text {
+            input{
+                border: none;
+                color: $colorDefault;
+                text-align: center;
+                font-size: 15px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                line-height: 1.3;
+                @include transition(all 0.2s ease);
+            }
+        }
+        .icon-ico_search{
+            display: inline-block;
+            font-size: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: -8px;
+            @include transition(all 0.2s ease);
+        }
+    }
+}
+
+.searchSuggestDiv {
+    width:100%;  
+    top: 60px; 
+    .searchSuggestDivHolder {
+        background: $vlightBg;
+        padding-right: 20px;
+        overflow: auto;
+        max-height: 465px;
+        border-radius: 3px;
+        .prd {
+            display: inline-block;
+            width: 60%;
+            vertical-align: top;
+            background: #ffffff;
+            padding: 20px;
+            h3 {
+                font-size:12px;
+                color:$sText;
+                font-family: $fM;
+                text-indent: -9999px;
+                padding:0px 0 10px 0;
+                margin:0;
+                font-weight: normal;
+                small {
+                    text-indent: 0;
+                    float:left;
+                    color:$sText;
+                    font-family: $fM;
+                    font-size:12px;
+                }
+            }
+            table tr th { width: 100px; }
+            table tr td { width: 80%; }
+            table tr td span{ font-size: 12px; }
+            table tr td span b{ font-size: 12px; font-weight: normal; }
+        }
+        .cat {
+            display: inline-block;
+            width: 40%;
+            vertical-align: top;
+            padding: 20px 0 20px 20px;
+            h3{
+                margin: 0;
+                font-size:12px;
+                color:$sText;
+                font-family: $fM;
+                font-weight: normal;
+            }
+            .sHolder {
+                div { border: none; }
+            }
+        }
+        .sHolder {
+            img {
+                width:50px;
+                display:block;
+                max-width: 50px;
+            }
+            div {
+                padding:10px 0; 
+                display: block;
+                cursor:pointer !important;
+                border-top: 1px solid $borderColor;
+                @include transition(all .2s ease);
+                > a{ 
+                    font-size: 12px;
+                    @include transition(all .2s ease);
+                    &:hover {
+                    color: $text;
+                }
+                }
+                &:hover {
+                    color: $text;
+                }
+            }
+            div:first-child{
+                border-top: none;
+            }
+        }
+    }
+}
+
+body.search-focused {
+    .mod-mini-search {
+        &-body {
+            .icon-ico_search{ left: 15px; @include setTransform(translateX(0)); }
+            .icon-ico_search:after{ opacity: 0; visibility: hidden; }
+            .ems-field.text{
+                input { padding-left: 40px; }
+            }
+        }
+    }
+    &.search-keyup {
+        .vailSearch {opacity: .4; visibility: visible;}
+    }
+}
+
+/*Mobile Gecis*/
+@media screen and (max-width:$breakpointSM) {
+    /*Mobile Smart Menu*/
+    .ems-smart-header { display: block; width: 100%; /*@include transition(all .32s ease);*/ height: 70px; }
+    /*Search*/
+    .mod-mini-search {
+        &-body {
+            .ems-field.text {
+                input {
+                    background: #ffffff;
+                    color: $sText;
+                    font-size: 18px;
+                }
+            }
+            .icon-ico_search{
+                left: 15px;
+                @include setTransform(translateX(0));
+                &:before{
+                font-size: 20px;
+                color: $sText;
+                }
+                &:after{
+                    color: $sText;
+                    font-size: 18px;
+                }
+            }
+            .icon-ico_mb-close {
+                &:before {
+                   color: $sText; 
+                }
+            }
+        }
+        &-footer{
+            @include transition(all .32s ease);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: #ffffff;
+            z-index: 100;
+            display: block;
+            ul{ display: none; }
+        }   
+    }
+    /*Search Autocomplete*/
+    .searchSuggestDiv{
+        @include transition(bottom .32s ease);
+        position: fixed !important;
+        bottom: -100%;
+        top: inherit;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        z-index: 150 !important;
+        height: calc(100% - 85px);
+        will-change: bottom;
+        overflow: auto;
+        .searchSuggestDivHolder{
+            background: #ffffff;
+            overflow: inherit;
+            border-radius: 0;
+            padding: 0;
+            max-height: 100%;
+            .sHolder div > a {
+                font-size: 14px;
+            }
+            .prd, .cat{
+                width: 100%;
+                padding: 20px;
+                h3{ display: none; }
+            }
+            .cat{
+                padding-bottom: 0;
+                border-top: 1px solid $borderColor;
+            }
+            .dvTumunuGoster.emos_invisible{
+                display: block !important;
+                padding-top: 0px;
+                margin-top: 40px;
+                height: 50px;
+                a.btnArama {
+                    position: fixed;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    background: #fff;
+                    color:$lBlue;
+                    text-transform: uppercase;
+                    border-top: 1px solid $borderColor;
+                }
+            }
+        }
+    }
+    /*Suggest Focused Autocomplete Animate*/
+    body.search-focused {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        .mbHeader{ @include setTransform(translateY(-100%)); }
+        .icon-ico_search { left: 15px; @include setTransform(translateX(0)); }
+        .icon-ico_mb-close{ bottom: 15px; @include setTransform(translateY(0)); }
+        .ems-smart-header { height: 0; overflow: hidden; font-size: 0; padding: 0; }
+        .mod-mini-search {
+            &-footer{
+                /*
+                height: calc(100% - 145px);
+                */
+                height: calc(100% - 85px);
+            }
+            .icon-ico_mb-close {bottom: 14px; display: block;}
+        }
+    }
+    /*Suggest Keyup Autocomplete Animate*/
+    body.search-keyup {
+        .searchSuggestDiv{
+            bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,213 @@
+.ems-tab-horizontal-content > .ems-tab-inner > ul.content-js > li.paymentOptions .content .popupTaksit {display:block;}
+.popupTaksit {
+    display: none;
+    padding: 0 !important;
+    .popupTitleTaksit {
+        padding: 0 !important;
+        border: 0 !important;
+        span {
+            margin-bottom: 15px !important;
+        }
+    }
+    .popupTaksit_lbfAciklama {
+        span {margin-bottom: 20px !important;}
+    }
+    .popupTaksit_lbfAciklama {
+        span {
+            font-size: 17px !important;
+            display: inline-block !important;
+            .taksit_pesin {
+                color: #d75c95;
+                margin: 0 !important;
+            }
+        }
+    }
+    .gridRowTaksitBanka {
+        display: inline-block;
+        height: 100%;
+        > table {height: 100%; /*border:1px solid $borderColor;*/ border-collapse: collapse;}
+        td {padding: 0; margin: 0;}
+        .taksit_banka {
+            font-size: 14px;
+            font-family: $fM;
+            padding: 20px;
+            text-align: left;
+            height: 100px;
+            color: #002b5c;
+            img {margin-bottom: 10px !important; display: block !important;}
+        }
+    }
+    & table , table tr {width: 100%; vertical-align: top;}
+    & table.gridTaksitBanka > tbody > tr {
+            display: table;
+            height: 100%;
+            > td {
+                width: 50%;
+                padding-bottom: 10px;
+                &:nth-child(1) {
+                    padding-right:20px;
+                }
+            }
+    }
+    table.gridTaksitSecenek {
+        tr.gridHeaderTaksitSecenek {
+            background-color: $vlightBg;
+            font-size: 13px;
+            text-align: center;
+            color: $dBlue !important; 
+            & th {
+                padding: 12px 0;
+                border: solid 1px $borderColor;
+                border-left: 0;
+                border-right: 0;
+                font-weight: normal;
+            }
+        }
+        tr.gridRowTaksitSecenek, tr.gridAlternateTaksitSecenek {
+            font-size: 16px;
+            text-align: center;
+            & td {
+                padding: 10px 0;
+                border: solid 1px $borderColor;
+                border-left: 0;
+                width: 33.333% !important;
+            }
+            &:last-child td {border-bottom: 0;} 
+            &:hover{background: #cae7eb;}
+        }
+        tr.gridRowTaksitSecenek {
+            .taksit_pesin {/*color: $dBlue !important;*/}
+        }
+    }
+}
+
+
+@media screen and (max-width:960px) {
+
+.popupTaksit table.gridTaksitBanka > tbody > tr > td {width:100%; padding-right: 0; float: left;}
+.gridRowTaksitBanka:nth-child(1) {padding-right:0px !important;}
+
+}
+
+/*
+//taksit
+.pageOdemeBilgi_odemeTaksit {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin-top: 25px;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: $borderColor;
+    > img {
+        display: block;
+        margin: 12px auto;
+    }
+    > .pageOdemeBilgi_lbfOdemeTaksit {
+        text-align: center;
+        background: #f00;
+        padding: 5px;
+        color: #fff;
+        font-size: 14px;
+    }
+    .tableOdemeTaksit {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        td {
+            font-family: $fontSiteReg;
+            font-size: 16px;
+            color: $marineBlue;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid $borderColor;
+            input {
+                margin-right: 0;
+            }
+            &:nth-child(1) {
+                width: 24px;
+                border-left: none;
+                border-right: none;
+            }
+            &:nth-child(2) {
+                border-left: none;
+            }
+            &:nth-child(4) {
+                border-right: none;
+            }
+        }
+        .tableTitleOdemeTaksit {
+            display: table-row;
+            td {
+                font-family: $fontSite;
+                font-size: 13px;
+                background: #f0f3f5;
+                padding: 17px;
+            }
+        }
+        .taksit_pesin td {
+            color: #d75c95;
+        }
+    }
+}
+
+
+.mod-payment-options {
+    position: relative;
+}
+
+.popupTaksit {
+    .gridTaksitBanka {
+        width: 100%;
+        max-width: $siteContainerWidth;
+        margin: 0 auto;
+        table {
+            width: 100%;
+            border-spacing: 0;
+         }
+         td {padding: 0;}
+        .gridRowTaksitBanka {
+            vertical-align: top;
+            padding-left: 2px;
+            &:first-child {padding-left: 0;}
+            .taksit_banka {
+                font-size: 0;
+                > span {
+                    display: block;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .gridTaksitSecenek {
+                table-layout: fixed;
+                th, td {
+                    border: 1px solid #ebebeb;
+                    text-align: center;
+                    padding: 15px;
+                }
+                .gridHeaderTaksitSecenek {
+                    background: #fff;
+                    th {
+                        color: #333;
+                        &:first-child {
+                            width: 30%;
+                        }
+                    }
+                }
+                .gridRowTaksitSecenek, .gridAlternateTaksitSecenek {
+                    td {
+                        color: #666;
+                        &:first-child {
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .popupTitleTaksit, .popupTaksit_lbfAciklama {
+        display: none !important;
+    }
+}
+*/

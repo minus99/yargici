@@ -1,0 +1,1213 @@
+/*Layout*/
+.ems-container { max-width: $siteContainerWidth;}
+.ems-width-full, .ems-row {width: $siteContainerWidthFull; }
+
+.ems-content-page {
+   .col1 {
+       width: 250px;
+       float: left;
+        .kutuSolMenuTree {
+            .kutuHeaderSolMenuTree {
+                display:none;
+            }
+            .kutuBodySolMenuTree {
+                padding: 40px 0 50px 0;
+                ul {
+                    display: block;
+                    > li {
+                        > a {
+                            font-family: $fM;
+                            font-size: 30px;
+                            margin: 0;
+                            font-weight: normal;
+                            display: block;
+                        }
+
+                        ul {
+                            padding-top: 10px; 
+                            li {
+                                a {
+                                    display: block;
+                                    padding: 15px 0;
+                                    font-size: 18px;
+                                    font-family: $fM;
+                                    position: relative;
+                                    &:before {
+                                        content: '\e935';
+                                        font-family: 'icomoon';
+                                        position: absolute;
+                                        right: 0;
+                                        top: 40%;
+                                        font-size: 12px;
+                                        color: #9e9e9e;
+                                    }
+                                } 
+                                &.act {
+                                    a {
+                                        color: $lBlue;
+                                        &:before {
+                                            color: $lBlue;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .sStylerMainWrp {
+                display: none;
+                width: 100%;
+                .sStylerWrp {
+                    border-bottom: 1px solid $lines;
+                    background: none;
+                    height: 66px;
+                    padding: 18px 20px;  
+                    &:after {
+                        right: 30px;
+                        font-size: 12px;
+                    }
+                    .sStyleHolder {
+                        span {
+                            font-size: 24px;
+                            font-family: $fM;
+                            line-height: 30px;
+                        }
+                    }
+                }
+            }
+       }
+   }
+   .col2 {
+        width: auto;
+        margin-left: 340px;
+        padding: 100px 0 35px 0;
+        .pDetail {
+            .sayfaAd {
+                position: relative;
+                display: block;
+                font-family: $fM;
+                font-size: 24px;
+            }
+            .sayfaIcerik {
+                margin: 30px 0;
+                b {
+                    font-size: 18px;
+                    font-family: $fM;
+                    font-weight: normal;
+                    display: block;
+                    color: $text;
+                    margin-bottom: 12px;
+                }
+                 p {
+                    color: $text;
+                    
+                }
+                ul {
+                    li {
+                        display: inline-block;
+                        width: 100%;
+                        margin-bottom: 20px;
+                        &.imgRight {
+                            img {
+                                padding:0 0 30px 30px;
+                                width: 60%;
+                            }
+                        }
+                        &.imgLeft {
+                            img {
+                                padding:0 30px 30px 0;
+                                width: 60%;
+                            } 
+                        }
+                    }
+                }
+                a.btnDefault {
+                    width: 100%;
+                    max-width: 220px;
+                    font-size: 18px;
+                    text-transform: uppercase;
+                }
+                a.icerikLink {
+                    background: #2196f3;
+                    padding: 10px 17px 8px 17px;
+                    border-radius: 3px;
+                    display: inline-block;
+                    color: #fff;
+                    text-align: center;
+                    &:hover {
+                        background: #37a0f4;
+                    }
+                } 
+            }
+
+            .formObj {
+                margin-bottom: 30px; 
+                border-bottom: 1px solid $borderColor;
+                li {
+                    input {width:100%; max-width: 370px;}
+                }
+            }
+
+        }
+   }
+}
+
+.page-member {
+	.row-1 {
+       display: table-cell;
+        .kutuSolMenuTree {
+            .kutuHeaderSolMenuTree {
+                display:none;
+            }
+            .kutuBodySolMenuTree {
+                padding: 40px 0 50px 0;
+                ul {
+                    display: block;
+                    > li {
+                        > a {
+                            font-family: $fM;
+                            font-size: 30px;
+                            margin: 0;
+                            font-weight: normal;
+                            display: block;
+                        }
+
+                        ul {
+                            padding-top: 10px; 
+                            li {
+                                a {
+                                    display: block;
+                                    padding: 15px 0;
+                                    font-size: 18px;
+                                    font-family: $fM;
+                                    position: relative;
+                                    &:before {
+                                        content: '\e935';
+                                        font-family: 'icomoon';
+                                        position: absolute;
+                                        right: 0;
+                                        top: 40%;
+                                        font-size: 12px;
+                                        color: #9e9e9e;
+                                    }
+                                } 
+                                &.act {
+                                    a {
+                                        color: $lBlue;
+                                        &:before {
+                                            color: $lBlue;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+		}
+    }
+     .sStylerMainWrp.member-menu-selecbox {
+                display: none;
+                width: 100%;
+                .sStylerWrp {
+                    border-bottom: 1px solid $lines;
+                    background: none;
+                    height: 66px;
+                    padding: 18px 20px;  
+                    &:after {
+                        right: 30px;
+                        font-size: 12px;
+                    }
+                    .sStyleHolder {
+                        span {
+                            font-size: 24px;
+                            font-family: $fM;
+                            line-height: 30px;
+                        }
+                    }
+                }
+            }
+}
+
+.page-member {
+    .kutuSolMenuTree {
+        .member-menu-selecbox.sStylerWrp_select {
+            display:none;
+        }
+    }
+}
+.errorHolder {
+    text-align:center; 
+    margin: 100px auto  100px auto;
+    width: 100%;
+    max-width: 640px;
+    padding: 0 20px;
+    img {margin-bottom: 50px;}
+    span {
+        font-size: 36px;
+        display:block;
+        font-family: $fM;
+        margin-bottom: 30px;
+        color: $lBlue;
+    }
+    p {
+        font-size: 18px;
+        font-family: $fD;
+        display:block;
+        color: $text;
+        margin-bottom: 35px; 
+    }
+    a {
+        font-size: 17px;
+        background: $lBlue;
+        min-width: 220px;
+        &:hover {
+            background: $lBlue;
+        }
+    }
+}
+
+
+/*.page-customer {
+.kutuSolMenuTree {
+    .kutuBodySolMenuTree {
+        position: absolute;
+        left: 0;
+        right:0;
+        top:42px;
+        z-index: 1;
+        ul {
+            li {
+                &.sev2 > a {display:none;}
+                ul {
+                    width:100%;
+                    max-width:990px;
+                    margin:0 auto;
+                    display:table;
+                    vertical-align: middle;
+                    padding: 0 20px;
+                    li {
+                        display:table-cell;
+                        vertical-align: middle;
+                        a {
+                            font-size:20px;
+                            text-align: center;
+                            padding:11px;
+                            display: block;
+                            color: #fff;
+                            width:100%;
+                            height: 100%;
+                            vertical-align: middle;
+                            position: relative;
+                            &:hover {
+                                background:$lightBlue;
+                                text-decoration: underline;
+                            }
+                            
+                        }
+                        &.act a {
+                                background:$lightBlue;
+                            }
+                    }
+                }
+            }
+        }
+    }
+    .kutuHeaderDefault {display:none;}
+}
+    .ems-page-corporate {
+        height:595px;
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        margin-bottom:38px;
+        -webkit-box-shadow: inset 0px 132px 212px -35px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: inset 0px 132px 212px -35px rgba(0, 0, 0, 0.75);
+        box-shadow: inset 0px 132px 212px -35px rgba(0, 0, 0, 0.75);
+        &-comment{
+            width:100%;
+            max-width:850px;
+            margin:0 auto;
+            @include vAlign;
+            span {
+                font-size:48px;
+                line-height: 0.92;
+                margin-bottom: 65px;
+            }
+            p {
+                font-size:20px;
+                line-height: 29px;
+                padding: 0 20px;
+                span {
+                    font-family: $fontSite;
+                    font-size: 20px;
+
+                }
+                i {
+                    width:51px;
+                    padding: 10px;
+                    display: inline-block;
+                    border-radius: 100%;
+                    border:2px solid #fff;
+                    position: relative;
+                    top: 5px;
+                    margin: 10px;
+                    &:before {
+                        font-size:27px;
+                    }
+                    
+                }
+            }
+        }
+    }
+    .downArrow {
+        position: absolute;
+        right:0;
+        left:0;
+        bottom: 30px;
+        background: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        margin: 0 auto;
+        cursor: pointer;
+        &:before {
+            content: "\e901";
+            font-family: 'icomoon';
+            font-size: 15px;
+            position: relative;
+            color:$marineBlue;
+            padding: 12px;
+            display:block;
+        }
+    }
+    .ems-page-corporate-content {
+        width:100%;
+        text-align:center;
+        > ul {
+            width:100%;
+            max-width: 900px;
+            display:inline-block;
+            > li {
+                width:100%;
+                display:table;
+                margin-bottom: 60px;
+                span {
+                    display: table-cell;
+                    vertical-align: middle;
+                    width:45%;
+                    font-size: 17px;
+                    padding: 0 50px;
+                    b {
+                        font-size:35px;
+                        line-height:44px;
+                        display:block;
+                        margin-bottom:35px;
+                        font-weight: normal;
+                    }
+                    a {
+                        text-decoration: underline;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+*/
+    /* İçerik Sayfaları */
+
+/*
+    .pDetail {
+        .sayfaAd {
+            font-size: 35px;
+            line-height: 44px;
+            display: block;
+            padding: 37px 0 25px 0;
+            font-weight: normal;
+        } 
+        p {
+            font-size: 17px;
+        }
+    }
+
+    &.page-support {
+        margin-bottom: 80px;
+        padding: 0;
+        .col1 {
+             width: 250px;
+             float: left;
+            .kutuSolMenuTree {
+                padding-bottom: 50px;
+                width: 100%;
+                display: inline-block;
+                .kutuBodySolMenuTree {
+                    position:static;
+                    ul {
+                        li {
+                            ul {
+                                display: block;
+                                position: static;
+                                padding: 10px 0 0 0;
+                                max-width: none;
+                                li {
+                                    display:inline-block;
+                                    width:100%;
+                                    a {
+                                        display: block;
+                                        padding: 10px 20px;
+                                        font-family: $fontDefault;
+                                        font-size: 17px;
+                                        color: $marineBlue;
+                                        line-height: 1;
+                                        background: none;
+                                        text-decoration: none;
+                                        text-align: left;
+                                        position: relative;
+                                    }
+                                    &.act a {
+                                        color: $lightBlue;
+                                        &:before {
+                                        content: "\e91f";
+                                        font-family: 'icomoon';
+                                        font-size: 8px;
+                                        color: #bcc7d5;
+                                        position: absolute;
+                                        left: 0;
+                                        top:15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        li.sev2 > a {
+                            display: block;
+                            font-family: $fontSite;
+                            font-size: 17px;
+                            line-height: 1;
+                            margin: 0;
+                            padding: 15px 20px;
+                            border-bottom: 1px solid #d8d8d8;
+                        }
+                    }
+                }
+            }
+        }
+        .col2 {
+            width:auto;
+            margin-left: 340px;
+            padding: 0 20px;
+            .kutuOrderQuery {
+                .kutuHeaderOrderQuery {
+                    span {
+                        font-size: 35px;
+                        line-height: 44px;
+                        display: block;
+                        padding: 37px 0 25px 0;
+                        font-weight: normal;
+                        font-family: $fontDefault;
+                    }
+                }
+                div.kutuBodyOrderQuery {
+                    margin-bottom: 40px;
+                    div {
+                        display: inline-block;
+                        margin-bottom: 16px;
+                        width: 100%;
+                    span {
+                        width:23%;
+                        display: inline-block;
+                        font-family: $fontSite;
+                        font-size: 13px;
+                        color: #002b5c;
+                        text-transform: uppercase;
+                    }
+                    input {
+                        width: 77%;
+                        max-width: 425px;
+                    }
+                    a {
+                        width: 100%;
+                        max-width: 425px;
+                        float: left;
+                        span {
+                            width: auto; 
+                            color: #ffffff;
+                            font-size: 17px;
+                            font-family: $fontSiteReg;
+                        }
+                    }
+                    table {
+                        width: 77%;
+                        float: right;
+                        tbody,tr,th {
+                             width: 100%;
+                             display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    */
+
+    /* Site Map */
+
+    /*
+    &.ems-site-map {
+        .site-map-content {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 30px;
+
+            */
+
+            /* Site Map */
+            /*
+            .pageHeadersitemap {padding:25px 0; margin-bottom:20px; border-bottom:1px solid $borderColor;}
+            .pageHeadersitemap span{font-size:36px; color:#002a5c;}
+            .urunKategoriListe > ul > li{width:100%; clear:both; display:block;}
+            .urunKategoriListe > ul > li:before, .urunKategoriListe > ul > li:after{clear:both; display:table; content:""; font-size:0; height:0; visibility:hidden;}
+            .urunKategoriListe > ul > li > a{color:#002a5c; font-size:15px;}
+            .pageSitemap > div > ul > li > ul > li > a{font-size:16px; color: #004893; font-weight:bold; margin-bottom:15px; display:inline-block;}
+            .pageSitemap > div > ul > li > a{font-size:20px; color:$marineBlue; font-weight:bold; display:inline-block; margin:10px 0 30px 0;}
+            .pageSitemap > div > ul > li ul.seviye2{border-left:1px solid $borderColor; margin:10px 0 20px 5px; padding-left:15px;}
+            .pageSitemap > div > ul > li > ul > li{display:table-cell; -webkit-column-break-inside:avoid; -moz-column-break-inside:avoid; column-break-inside: avoid;}
+            .pageSitemap > div > ul > li > ul > li > ul > li{margin-bottom:3px;}
+            .pageSitemap > div > ul > li > ul{ column-count:4; -webkit-column-count:4; -moz-column-count:4; margin-bottom:25px; padding-bottom: 25px; border-bottom:1px solid $borderColor;}
+            .pageSitemap > div > ul > li:last-child > ul {border:none;padding:0}
+            .pageSitemap > div > ul > li > ul > li{    -webkit-column-break-inside: avoid; display: table; column-break-inside: avoid; -moz-column-break-inside: avoid;}
+            .pageSitemap > div > ul > li > ul > li > ul > li > a{font-size: 16px;  color: #3e3f44; line-height: 1.7;}
+            .pageSitemap{padding:0px 10px;}
+
+        }
+    }
+    
+
+}
+*/
+
+/* Bize Ulaşın */
+
+/* Quest Accordion */
+
+/*
+.questWrapper {
+    width: 100%; 
+    max-width: 900px; 
+    margin: 0 auto;
+        .questAcc {
+            li {
+                width:100%; 
+                display:inline-block;
+                margin-bottom:20px;
+                position:relative;
+                
+                &.opened .tabLnk {
+                    margin-bottom:28px;
+                    background:$lightBlue;
+                    border:1px solid #fff; 
+                    &:after {
+                        content: "\e91e";
+                        font-family: 'icomoon';
+                        font-size: 9px;
+                        position:absolute; 
+                        right:20px;  
+                        top:22px;
+                        color: #fff;
+                        }
+                    h3 {
+                        color: #fff;
+                    }
+                }
+
+                .tabLnk {
+                width:100%; 
+                display:inline-block; 
+                border:1px solid #d8d8d8; 
+                    &:after {
+                        content: "\e91f";
+                        font-family: 'icomoon';
+                        font-size: 9px;
+                        color:#bcc7d5;
+                        position:absolute; 
+                        right:20px; 
+                        top:22px;
+                        }
+                    h3 {
+                        font-family:$fontSite; 
+                        font-size: 15px;  
+                        padding:15px 30px; 
+                        color:$marineBlue;
+                        letter-spacing: 0.5px;
+                        font-weight: normal;
+                        margin: 0;
+                    }
+                }
+            }   
+        }
+
+        .questAccBtn {
+            .questStep {
+                li {
+                    &:before {
+                        content:''; 
+                        width:100%; 
+                        height:2px; 
+                        background:$marineBlue; 
+                        position:absolute; 
+                        top:45px; 
+                        z-index:-1; 
+                        display:block;
+                        }
+
+                        &:first-child:before {
+                            content:''; 
+                            width:50%; 
+                            left:50%}
+                        &:last-child:before {
+                            content:''; 
+                            width:50%; 
+                            right:50%}
+                        &.selected:before {
+                            content:''; 
+                            width:100%; 
+                            height:2px; 
+                            background:$lightBlue; 
+                            position:absolute; 
+                            top:45px; 
+                            z-index:0; 
+                            display:block;}
+                        &.selected:first-child:before {
+                            content:''; 
+                            width:50%; 
+                            left:50%}
+                        &.selected:last-child:before {
+                            content:''; 
+                            width:50%; 
+                            right:50%
+                        }
+
+
+
+                    a {
+                        padding-top:20px; 
+                        width:100%; 
+                        text-align:center; 
+                        display:inline-block;
+                        &:hover {
+
+                        }
+                        i {
+                            background:#fff;
+                            &:before {
+                                content:'';
+                                font-family: 'icomoon';
+                                font-size:30px;
+                                display:block;
+                                position: relative;
+                                top: 8px;
+                            }
+                            &.icons {
+                                width: 51px;
+                                height: 51px;
+                                border: 2px solid $marineBlue; 
+                                border-radius: 100%; 
+                                position:relative; 
+                                display:inline-block;
+                                overflow: hidden;
+                                }
+                                &.user:before {
+                                    content: "\e928";
+                                    font-weight: bold;
+                                    top: 10px;
+                                }
+                                &.prdStick:before {
+                                    content: "\e926";
+                                }
+                                &.orderPay:before {
+                                    content: "\e900";
+                                    top: 7px;
+                                }
+                                &.prdSend:before {
+                                    content: "\e902";
+                                    font-size: 33px;
+                                    top: 7px;
+                                }
+                                &.orderCancel:before {
+                                    content: "\e905";
+                                    font-size: 16px;
+                                    top: 16px;
+                                }
+                                &.icoStock:before { 
+                                    content: "\e926";
+                                    position: relative;
+                                    top: 9px;
+                                    right: 1px;
+                                }
+                                &.icoPartner:before {
+                                    content: "\e933";
+                                     
+                                }
+                                &.icoSugg:before {
+                                    content: "\e92c";
+                                    font-size: 26px;
+                                    top: 10px;
+                                     
+                                }
+
+                          }
+
+                    }
+                    &.selected {
+                        i {
+                            background:#097ac1;
+                            border-color:#097ac1 !important; 
+                            &:before {
+                                content:'';
+                                font-family: 'icomoon'; 
+                                color:#fff;
+                            }
+                        }
+                        span {
+                            color:$lightBlue;
+                        }
+                        & a:before:hover  {
+                            content:''; 
+                            width:100%; 
+                            height:2px; 
+                            background:$lightBlue; 
+                            position:absolute; 
+                            top:45px; 
+                            display:block;
+                        }
+                    }
+                }
+                span {
+                    font-family: $fontSite;
+                    font-size: 15px; 
+                    color:$marineBlue; 
+                    display: block; 
+                    padding: 30px 10px; 
+                    text-align:center; 
+                    height: 90px; 
+                    overflow: hidden;
+                }
+            }
+*/
+            /* Step */
+/*
+            .questStep {
+                position:relative;
+                width: 100%; 
+                display:inline-block; 
+                text-align:center;
+                    li {
+                        width:20%; 
+                        text-align:center; 
+                        position:relative; 
+                        display:inline-block;
+                            &.selected {
+                                a {
+                                    &:before:hover {
+                                        content:''; 
+                                        width:100%; 
+                                        height:2px; 
+                                        background:#097ac1; 
+                                        position:absolute; 
+                                        top:45px; 
+                                        display:block;
+                                    }
+                                }
+                            }
+                    }
+            }
+
+        }
+*/
+
+        /* Quest List */ 
+
+/*
+        .questList {
+            width: 100%; 
+            margin:40px 0; 
+            background: #f0f3f5; 
+            display: inline-block;
+            .questListItems {
+                display:none;
+                    &.selected {
+                        display:table; 
+                        position:relative;
+                    }
+                .leftCol {
+                    width:40%; 
+                    background: #fff;
+                    display: table-cell;
+                    vertical-align: top;
+                        a {
+                            font-size:17px; 
+                            color:#585858; 
+                            padding:18px 20px; 
+                            display:block;
+                                &:hover {
+                                    color:#0979c1;
+                                }
+                        }
+                    ul {
+                        li {
+                            &.selected {
+                            a {
+                                background:#f0f3f5; 
+                                color:$lightBlue;
+                            }
+                        }
+                        }
+                    }
+                        
+                }
+            .rightCol {
+                width:100%; 
+                float:right; 
+                background:#f0f3f5; 
+                padding:40px;
+                &:after {
+                    content: ""; 
+                    position: absolute; 
+                    top: 0; 
+                    right: 60%; 
+                    width: 2%; 
+                    height: 100%; 
+                    background: linear-gradient(to left bottom,#f0f3f5 50%,transparent 0);
+                    }
+                    p {font-size:16px; 
+                    color:$marineBlue;  
+                    float:none;
+                        a {
+                            display:inline;  
+                            text-decoration:none;
+                        }
+                    }
+                a {
+                    font-size:16px; 
+                    text-decoration:underline; 
+                    color:$lightBlue; 
+                    display:block;}
+                li {
+                    display:none;
+                        &.selected {
+                            display:block;
+                        } 
+                    }
+            }
+            
+*/
+
+            /* List Newsletter */
+            /* newsletter */
+
+/*
+.kutuBultenCont {
+    width:100%;
+    background-color: transparent !important;
+    padding:0 !important;
+    text-align: left;
+    span.b2 {
+        position:relative;
+        a {
+            position:absolute;
+            right:0;
+            top: 0;
+            padding: 13px 20px;
+            font-size: inherit;
+            background: inherit !important;
+        }
+        a:before {
+            content: "\e914";
+            font-family: 'icomoon';
+            font-size: 14px;
+            color: $lightBlue;
+            position:relative;
+            top: 2px;
+        }
+       span {
+            display:none
+        }
+        input {
+            padding-right:50px;
+        }
+    }
+}
+
+            .newIcon {
+                display:inline-block; 
+                width:100%; 
+                margin:20px 0;
+                 div {
+                     float:left; 
+                     display: inline-block; 
+                     padding:10px 0; 
+                     width: 50%;
+                        i {
+                            width:40px; 
+                            height:40px; 
+                            float:left; 
+                            display:inline-block;
+                            &:before {
+                                width: 20px;
+                                height: 20px;
+                            }
+                            &.ico1:before {
+                                content:'\e90e';
+                                font-family: 'icomoon';
+                                font-size:48px;
+                                
+                            }
+                            &.ico2:before {
+                                content:'\e902';
+                                font-family: 'icomoon';
+                                font-size:48px; 
+                            }
+                            &.ico3 {
+                                border: 2px solid $marineBlue;
+                                 padding: 6px;
+                                display: block;
+                                border-radius: 100%;
+                                    margin-top: 5px;
+                            }
+                            &.ico3:before {
+                                content:'\e904';
+                                font-family: 'icomoon';
+                                font-size:23px; 
+                            }
+                            &.ico4 {
+                                border: 2px solid $marineBlue;
+                                padding: 6px;
+                                display: block;
+                                border-radius: 100%;  
+                                margin-top: 5px;
+                                }
+                            &.ico4:before {
+                                content:'\e910';
+                                font-family: 'icomoon';
+                                font-size:23px; 
+                            }
+                          }
+                     }
+                span {
+                    font-family: $fontSite;
+                    font-size: 14px; 
+                    color: $marineBlue; 
+                    padding:18px 0 18px 0px; 
+                    overflow:inherit; 
+                    text-align:left; 
+                    height:auto;
+                    margin-left: 55px;
+                    width: auto;
+                    display: block;
+                }
+            }
+
+        }
+    }
+    }
+
+*/
+
+/*
+.questAcc .questAccBtn li .listInner {display:none;}
+.questAcc .questAccBtn li.opened .listInner {display: inline-block;}
+*/
+
+/***** PLH İletişim Formu  *****/
+
+/*
+.popupMesajGonder, .popupMesajGonder * {-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;	 border:none; outline:none; vertical-align:baseline; text-decoration:none; list-style:none}
+
+.popupMesajGonder {padding:45px 60px; text-align:left; display:inline-block;}
+.popupMesajGonder input {width:50%; outline: 0;color: #000;padding: 10px;border-bottom: 0;border-right: 0;border-left: 1px solid #d6d6d6;border-top: 1px solid #d6d6d6;background-color: #F6F6F6;font-size: 11px;height: auto;border: 1px solid #c1c1c1;border-radius: 0;box-shadow: 2px 2px 2px #ddd inset;}
+.popupMesajGonder .emosMessageTitle {margin-bottom:35px;}
+.popupMesajGonder .emosMessageTitle span {font-size:20px; color:#0b3364; font-family: 'DINPro-Medium';}
+.popupMesajGonder .yeniMesajAciklama span {font-size:16px !important; color:#464646; font-family: Georgia, "Times New Roman", Times, serif !important;}
+.popupMesajGonder .messageInput {float:left; width:60%;}
+.popupMesajGonder .messageInput span {font-size:16px !important; color:#464646; font-family: Georgia, "Times New Roman", Times, serif !important; font-weight:normal !important; float:left; width:30%;}
+.popupMesajGonder .messageInput input {background: none repeat scroll 0 0 #F6F6F6; border: 1px solid #FEFEFE; border-radius: 2px 2px 2px 2px; box-shadow: 0 1px 2px #CCCCCC inset; height: 35px; max-width: 240px; width: 100% !important; margin:0 0 10px 0 !important; padding: 7px 10px;   color: #6E6E6E; font-size: 12px; text-align: left; border: 1px solid #c1c1c1 !important; border-radius: 0 !important;}
+.popupMesajGonder .messageInput select, .popupMesajGonder .messageInput input {width:65% !important; max-width:none !important; margin:0 0 10px 0 !important; float:right;}
+.popupMesajGonder .messageInput ul li {width:100%; display:inline-block; float:left;}
+
+.popupMesajGonder .messageArea {width:100%; float:left;}
+.popupMesajGonder .messageArea span {font-size:16px !important; color:#464646; font-family: Georgia, "Times New Roman", Times, serif !important; font-weight:normal !important; float:left; width:20%;}
+.popupMesajGonder .messageArea textarea {background: none repeat scroll 0 0 #F6F6F6; border: 1px solid #FEFEFE; border-radius: 2px 2px 2px 2px; box-shadow: 0 1px 2px #CCCCCC inset; max-width:none !important;  width: 79% !important; margin:0 0 10px 0 !important; padding: 7px 10px;   color: #6E6E6E; font-size: 12px; text-align: left; border: 1px solid #c1c1c1 !important; border-radius: 0 !important; float: right; height:75px;}
+.popupMesajGonder .yeniMesajAciklama {margin-bottom:25px;}
+
+.popupMesajGonder .messageSend {display: inline-block; width: 100%; padding-left: 21%; float:left;}
+.popupMesajGonder .messageSend #imgCaptcha {float: left; width: 28%; height: 65px; border: 1px solid #c1c1c1; margin-right: 2%;}
+.popupMesajGonder .messageSend .btnMesajGonder {float: right; width: 18%; margin-left: 2%; margin-top:-30px; padding: 21px 10px 20px 10px !important; background-color: #002553 !important; border: 0 !important;}
+.popupMesajGonder .messageSend .btnMesajGonder span {width:100%; margin:0; font-family: 'DINPro-Medium' !important; font-size: 18px !important; color: #fff;}
+.popupMesajGonder .messageSend  span {font-size: 14px !important; color: #000; font-family: Georgia, "Times New Roman", Times, serif !important; font-weight: normal !important; display: block; width: 50%; float: left; margin-bottom: 15px;}
+.popupMesajGonder .messageSend br {display:none;}
+
+.popupMesajGonder .iletisimInfo {border: 1px solid #c1c1c1; margin-bottom:20px; padding:40px 20px 26px 20px; width:38%; font-family:Georgia, "Times New Roman", Times, serif; color:#a3a3a3; float: right;}
+.popupMesajGonder .iletisimInfo .iLeft {width:100%; text-align:center; border-bottom: 1px solid #c1c1c1; padding:0 0 40px 0;}
+.popupMesajGonder .iletisimInfo .iLeft span{font-size: 20px; color: #012a5e; font-family: 'DINPro-Bold';}
+.popupMesajGonder .iletisimInfo .iRight {margin-top:30px; text-align:center;}
+.popupMesajGonder .iletisimInfo .iRight i.icons {width:45px; height:45px; border:1px solid #0260b7; border-radius:100%; float: left;}
+.popupMesajGonder .iletisimInfo .iRight a {font-family: 'DINPro-Bold'; font-size: 15px; color: #012a5e; display: block; padding:15px 0; margin-left: 60px;}
+.popupMesajGonder .iletisimInfo .iRight .icons.tlpIco {background:url(/images/frontend/questIcon.png) -227px -46px no-repeat;}
+.popupMesajGonder .iletisimInfo .mhTel {display:inline-block;}
+
+.minPp a.btnMinPpCl {
+    position:absolute; 
+    right:15px; top:12px;
+    background: transparent;
+    width: auto;
+    height: auto;
+    padding: 15px;
+    &:before {
+        content: "\e905";
+        display: block;
+        font-family: 'icomoon';
+        font-size: 16px;
+    }
+    &:hover {
+        @include setTransform(rotate(90deg));
+    }
+}
+*/
+
+/*
+.errorHolder {
+    text-align:center; 
+    margin: 150px auto;
+    width: 100%;
+    max-width: 400px;
+    img {margin-bottom: 40px;}
+    span {
+        font-size: 25px;
+        display:block;
+        margin-bottom: 30px;
+    }
+    p {
+        font-size: 16px;
+        font-family: $fontSite;
+        display:block;
+        margin-bottom: 35px; 
+    }
+    a {
+        font-size: 17px;
+        background: #de1e54;
+        &:hover {
+            background: #d75c95;
+        }
+    }
+}
+*/
+
+@media screen and (max-width:960px) {
+    
+
+    .ems-content-page {
+        padding: 0;
+        .col1 {
+            width: 100%;
+        }
+        .col2 {
+            margin-left: 0;
+            padding: 0px 20px;
+            display: inline-block;
+            .pDetail {
+                .sayfaAd {display:none;}
+                .sayfaIcerik {padding: 0;}
+            }
+        }
+    }
+
+
+    /* Mobile List Menu */
+
+    .kutuSolMenuTree {
+        position:relative;
+        .kutuHeaderSolMenuTree {
+            font-size:24px;
+            padding: 18px 20px;
+            font-family: $fM !important;
+            position:static;
+            cursor:pointer;
+            /*display: block !important;*/
+            border-bottom: 1px solid $borderColor;
+            &:before {
+                content: "\e933"; 
+                font-family: 'icomoon';
+                position: absolute;
+                right: 30px;
+                top: 35px;
+                font-size: 12px;
+                margin-top: -6px;
+                color: inherit;
+            }
+            
+        }
+        .kutuBodyDefault  {
+                display:none; 
+        }
+        &.opened {
+            .kutuBodyDefault  {
+                    position:static;
+                    display:block;
+                    background: #eee;
+                    padding: 0 !important; 
+                    ul > li > a {display:none !important;}
+                    ul li ul {
+                        width:100%;
+                        padding: 0 !important;
+                        display:inline-block;
+                        li {
+                            width:100%;
+                            display:inline-block;
+                            a {
+                                background: $borderColor;
+                                padding: 20px 30px !important;
+                                font-size: 16px !important;
+                                text-transform: uppercase;
+                                display: block !important;
+                                font-family: $fD !important;
+                                &:hover {
+                                    background: #ccc;
+                                    text-decoration: none;
+                                }
+                                &:before {
+                                    right: 20px !important;
+                                }
+                            }
+                            &.act {
+                                display:none;
+                                a {
+                                    color: #fff;
+                                    &:hover {
+                                        background:$lightBlue;
+                                    }
+                                    }
+                            } 
+                            &:hover {background:none;}
+                      }
+                 }
+            }
+        }
+        .sStylerMainWrp {
+            display: inline-block !important;
+        }
+    }
+    &.opened {
+        .kutuHeaderSolMenuTree {
+            &:before {
+                content:'\e936';
+            }
+        }
+    }
+}
