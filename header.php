@@ -219,6 +219,7 @@
                             <li><a href="javascript:void(0);">GIFT CARD</a></li>
                             <li><a href="javascript:void(0);">BLOG</a></li>
                         </ul>
+                        <span class="mobile-element"><i class="icon-ico_arw-empty-top"></i></span>
                     </div>
                 </nav>
             </div>

@@ -44,7 +44,7 @@
             </div>
             <!--Double banner type-2-->
 
-        <!--Banner double type-1-->
+        <!--Double banner type-1-->
         <div class="ems-row ems-row-3">
         <div class="bnr-box bnr-box-type-1 clearfix">
             <div class="bnr-box-wrp left">
@@ -76,7 +76,7 @@
         </div>
         </div>
         </div>
-        <!--Banner double type-1-->
+        <!--Double banner type-1-->
 
          <!--Grid Column Template-->
         <div class="ems-row ems-row-4">
@@ -169,5 +169,4 @@
         </div>
         </div>
         <!--Insta Feed-->
-
     </div>
