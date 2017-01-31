@@ -1,0 +1,219 @@
+input[type="text"], input[type="password"], input[type="file"], select, textarea, .dropdown > span {
+    border: none;
+    outline: none;
+    padding:10px 15px;
+    width: 100%;
+    height: 40px;
+    line-height: 20px;
+    color: $colorDefault;
+    background: $vlightBg;
+    font-size:15px;
+    font-family: $fD;
+    border:none;
+    @include transition (all .2s ease-in-out);
+}
+
+input:disabled {background: #ebebe4;}
+
+/*Checkbox Input*/
+span.cStyler {
+    width: 14px; 
+    height: 14px;
+    border: 1px solid $sText;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    background: #fff;
+    &.checked {
+        background : $lBlue;
+        border-color:$lBlue;
+    }
+}
+
+.sStylerMainWrp {
+    &.sStylerWrp_checkbox {
+        display: inline-block;
+    }
+    &.sStylerWrp_select {
+        position: relative;
+        width: 100%;
+        display: inline-block; 
+        .sStylerWrp {
+            font-size: 18px;
+            padding-top: 30px;
+            line-height: 1; 
+            height: 60px;
+            color: $title;
+            position: relative;
+            &:after{
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                content: '\e933';
+                font-family: 'icomoon';
+                font-size: 14px;
+                margin-top: -6px;
+            }
+        }
+    }
+    select {
+        position: absolute;
+        left: 0;
+        top: 0px;
+        width: 100%!important;
+        height: 100%;
+        option {
+            font-size: 16px;
+            padding:  10px 0;
+        }
+    }
+    .sStylerWrp {
+        box-shadow: none;
+        border: none;
+        outline: none;
+        padding: 15px 20px 15px 15px;
+        width: 100%;
+        height: 50px;
+        line-height: 30px;
+        color: $sText;
+        background: $vlightBg;
+        font-size: 14px;
+        border: none;
+        border-radius: 3px;
+        @include transition (all .2s ease-in-out);
+    }
+}
+
+/*input[type="checkbox"], input[type="radio"] {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin-right: 12.5px;
+    display: inline-block;
+    vertical-align: middle;
+    @at-root {
+        & + span, span.checkbox + span {
+            font-size: 16px;
+            vertical-align: middle;
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}*/
+
+.ems-form {
+    display: block;
+    &-inner {
+        position: relative;
+        .ems-field {
+            margin-bottom: 20px;
+            position: relative;
+            .ems-form-label {
+                font-family: $fD;
+                font-size: 14px;
+                line-height: 30px;
+                color: $sText;
+                position: absolute;
+                top: 12px;
+                left: 0;
+                padding-left: 15px;
+                pointer-events: none;
+                z-index: 1;
+                @include transition (all .2s ease-in-out);
+                &:empty {
+                    display: none;
+                }
+                .ems-form-obj {
+                    &:empty {
+                        display: none;
+                    }
+                }
+            }
+            &.is-completed{
+                .ems-form-label{
+                    top: 7px;
+                    line-height: 15px;
+                    font-size: 12px;
+                }
+                .ems-form-obj {
+                    input { height: 60px; color:$title; font-size: 18px; padding-top: 30px; line-height: 1; }
+                }
+            }
+        }
+        .ems-field:empty {
+            display: none;
+        }
+        .margin0 {
+            margin-bottom: 0;
+        }
+        .margin2 {
+            margin-bottom: (10px / 2);
+        }
+        .vam {
+            > * {
+                vertical-align: middle;
+            }
+        }
+        .w98 {
+            > * {
+                width: 49%;
+                &:first-child {
+                    margin-right: 2%;
+                }
+            }
+        }
+        [id$="plhLoginSifreUnut1"] {
+            text-align: center;
+        }
+        input[id$="CEPTELEFONALAN"] {
+            width: 20% !important;
+            text-align: center;
+        }
+        input[id$="CEPTELEFONALAN"] + input[id$="CEPTELEFON"] {
+            width: 78% !important;
+            float: right;
+        }
+        .ems-login-error {
+                span {
+                    font-size: 14px;
+                    color: #fff;
+                    background: $red;
+                    padding: 15px;
+                    text-align: center;
+                    display: block;
+                }
+        }
+    }
+    &.ems-form-horizontal {
+        .ems-form-inner {
+            .ems-field {
+                width: 100%;
+                margin-bottom: 16px;
+                > * {
+                    display: inline-block;
+                }
+                .ems-form-label {
+                    margin-bottom: 0;
+                    /*width: 23%;*/
+                }
+                .ems-form-obj {
+                    width: 77%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:960px) {
+    .ems-form.ems-form-horizontal {
+        .ems-form-inner {
+            .ems-field {
+                .ems-form-obj {
+                        width: 100%;
+                        max-width: 425px;
+                }
+            }
+        }
+    }
+}

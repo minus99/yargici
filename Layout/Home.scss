@@ -1,0 +1,218 @@
+/*Cookie Kampanya Banner*/
+.ems-cookie-bnr {
+    width: 100%;
+    background-size: cover !important;
+    height: 220px;
+    &-inner{
+        margin: 0 auto;
+        max-width: 1240px;
+        width: 100%;
+        padding: 0 20px;
+        @include vAlign();
+    }
+    &-content{
+        h1{ margin: 0 0 10px 0;  font-size: 36px;  color: #ffffff; font-family: $fM; font-weight: normal; }
+        p{ margin: 0 0 0 0; font-size: 18px; color: #ffffff; max-height: 68px;; overflow: hidden; }
+        .ems-cookie-bnr-logo {
+            margin-top: 30px;
+        }
+    }
+    &-left{
+        max-width: 620px;
+        width: 100%;
+        float: left;
+    }
+    &-right{
+        @include setAbsolute();
+        max-width: 255px;
+        left: inherit;
+        right: 20px;
+        .ems-cookie-bnr-close{
+            position: absolute;
+            width: auto;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            a{
+                i.icon-ico_quit{
+                    &:before{
+                        font-size: 10px;
+                        color: #1c1213;   
+                    }
+                }
+                span { margin-left: 8px; font-size: 14px; color: #1e1414; font-family: $fM; }
+            }
+        }
+        .ems-cookie-bnr-btn{
+            position: absolute;
+            bottom: 10px;
+            right: 0;
+            a{
+                display: block;
+                border-radius: 5px;
+                padding: 16px 10px;
+                background: $dBlue;
+                text-align: center;
+                span{
+                    font-size: 14px;
+                    font-family: $fM;
+                    color: #ffffff;
+                }
+            }
+        }
+    }   
+}
+
+/*Ana Sayfa One Cikan Urunler*/
+.featured-products {
+    width: 100%;
+    max-width: 1240px;
+    padding: 0 20px;
+    margin: 0 auto;
+    position: relative;
+    .ems-prd-list-count {
+        display: none;
+    }
+    .featured-products-title{
+        font-size: 30px;
+        margin: 30px 0 25px 0;
+        font-weight: normal;
+        font-family: $fM;
+    }
+    .featured-products-link{
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        a.allProducts{
+            padding: 10px 0;
+            span, i.icon-ico_arrw{ display: inline-block; vertical-align: middle;}
+            span { font-family: $fM; color: $dBlue; @include transition(all .2s ease); }
+            i.icon-ico_arrw{ margin-left:10px; @include transition(all .2s ease); }
+            i.icon-ico_arrw:before{ color: $dBlue; font-size: 14px; @include transition(all .2s ease);}
+            &:hover{
+                i.icon-ico_arrw { margin-left: 15px; }
+                span, i.icon-ico_arrw:before { color: $lBlue; }    
+            }
+        }
+    }
+    .ems-prd {
+        width: 20%; 
+        .listBottomBtn {
+            .ems-prd-addBasket{
+                .urunListe_adet { display: none; }
+            }
+        }
+    }
+    .ems-prd-list {
+        .ems-prd-list-prop,
+        .ems-prd-list-paging { display: none; }
+    }
+}
+
+/*Mobile Gecis*/
+@media screen and (max-width: 1100px) {
+
+    .featured-products {
+        .ems-prd-list {
+            .ems-prd {
+            width: 25%;  
+            }
+        }
+    }
+}
+
+@media screen and (max-width:$breakpointSM) {
+    .ems-tab-featured,
+    .widget.realTime-widget,
+    .widget.you-viewed-widget,
+    .top-sellers-widget,
+    .cat-top-seller-widget{
+        display: none !important;
+    }
+    /*Cookie banner*/
+    .ems-cookie-bnr{
+        height: 225px;
+        position: relative;
+        &-inner{
+            transform: none;
+            top: inherit;
+            max-width: 100%;
+            padding-top: 15px;
+            position: static;
+        }
+        &-content{
+            max-width: 230px;
+            h1{ font-size: 24px; }
+            p{ font-size: 12px; }
+            .ems-cookie-bnr-logo { display: none; }
+        }
+        &-left{
+           width: 100%;
+           max-width: 100%;
+           float: none;
+        }
+        &-right{
+            position: inherit;
+            left: inherit;
+            right: inherit;
+            top: inherit;
+            max-width: 100%;
+            height: auto;
+            .ems-cookie-bnr-close{
+                top: 20px;
+                right: 20px;
+            }
+            .ems-cookie-bnr-btn{
+                position: inherit;
+                bottom: inherit;
+                right: inherit;
+                a{
+                    max-width: 250px;
+                    margin-top: 15px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    /*Ana Sayfa One Cikan Urunler*/
+    .featured-products {
+        padding: 0;
+        .featured-products-title{
+            font-size: 20px;
+            color: #263238;
+            margin: 25px 0 10px 20px;
+        }
+        .featured-products-link{
+            position: inherit;
+            top: inherit;
+            right: inherit;
+            a.allProducts{
+                background: $lightBg;
+                padding:18px 10px;
+                display: block;
+                text-align: center;
+                span{font-size: 12px;}
+                i.icon-ico_arrw{ display: none;}
+            }
+        }
+    }
+    // 960px Öne çıkan ürün 
+    .featured-products {
+        .ems-prd-list {
+            .ems-prd {
+            width: 33.333%;  
+            }
+        }
+    }
+}
+
+@media screen and (max-width:640px) {
+    // 640px Öne çıkan ürün 
+    .featured-products {
+        .ems-prd-list {
+            .ems-prd {
+            width: 50%;  
+            } 
+        }
+    }
+}

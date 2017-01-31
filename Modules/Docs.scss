@@ -1,0 +1,132 @@
+.mod-docs {
+    ul {
+        > li {
+            padding: 10px 20px;
+            &:first-child {padding-top: 0;}
+            > .title {
+                display: block;
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+            > .dwn {
+                font-size: $fontSizeDefault;
+                color: #666;
+                position: relative;
+                    &:after,
+                    &:before{
+                        content:'';
+                        position: relative;
+                        display:inline-block; 
+                        vertical-align:middle; 
+                        text-indent:-999em; 
+                        transition: all 0.2s ease;
+                        font-size: 0px;
+                    }
+                    &:after{
+                        position: absolute;
+                        left: 0;
+                        top: -8px;
+                    }
+                    &:before{
+                        margin-right: 5px;
+                    }
+            }
+        }
+    }
+}
+
+/* Kombin */
+
+/* Kombin Sayfa */
+
+.pageScroll {width: 100%; max-width: 1000px; margin: 0 auto; padding:0px;}
+.pageScroll .kolleksiyonTitle {text-align:center; padding:50px 0;}
+.pageScroll .kolleksiyonTitle span {font-size: 50px; display: block; margin-top: 10px;}
+.pageScroll .kombinList {width:100%; position:relative;}
+.kombinList .kombinSlider li {margin:0; display:inline-block; width:100%; position:relative; min-height:600px; margin-bottom: 100px;} 
+.kombinList .kombinSlider li a {display:inline-block; width:100%;}
+.kombinList .kombinSlider li img {width:100%; display:none;} 
+.kombinList .kombinSlider .kombinContent p {font-size:19px; font-weight: normal; color:$marineBlue; line-height: 1.37; text-align:center; margin-bottom:40px; display:block;}
+.kombinList .kombinSlider .kombinContent h5 {font-size:35px; font-weight: normal; color:$marineBlue; text-align:center; display:block; margin: 0 0 20px 0;}
+.kombinList .kombinSlider .kombinContent .kombinBtn {text-align:center;}
+.kombinList .kombinSlider .kombinContent a {width:auto;}
+.kombinList .kombinSlider .kombinContent .kombinBtn span {font-family: 'proximaNovReg'; font-size: 13px; color: #fff;}
+.kombinList .kombinSlider .kombinImg.beyaz .kombinContent h5, .kombinList .kombinSlider .kombinImg.beyaz .kombinContent p {color:#fff;}
+.kombinList .kombinSlider .kombinImg.beyaz .kombinContent a {background:#fff;} 
+.kombinList .kombinSlider .kombinImg.beyaz .kombinContent a span {color:#000;}
+.kombinList .kombinSlider .kombinImg.beyaz .kombinContent a i {background-position: -34px -8px;}
+
+.kombinImg.halfSize {background:none !important;}
+.kombinImg.halfSize .kbImg img {display:block;}
+.kombinImg.halfSize .kbImg {width: 60%; float: right; position: relative;}
+.kombinImg.halfSize .kombinContent {position:absolute; text-align: center; padding: 0 50px; width: 40%; left:0; top:50%; margin:0 auto; transform: translate(0%, -50%); -webkit-transform: translate(0%, -50%);  -ms-transform: translate(0%, -50%); }
+.kombinList .kombinNav {position:fixed; right:30px; top:50%; }
+.kombinList .kombinNav .selected a{background: $marineBlue; width: 10px; height: 10px; display: block; border-radius: 10px; text-indent: -999px; margin-bottom:18px;}
+.kombinList .kombinNav a {background: $borderColor; width: 10px; height: 10px; margin: 0px 0 0 -1px;  display: block; border-radius: 10px; text-indent: -999px; margin-bottom:18px;}
+.kombinList .kombinNav a.top-btn {
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 1px solid #d8d8d8;
+    text-indent: 0;
+    margin: 0 0px 50px -15px;
+        &:before {
+        content: "\e91a";
+        font-family: 'icomoon';
+        font-size: 15px;
+        padding: 10px 12px;
+        display: block;
+    }
+}
+.kombinList .kombinNav a.bottom-btn {
+        background: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: 1px solid #d8d8d8;
+        text-indent: 0;
+        margin: 50px 0px 0 -15px;
+    &:before {
+        content: "\e901";
+        font-family: 'icomoon';
+        font-size: 15px;
+        padding: 12px 12px;
+        display: block;
+    }
+}
+
+.kombinList .kombinBottom {background: #fff; padding: 10px 8px; display: none; position: fixed; left: 50%; bottom: 0;}
+.kombinList .kombinBottom i {width: 18px; height: 8px;  display: block; border: 0 !important;}    
+
+@media screen and (max-width:980px) {
+    .kolleksiyonTitle {border-top: 3px solid $marineBlue;}
+    .pageScroll .kolleksiyonTitle span {font-size: 40px; padding: 0 20px;}
+    .pageScroll .kolleksiyonTitle {padding: 35px 0;}
+    .kombinList .kombinSlider li {background: none !important; margin-bottom: 0; min-height: 0;}
+    .kombinList .kombinSlider li a {float: left;}
+    .kombinList .kombinSlider li a:hover {background:#ddd;}
+    .kombinList .kombinSlider li img {display: block; max-height: 600px; width: auto; margin: 0 auto;}
+    .kombinList .kombinSlider li .kbImg {width: 100%;}
+    .kombinImg .kombinContent {width: 100% !important; position: static !important; transform: none !important; padding: 0px 20px !important; display: inline-block;}
+    .kombinList .kombinSlider .kombinContent h5 {padding-top:50px;}
+    .kombinList .kombinNav {display:none;}
+    .kombinPin .pin { 
+        position:static !important;
+        border-bottom: 1px solid $borderColor;
+        display: inline-block;
+        width: 100%;
+        float: left;
+            &:after {
+                display: none;
+            }
+            .pin-content {
+                width: 100%;
+                max-width: none;
+                display: table;
+                padding: 19px 30px;
+                .prd-price {width: 40%; display: table-cell; vertical-align: middle; text-align: right;}
+                .prd-title {width: 60%; display: table-cell; vertical-align: middle;}
+            }
+    }
+}

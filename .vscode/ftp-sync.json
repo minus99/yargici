@@ -1,0 +1,19 @@
+{
+    "remotePath": "./yargici",
+    "host": "46.20.149.6",
+    "username": "frontend",
+    "password": "frontend2017",
+    "port": 21,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.php",
+        "\\.config",
+        "\\.gitattributes"
+    ]
+}

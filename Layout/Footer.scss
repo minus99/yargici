@@ -1,0 +1,224 @@
+.site-footer {
+    display: inline-block;
+    border-top:1px solid $borderColor;
+    padding-bottom: 60px;
+    .ems-footer-social {
+        width: $siteContainerWidthFull;
+        text-align: center;
+        > ul {
+            display: table;
+            max-width: 360px;
+            width: 100%;
+            padding: 35px 10px 20px 10px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        > ul > li {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            & a {
+                display: block;
+                padding: 10px;
+                i{
+                    display: inline-block;
+                    &:before{
+                        color: #ccc;
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*Bulten*/
+.mod-newsletter {
+    display: inline-block;
+    vertical-align: top;
+    width: 42%;
+    &-header{
+        h5{
+            font-family: $fB;
+            color:$colorDefault; 
+            margin: 0 0 20px 0;
+            font-size: 15px;
+        }
+        span{
+            font-family: $fD;
+            font-size: 14px;
+            color: $colorDefault;
+            line-height: 25px;
+            padding-bottom: 20px;
+            display: block;
+        }
+    }
+    &-inner{
+        width: 100%; 
+        position: relative;
+        .ems-form{
+            .ems-field {
+                margin: 0;
+                input { padding-right: 30px; }
+                &.submit{
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    top: 6px;
+                    right: 10px;
+                    z-index: 1;
+                    a.btn-send{
+                        padding: 0;
+                        background: none;
+                        height: 30px;
+                        line-height: 30px;
+                        width: 30px;
+                        text-align: center;
+                        color: $colorDefault;
+                        i.icon-ico_slide-lright{
+                            &:before{
+                                font-size: 13px;
+                                color: $colorDefault;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-footer {
+        .ems-message {
+            margin-top: 10px;
+            padding: 10px;
+        }
+    }
+}
+
+
+/* Footer Menu */
+.ems-footer-menu {
+    width: 100%;
+    max-width: 940px;
+    padding: 0 20px 25px 20px;
+    margin: 40px auto 0 auto;
+    .ems-menu-list {
+        width:28.5%;
+        display: inline-block;
+        vertical-align: top;
+        h5 {
+            font-family: $fB;
+            color:$colorDefault; 
+            margin: 0 0 20px 0;
+            font-size: 15px;
+            a{
+                font-family: $fB;
+                color:$colorDefault;
+                font-size: 15px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    ul {
+        width: 100%;
+        li {
+            a {
+                font-family: $fD;
+                font-size:14px;
+                color: $colorDefault;
+                line-height: 1;
+                display: block;
+                padding: 6px 10px 6px 0;
+                &:hover {
+                    color: $title;
+                }
+            }  
+        }
+    }
+}
+
+.ems-footer-copyright{
+    border-top: 1px solid $borderColor;
+    width: 100%;
+    margin-top: 30px;
+    &-inner{
+        padding-top: 35px;
+        p{
+            text-align: center;
+            font-size: 14px;
+            color: $colorDefault;
+            margin: 0;
+        }
+    }
+}
+
+/*Mobile Gecis*/
+@media screen and (max-width:$breakpointSM) {
+    .site-footer {
+        padding-bottom: 35px;
+        border-bottom: 4px solid $lBlue;
+        .ems-footer-cargo{
+            &-item{
+                width: 50%;
+                text-align: center;
+            }
+            &-icon{
+                float: none;
+                margin-bottom: 13px;
+            }
+            &-text{
+                padding: 0;
+            }
+        }
+        .ems-footer-call{
+            &-inner {
+                padding: 0 40px 40px 40px;
+            }
+            .ems-store-btn, .ems-call-btn {
+                width: 100%;
+                padding: 0;
+                > a {
+                    /*border: none;*/
+                    background: $vlightBg;
+                    padding: 17px 0;
+                    border-color: $vlightBg;  
+                }
+            }
+            .ems-store-btn {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .ems-footer-menu { 
+        display: none; 
+    }
+    .mod-newsletter {
+        &-inner {
+            max-width: 100%;
+            padding: 40px;
+            margin: 0;
+            .ems-form {
+                .ems-field {
+                    input {
+                        border:1px solid $lightBg;
+                        background: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+    .ems-footer-copyright{
+        margin-top: 0;
+        border: none;
+        &-inner{
+            padding: 0;
+            .ems-col-left, .ems-col-right {
+                float: none;
+                padding: 0;
+                text-align: center;
+            }
+            .ems-col-right {
+                margin-top: 30px;
+            }
+        }
+    }
+}

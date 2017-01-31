@@ -1,0 +1,933 @@
+.compareHolder  {
+    position: fixed;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    border-top: 2px solid $dBlue;
+    z-index: 99;
+    height: 0; 
+    overflow: hidden;
+    background: #fbfafa;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+        .compare-prd-active &{
+            //display: block;
+            height: auto;
+            bottom: -2px;
+        }
+        .show-compare &{
+            .compareContent {
+                height: 0;
+                overflow: hidden;
+                display: block;
+                }
+        }
+        
+        .compareMenuHolder{
+            width: 100%;
+            max-width: 1240px;
+            padding: 0 20px; 
+            margin: 0 auto;
+            background: $dBlue;
+            height: 0;
+            display: inline-block;
+                .compareMenu {
+                    color: #fff;
+                    width: 100%;
+                    max-width: $siteContainerWidthFull - 200;
+                    margin: 0 auto;
+                    position: relative;
+                        i.openCloseBtn {
+                            float: right;
+                            height: 50px;
+                            padding: 10px 40px 10px 10px;
+                            line-height: 30px;
+                            cursor: pointer;
+                            display: none;
+                                b{
+                                    font-size: 15px;
+                                        &.view{
+                                            display:none;
+                                                .show-compare &{
+                                                    display: block;
+                                                }
+                                        }
+                                        &.hide{
+                                            display:block;
+                                                .show-compare &{
+                                                    display: none;
+                                                }
+                                        }
+                                }
+                                i.ems-icon{
+                                    position: absolute;
+                                    right: 5px;
+                                    top: 20px;
+                                    z-index: 2;
+                                    transition: all 0.2s ease-in-out;
+                                        .show-compare &{
+                                            transform: rotate(-180deg);
+                                        }
+                                }
+                        }
+                        & > ul{
+                            float:left;
+                                & > li{
+                                    display: inline-block;
+                                    font-size:15px;
+                                    color:#fff;
+                                    padding: 10px 0;
+                                    line-height: 30px;
+                                    vertical-align: top;
+                                        a{
+                                            position: absolute;
+                                            right: 0;
+                                            bottom: 0;
+                                                &.btnCompare {
+                                                    top: 17px;
+                                                    right: 0px;
+                                                    height: 50px;
+                                                    line-height: 45px;
+                                                    padding: 0 20px;
+                                                    font-size: 16px;
+                                                    cursor: pointer;
+                                                    span {text-transform: uppercase;}
+                                                    &:before {
+                                                        content: "\e909";
+                                                        font-family: 'icomoon';
+                                                        font-size: 18px;
+                                                        color: #fff;
+                                                        margin-right: 15px;
+                                                        position: relative;
+                                                        top: 3px;
+                                                    }
+
+                                                }
+                                                &.btnClear{
+                                                    /*display: none;*/
+                                                    top: 0px;
+                                                    bottom: auto;
+                                                    right: 160px;
+                                                    padding: 28px 20px 30px 40px;
+                                                    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
+                                                    z-index: 2;
+                                                    span {
+                                                        font-size: 16px;
+                                                        color: $dBlue;
+                                                    }
+                                                    &:hover {
+                                                        color: $lBlue;
+                                                    }
+                                                }
+                                        }
+                                        &.tab-2 {
+                                            .tabBtn {
+                                                display:none;
+                                            }
+                                        }
+                                }
+                        }
+                }
+        }
+        .compareContent {
+            width: 100%;
+            display: inline-block;
+            vertical-align: top;
+            height: 80px; 
+            max-width: 1240px;
+            transition: all 0.2s ease-in-out;
+             .compareContentList{
+                 margin: 0 auto;
+                 width: 100%;
+                 max-width: $siteContainerWidthFull - 200;
+                    .emosInfinite {
+                        padding: 0px 240px 0px 0;
+                        width: 100%;
+                        display: inline-block;
+                        vertical-align: top;
+                            & > li {
+                                float: left;
+                                width: 25%;
+                                border: 0; 
+                                border-right: 1px solid $borderColor;
+                                /*height: 190px;
+                                padding-right: 70px;*/
+                                margin-bottom: 0;
+                                margin-right: 0;
+                                padding: 0;
+                                    .ems-prd-inner {
+                                        padding:10px 5px;
+                                        position: relative;
+                                        background: #fff;
+                                        border: 0;
+                                            .ems-prd-image > a {
+                                                width: 100%;
+                                                display: block;
+                                                text-align: center;
+                                                    img {
+                                                        width: auto;
+                                                        max-height: 60px;
+                                                    }
+                                            }
+                                            .ems-prd-compare{
+                                                position: absolute;
+                                                left: 0px;
+                                                top: 0px;
+                                                width: 16px;
+                                                height: 16px;
+                                                display: block;
+                                                background: $sText; 
+                                                overflow: hidden;
+                                                    &:before {
+                                                        content: "\e921";
+                                                        font-family: 'icomoon';
+                                                        font-size: 10px;
+                                                        color: #fff;
+                                                        padding: 3px;
+                                                        display: block;
+                                                    }
+                                                    input{
+                                                        width: 100%;
+                                                        height: 37px;
+                                                        opacity: 0;
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 0;
+                                                        z-index: 2;
+                                                        cursor: pointer;
+                                                    }
+                                                    span{
+                                                        display: block !important;
+                                                        width: 100%;
+                                                        height: 37px;
+                                                        text-indent: -999px;
+                                                            &:after{
+                                                                content:'';
+                                                                display: block;
+                                                                position: absolute;
+                                                                top: 9px;
+                                                                left: 8px;
+                                                            }
+                                                    }
+                                                    input:checked + span{
+
+                                                    }
+                                            }
+                                            .ems-prd-description,
+                                            .ems-prd-icons,
+                                            .ems-prd-stock,
+                                            .ems-prd-btn-detail {
+                                                display: none;
+                                            }
+                                            .ems-prd-name {
+                                                font-size: 12px;
+                                                display: block;
+                                                width: 100%;
+                                                padding: 0px;
+                                                margin: 5px 0;
+                                                text-align: left;
+                                                height: 28px;
+                                            }
+                                            .ems-prd-image {
+                                                padding: 0;
+                                                float: left;
+                                            }
+                                            .ems-prd-price-selling {
+                                                font-size:14px;
+                                                text-align: left;
+                                                .d {
+                                                    font-size: 10px;
+                                                    position: relative;
+                                                    top: 2px;
+                                                    vertical-align: super;
+                                                }
+
+                                            }
+                                            .ems-prd-price {
+                                                margin: 0;
+                                                padding: 0;
+                                                height: auto;
+                                                .urunListe_satisFiyat {
+                                                    &:before {
+                                                        font-size: 12px; 
+                                                    }
+                                                }
+                                            }
+                                            .ems-prd-right {
+                                                width: auto;
+                                                margin-left: 70px;
+                                            }
+                                            .ems-prd-comment {
+                                                display:none;
+                                            }
+                                            .ems-prd-code {
+                                                display:none;
+                                            }
+                                            .listBottomBtn {
+                                                left: 0;
+                                                top: 0;
+                                                bottom: inherit;
+                                                .ems-prd-addBasket {
+                                                    display:none;
+                                                }
+                                            }
+                                            .ems-prd-price-first{
+                                                padding: 0 10px;
+                                                font-size: 23px;
+                                                font-weight: 700;
+                                                display: none;
+                                                    .d {
+                                                        display: none;
+                                                    }
+
+                                                    .pb1 {
+                                                        font-size: 14px;
+                                                        display: inline-block;
+                                                        vertical-align: super;
+                                                        margin-left: 5px;
+                                                    }   
+                                            }
+                                    }
+
+                                    .ems-prd-price:before {
+                                        display:none !important;
+                                    }
+                                    &:hover:before {
+                                        display:none;
+                                    }
+                            }
+                    }
+             }
+        }
+}
+
+.compareWrapper{
+    /*padding: 40px 0 0 0;*/
+        .comTitle{
+            display: block;
+            width: 100%;
+            margin-bottom: 36px;
+                .spnComTitle{
+                    font-size: 23px;
+                    font-weight: 700;
+                }
+                .urunKiyaslama_btnListeDon,
+                .spnComTotal{
+                    display: none;
+                }
+        }
+        .searcProduct{
+            /*display: none;*/
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .compareSlider{
+            width: 100%;
+            position: relative;
+            margin-bottom: 40px;
+                .mask {
+                    width: 100%;
+                    overflow: hidden;
+                    position: relative;
+                        ul{
+                            width: 100%;
+                                li{
+                                    display: inline-block;
+                                    vertical-align: top;
+                                    /*width: 32.33% !important;
+                                    margin-right: 1.5%;*/
+                                        &:last-child{
+                                            margin-right: 0;
+                                        }
+                                        & > div{
+                                            position: relative;
+                                            /*border: 1px solid $borderColor;*/
+                                                .urunKiyaslamaUrun_resim{
+                                                    width: 100%;
+                                                    background: #f7f7f7;
+                                                        img{
+                                                            width: 100%;
+                                                            height: auto;
+                                                        }
+                                                }
+                                                .btnKiyaslamaRemove{
+                                                    background: transparent;
+                                                    color: $red;
+                                                    padding: 0;
+                                                    /*&:before {
+                                                        content: "\e921";
+                                                        font-family:'icomoon';
+                                                        font-size: 12px;
+                                                        color: $text;
+                                                    }*/
+                                                }
+                                                .urunKiyaslamaUrun_urnAd{
+                                                    padding: 5px 20px 9px 20px;
+                                                    font-size:15px;
+                                                    font-weight: 700;
+                                                    color:#333333;
+                                                }
+                                                .urunKiyaslamaUrun_fiyat {
+                                                    padding: 0px 20px 10px; 
+                                                        > span:before {
+                                                            content: 't';
+                                                            font-family: 'tl';
+                                                            font-size: 25px;
+                                                            font-weight: normal;
+                                                            display: inline-block;
+                                                            color: $dBlue;
+                                                            margin-right: 5px;
+                                                        }
+                                                        .urunKiyaslama_satisFiyat {
+                                                            font-family: $fB;
+                                                            font-size: 30px;
+                                                            color: $dBlue;
+                                                            .d {
+                                                                font-size: 20px; 
+                                                                position: relative;
+                                                                top: 4px;
+                                                                vertical-align: super;
+                                                            }
+                                                        }
+                                                        .urunKiyaslama_brutFiyat,
+                                                        .urunKiyaslama_kdvDahil{
+                                                            display: none;
+                                                        }
+                                                        .urunKiyaslama_indirimFiyat{
+
+                                                                .d{
+                                                                    display: none;
+                                                                }
+                                                                .pb1{
+                                                                    vertical-align: super;
+                                                                    font-size: 13px;
+                                                                    font-weight: normal;
+                                                                }
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                }
+                .nav{
+                    display: none;
+                }
+        }
+        .floatFixer{
+            opacity: 0;
+        }
+        .comSpecfilter {
+            display: block;
+            margin-bottom: 40px;
+                & > ul > li {
+                    display: none;
+                        &.differences{
+                            display: block;
+                        }
+                }
+        }
+        .specAction,
+        .drpFilters{
+            /*display: none;*/
+        }
+        .comSpecs{
+            width: 100%;
+            position: relative;
+            margin-bottom: 30px;
+                .specItem{
+                    /*border-bottom:1px solid $borderColor;*/
+                        .specTitle{
+                            width: 100%;
+                            display: block;
+                            line-height: 22px;
+                            font-size: 15px;
+                            display: inline-block;
+                            vertical-align: top;
+                            cursor:pointer;
+                                i{
+                                    float: right;
+                                    width: 50px;
+                                    height: 50px;
+                                    padding: 6px;
+                                    display: none;
+                                        &:after{
+                                            content:'';
+                                            display: inline-block;
+                                            transition: all 0.2s ease-in-out; 
+                                        }
+                                }
+                        }
+                        .specContent{
+                            display: none;
+                            transition: all 0.2s ease-in-out;
+                                table,
+                                table tbody,
+                                table tbody tr{
+                                    width: 100%;
+                                    display: block;
+                                }
+                                input{
+                                    display: none;
+                                }
+                                .allspecs-title{
+                                    display: block;
+                                    width: 100%;
+                                    height: 50px;
+                                    line-height: 50px;
+                                    color: #333333;
+                                    font-size: 12px;
+                                }
+                                tr.urunKiyaslamaOzellik{
+                                    width: 100%;
+                                    /*display: inline-block;*/
+                                    vertical-align: top;
+                                    border: 1px solid $borderColor;
+                                    margin-bottom: -1px;
+                                        td{
+                                            display: table-cell;
+                                            vertical-align: top;
+                                            width: 33.33%;
+                                            text-align: center;
+                                            font-size: 14px;
+                                            color: $text;
+                                                &.allSpecs{
+                                                    /*display: none;*/
+                                                }
+                                            &:first-child {
+                                                width: 22%;
+                                            }
+                                        }
+                                    td:nth-child(even) {background:$lightBg;}
+                                    td:nth-child(odd) {background:$vlightBg;}
+                                }
+                        }
+                        &.selected{
+                            border-bottom:none;
+                            padding-bottom: 20px;
+                                .specTitle{
+                                    i:after{
+                                        transform: rotate(-45deg);
+                                    }
+                                }
+                        }
+                }
+        }
+        /*.fixHolderInside.fixed{ 
+                .compareSlider{
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    z-index: 99;
+                    background: #fff;
+                    display: inline-block;
+                    vertical-align: top;
+                    border-bottom:1px solid $borderColor;
+                    border-top:1px solid $borderColor;
+                    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.17);
+                        .mask{
+                            max-width: $siteContainerWidth;
+                            margin: 0 auto;
+                                li{
+                                    margin-right: 0;
+                                    width: 33.33% !important;
+                                    border:none;
+                                        .urunKiyaslamaUrun{
+                                            display: inline-block;
+                                            width: 100%;
+                                                .urunKiyaslamaUrun_resim{
+                                                    float: left;
+                                                    width: 100px;
+                                                    border: 1px solid #fff;
+                                                }
+                                                .urunKiyaslamaUrun_urnAd{
+                                                    padding: 20px 20px 9px 120px;
+                                                }
+                                                .urunKiyaslamaUrun_fiyat{
+                                                    padding: 0px 20px 20px 120px;
+                                                }
+                                        }
+                                }
+                        }
+                }
+        }*/
+}
+
+/* Kıyaslama Sayfası */
+
+/****************/
+/* COMPARE */
+/****************/
+/* General */
+.compareWrapper{ width:100%;}
+/* NAvigation */
+.pageContent.pageCompare .navigasyon.urunNavigasyon {padding-left:30px;}
+/* Compare products */
+.compareWrapper .comProducts {}
+.compareWrapper .comProducts .comTitle {padding: 30px 0;margin-bottom: 0px; display: inline-block; width: 100%;}
+.compareWrapper .comProducts .comTitle .spnComTitle {font-size:28px;font-family: $fB; padding-right:15px;}
+.compareWrapper .comProducts .comTitle .spnComTotal {font-size:20px;}
+.compareWrapper .comProducts .addProduct {  width: 20%;  float: left; display: table; border-radius: 3px;  border: solid 1px $borderColor;  box-sizing: border-box;  padding: 22px 25px;  height: 322px;  position: relative;  background: url('/images/frontend/addcompare.jpg') repeat-x bottom;}
+.compareWrapper .comProducts .addProduct a {}
+/*compare find search*/
+.compareWrapper .comProducts .addProduct .searcProduct span {  line-height: 1.4;  display: block;  margin-bottom: 25px; font-family: $fM; text-align: center;}
+.compareWrapper .comProducts .addProduct .searcProduct span b {font-weight: normal;}
+.compareWrapper .comProducts .addProduct .searcProduct > input {display: block;background: $vlightBg url(#{$baseHref + "/images/frontend/iconSearch.png"}) 92% center no-repeat;height: 40px;padding-right:40px;box-sizing: border-box;}
+.ui-autocomplete {  float: left;  width: auto !important;  background: #eee; border:solid 1px $borderColor;  min-width: 360px;  position: absolute !important;  top: inherit !important;  left: 25px !important; max-height: 380px; overflow-x: auto; z-index: 10;}
+.ui-autocomplete li {padding: 10px 15px; border-bottom:solid 1px $borderColor;}
+.ui-autocomplete li .search-result {}
+.ui-autocomplete li .search-result a {display:block;padding:10px 0;}
+
+/*fixed column
+.compareWrapper .fixHolderInside.fixed .addProduct {height:auto;}
+.compareWrapper .fixHolderInside.fixed .compareSlider .mask > ul > li .urunKiyaslamaUrun .urunKiyaslamaUrun_urnAd {padding-top:20px;}
+.compareWrapper .fixHolderInside.fixed .compareSlider .mask > ul > li .urunKiyaslamaUrun {height: 141px;}
+*/
+/*comapre slider*/
+.compareWrapper .compareSlider {width:78%; position:relative; float:right;}
+.compareWrapper .compareSlider .mask {width: 100%;border: 0;overflow: hidden;position: relative;margin: 0 auto;border-style: solid;border-color: $borderColor;border-width: 1px;border-radius:3px;max-height: 320px;}
+.compareWrapper .compareSlider .mask > ul { position:relative; z-index:1;-webkit-tap-highlight-color:rgba(0,0,0,0);width:100%;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;-o-text-size-adjust:none;text-size-adjust:none; }
+.compareWrapper .compareSlider .mask > ul > li {margin-right: 0; border-right:1px solid $lightBg; float:left; position:relative;}
+.compareWrapper .compareSlider .mask > ul > li:last-child {border: 0;}
+.compareWrapper .compareSlider .mask > ul > li .urunKiyaslamaUrun {border: 0;text-align: center;height: 320px;}
+.compareWrapper .compareSlider .mask > ul > li:nth-child(odd) {background:$vlightBg;}
+.compareWrapper .compareSlider .mask > ul > li:nth-child(even) {background:#fff;}
+.compareWrapper .compareSlider .mask > ul > li .urunKiyaslamaUrun > * {display:inline-block;width:100%;}
+.compareWrapper .compareSlider .mask > ul > li .urunKiyaslamaUrun .urunKiyaslamaUrun_resim {max-width: 160px;  padding: 10px 0; text-align: center; background: transparent;}
+.compareWrapper .compareSlider .mask > ul > li .urunKiyaslamaUrun .urunKiyaslamaUrun_resim > a > img {}
+.compareWrapper .compareSlider .mask > ul > li .urunKiyaslamaUrun .urunKiyaslamaUrun_urnAd {font-size:14px; height:55px; font-weight: normal; overflow: hidden;}
+.compareWrapper .compareSlider .mask > ul > li .urunKiyaslamaUrun .urunKiyaslamaUrun_fiyat {}
+.compareWrapper .compareSlider .mask > ul > li .urunKiyaslamaUrun .urunKiyaslamaUrun_btnKiyaslamaRemove {background: transparent;}
+.compareWrapper .compareSlider .mask > ul > li .urunKiyaslamaUrun .urunKiyaslamaUrun_btnKiyaslamaRemove span {text-align: center;padding: 0;font-size:14px;font-family: $fB; text-transform:uppercase;}
+.compareWrapper .compareSlider .nav a { position:absolute; width:29px; height:60px; position:absolute; top:50%; margin-top:-30px; text-indent:-999em; z-index:2; }
+.compareWrapper .compareSlider .nav a.prevBtn {left: -35px;}
+.compareWrapper .compareSlider .nav a.nextBtn {right: -35px;}
+.compareWrapper .compareSlider .nav a.prevBtn.hidden, .compareWrapper .compareSlider .nav a.nextBtn.hidden{ display:none; }
+/* Specfilter */
+.compareWrapper .comSpecfilter {display: inline-block;padding: 10px 0;margin: 0; font-size: 10px; width: 100%; position: relative; border-bottom: 1px solid  $borderColor;}
+.compareWrapper .comSpecfilter > span {display:none;}
+.compareWrapper .comSpecfilter ul {display:inline-block;}
+.compareWrapper .comSpecfilter ul li {display:inline-block;}
+.compareWrapper .comSpecfilter ul li.compare-spec-item-invisible{ float:left; height:352px; }
+.compareWrapper .comSpecfilter ul li.compare-spec-item-invisible .compare-spec-item-invisible-inside{ border-left:1px solid; height:100%; }
+.compareWrapper .comSpecfilter .specAction {float:right;cursor:pointer;}
+.compareWrapper .comSpecfilter .specAction > span {cursor:pointer;}
+.compareWrapper .comSpecfilter .specAction .expandAll {color: $text; font-family: $fM; font-size: 12px;}
+.compareWrapper .comSpecfilter .specAction .collapseAll {display:none;color: $text; font-family: $fM; font-size: 12px;}
+.compareWrapper .comSpecfilter ul li a {padding: 0 20px;/*border-left: solid 1px $borderColor;*/}
+.compareWrapper .comSpecfilter ul li span {font-size:12px; font-family: $fM; color: $text; padding: 9px 0;  border-bottom:2px solid transparent;}
+.compareWrapper .comSpecfilter ul li.allSpec a {padding:9px 20px 9px 20px; border:0;}
+.compareWrapper .comSpecfilter ul li {font-size:14px; float: left;}
+.compareWrapper .comSpecfilter ul li:first-child{display:none;}
+.compareWrapper .comSpecfilter ul li.selected a span {color:$lBlue; border-bottom:2px solid $lBlue; }
+.compareWrapper .comSpecfilter .specAction.selected .expandAll {display:none;}
+.compareWrapper .comSpecfilter .specAction.selected .collapseAll{ display:block; }
+.compareWrapper .comSpecfilter .sStylerMainWrp {display:none;}
+/* Specs */
+.compareWrapper .comSpecs {clear: both;padding: 0 0 65px; margin-top: 20px;}
+.compareWrapper .comSpecs .specItem .specTitle {cursor: pointer;font-family: $fM;font-size: 12px;text-transform: uppercase;padding: 12px 31px;border-style: solid;border-color: $borderColor;border-width: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px; position: relative;     margin-bottom: -1px;}
+.compareWrapper .comSpecs .specItem .specTitle:before {content: "\e904"; font-family: 'icomoon'; font-size: 9px; margin-right: 10px; display: inline-block;}
+.compareWrapper .comSpecs .specItem.selected .specTitle:before {background: url("/images/frontend/arrow/rb97.png") no-repeat;}
+.compareWrapper .comSpecs .specItem .specContent {display:none; }
+.compareWrapper .comSpecs .specItem.selected .specContent{ display:block; }
+.compareWrapper .comSpecs .specItem .specContent table { width:100%; }
+.compareWrapper .comSpecs .specItem .specContent table tbody tr {background: $lightBg;display:table; border-collapse: collapse;}
+.compareWrapper .comSpecs .specItem .specContent table tbody tr:last-child {}
+.compareWrapper .comSpecs .specItem .specContent table tbody tr.selected{ background:$lines;}
+.compareWrapper .comSpecs .specItem .specContent table tbody tr.selected td {/*color:#fff;*/}
+.compareWrapper .comSpecs .specItem .specContent table tbody tr td { position: relative; padding: 12px 20px 12px 30px; cursor: pointer; background-clip: padding-box;}
+.compareWrapper .comSpecs .specItem .specContent table tbody tr td { /*display:none; */}
+.compareWrapper .comSpecs .specItem .specContent table tbody tr td:first-child{ border-left:none; }
+.compareWrapper .comSpecs .specItem .specContent table tbody tr td.compare-spec-item.show{ display:table-cell; }
+.compareWrapper .comSpecs .specItem .specContent table tbody tr td.fixedCol.allSpecs {  position: relative;}
+.compareWrapper .comSpecs .specItem .specContent table tbody tr td.fixedCol.allSpecs .sStylerMainWrp.sStylerWrp_checkbox {position:absolute;left:15px;}
+.compareWrapper .comSpecs .specItem .specContent table tbody tr td.fixedCol.allSpecs input.specCheck {}
+.compareWrapper .comSpecs .specItem .specContent table tbody tr td.compare-spec-item {display:none;}
+/**/
+.comSpecfilter ul li.selected a{ color:red; }
+.specItem .specContent tr.hiddenElem, .specItem.hiddenElem{ display:none !important; }
+/**/
+/*
+.compareWrapper .fixHolderInside{ width:100%; max-width:1200px; display:inline-block; z-index:2; background:#FFF; }
+.compareWrapper .fixHolderInside.fixed {position:fixed;}
+.compareWrapper .fixHolderInside.fixed .compareSlider .mask > ul > li .urunKiyaslamaUrun {padding: 0 25px;}
+.compareWrapper .fixHolderInside.fixed .compareSlider .mask > ul > li .urunKiyaslamaUrun .urunKiyaslamaUrun_resim{ display:none; } 
+*/
+/*compare scrolltop*/
+.compareWrapper .fixHolderInside a.scrollTop{ display:none; }
+@media screen and (min-width:960px) {
+.compareWrapper .compareSlider .mask > ul {
+    width: 100% !important;
+    > li {width: 25% !important;}
+}
+}
+@media screen and (max-width:960px) {
+    .compareHolder {
+        .compareMenuHolder {
+            padding:0;
+                .compareMenu {
+                    a.btnClear {display: none;}
+                }
+            }
+        .compareContent {
+            .compareContentList {
+                .emosInfinite {
+                    padding: 0px 180px 0px 0;
+                    > li {
+                        border: 0;
+                        padding: 9px 5px;
+                        .ems-prd-inner {
+                            border:1px solid $borderColor;
+                            padding: 0;
+                            .ems-prd-image {
+                                float:none;
+                            }
+                            .ems-prd-right {
+                                .ems-prd-name, .ems-prd-price, .ems-prd-lastPrd {display:none;} 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .page-compare {
+        padding: 0;
+        .comTitle {
+            padding: 30px 20px !important;
+            .spnComTitle {
+                font-size: 20px !important;
+            }
+        }
+        .urunNavigasyon {display:none;}
+        .compareWrapper {
+            .comSpecfilter {
+                border-bottom: 0;
+                background: $lBlue;
+                padding: 0;
+                    span.sStylerMainWrp {display:none;}
+                    > span {
+                        background: none;
+                        font-family: $fM;
+                        color: #fff;
+                        border-radius: 0;
+                        width: auto;
+                        display: inline-block;
+                        height: auto;
+                        padding: 20px 30px;
+                         i {
+                            &:before {
+                                content:'\e904'; 
+                                font-family: 'icomoon';
+                                font-size: 8px;
+                                color: #fff;
+                                margin-left:5px;
+                                position: relative;
+                                top: -1px;
+                            }
+                        }
+                    }
+                    ul {
+                        display: inline-block;
+                        width: 100%;
+                        display: none;
+                        li {
+                            float: none;
+                            display: inline-block;  
+                            width: 100%;
+                            text-align: center;
+                            vertical-align: middle;
+                            border-top: 1px solid #fff;
+                            span {
+                                color: #fff;
+                                border: 0;
+                                text-align: center;
+                                font-size: 14px;
+                            }
+                            &.selected {
+                                span {
+                                    color: #fff;
+                                }
+                            }
+                            &:first-child {
+                                display: none !important;
+                            }
+                            a {
+                                padding: 20px 30px;
+                                text-align: left;
+                                display: block;
+                            }
+                            &.selected {
+                                display:none;
+                            }
+                        } 
+                    }
+                    &.opened { 
+                        ul {
+                            display: block;
+                        }
+                    }
+                    .specAction {
+                        span {
+                            padding: 28px 30px;
+                            color: #fff; 
+                            &.expandAll { 
+                                display:inline-block; 
+                            }
+                            &.collapseAll {
+                                display:none;
+                            }
+                        }
+                        &.selected {
+                            span {
+                                &.expandAll {
+                                    display:none;
+                                }
+                                &.collapseAll {
+                                display:inline-block;
+                                }
+                            }
+                        }
+                    }
+                }
+            .comProducts {
+                hr {display:none;}
+                .addProduct  {
+                    width: 100%;
+                    height: 130px;
+                    border-right: 0;
+                    border-left:0;
+                }
+            }
+            .comSpecs {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-bottom: 0;
+                .specItem {
+                    border-bottom: 0;
+                    padding-bottom: 0;
+                    .specTitle {
+                        font-size: 18px;
+                        font-family:$fD;
+                        border-bottom:0px;
+                        border-right: 0;
+                        border-left: 0;
+                        border-radius: 0; 
+                        &:before {
+                            content: "\e933";
+                            font-family: 'icomoon';
+                            font-size: 12px;
+                            background: none !important;
+                            float: right;
+                            color: $sText;
+                        }
+                    }
+                    .specContent {
+                        table {
+                            tbody {
+                                tr {
+                                    display:block;
+                                    border-right: 0;
+                                    border-left: 0;
+                                    border-bottom: 0;
+                                    background: $vlightBg;
+                                    &:last-child {
+                                        border: 0;
+                                    }
+                                    td {
+                                        padding: 14px 20px 13px 30px;
+                                        &.allSpecs {
+                                            width:100%;
+                                            display: block;
+                                            background: $lines;
+                                            text-align: left;
+                                            padding-left: 40px;
+                                            span {}
+                                        }
+                                        &.compare-spec-item {
+                                            /*display:table-cell;*/
+                                        }
+                                        &.fixedCol.allSpecs {
+                                            display: block;
+                                            border-style: solid;
+                                            border-color: #d0d0d0;
+                                            border-width: 0 0 1px;
+                                            background: #ddd;
+                                            & > span {
+                                                margin-right:7px;
+                                                }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.selected {
+                        .specTitle {
+                            font-family: $fM;
+                            &:before {
+                                content:'\e936';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .compareSlider {
+            margin-bottom: 0;
+            width: 100%;
+            .mask {
+                border-top:0;
+                > ul > li {
+                    border: 0;
+                }
+            }
+            .nav {
+                display: block;
+                text-align: center;
+                a {
+                    width: auto;
+                    height: auto;
+                    text-indent: 0;
+                    padding: 10px 5px;
+                    margin-top: -30px;
+                    position: absolute;
+                    top: 50%;
+                    z-index: 2;
+                    border: 1px solid $borderColor;
+                    background: #fff;
+                    span {display:none;}
+                    &.hidden {
+                            display:none;
+                    }
+                    &.prevBtn { 
+                        left: 0px;
+                        &:before {
+                            content:'\e934';
+                            font-family: 'icomoon';
+                            font-size: 14px;
+                            color: $sText;
+                            display: block;
+                        } 
+                    }
+                    &.nextBtn {
+                        right: 0px;
+                        &:before {
+                            content:'\e935';
+                            font-family: 'icomoon';
+                            font-size: 14px;
+                            color: $sText;
+                            display: inline-block;
+                        } 
+                    }
+                    &:hover {
+                        background: $lBlue !important;
+                        &:before {
+                            color:#fff;;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
