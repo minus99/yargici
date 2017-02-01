@@ -9,7 +9,7 @@ var mobile=function(){return{detect:function(){var uagent=navigator.userAgent.to
 /* slider */
 ;(function($){
 	$.fn.extend({
-		minusSliderSwiper : function(options){
+		minusSlider : function(options){
 			var defaults = {	};
 			
 			var option = $.extend( defaults, options );
