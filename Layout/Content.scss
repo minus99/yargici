@@ -54,39 +54,6 @@
         > a{
             display: block;
             position: relative;
-            &:before {
-                content: '';
-                background: linear-gradient(
-                    to bottom,
-                    rgba(0,0,0,0) 0%,
-                    rgba(0,0,0,0.7) 100%
-                );
-                width: 100%;
-                height: 50%;
-                opacity: 0;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                z-index: 1;
-                transition-property: top, opacity;
-                transition-duration: 0.3s;
-            }
-            &:hover{
-                &:before {
-                    opacity: 1;
-                    top: 50%;
-                }
-            }
-        }
-        &:hover{
-            .bnr-box-img{ 
-                @include setTransform(scale(1.1));
-            }
-            .bnr-box-txt{
-                .bnr-box-link{
-                    opacity: 1;
-                }
-            }
         }
     }
     &-img{
@@ -94,7 +61,6 @@
         background-size: cover !important;
         background-position: center center !important;
         @include transition(all 0.2s ease);
-        @include setTransform(scale(1));
     }
     &-txt{
         text-align: center;
@@ -123,8 +89,6 @@
             letter-spacing: 2px;
             font-size: 14px;
             padding:12px 5px;
-            @include transition(opacity 0.32s ease);
-            opacity: 0;
             i.icon-ico_arw-fill-right{
                 display: inline-block;
                 font-size: 7px;
@@ -224,8 +188,6 @@
                 .triple-bnr-inner{
                     background-size: cover !important;
                     background-position: center center !important;
-                    @include transition(all 0.2s ease);
-                    @include setTransform(scale(1));
                     img{
                         display: block;
                     }
@@ -237,11 +199,6 @@
                     color: $title;
                     letter-spacing: 1.8px;
                     font-family: $fB;
-                }
-                &:hover{
-                    .triple-bnr-inner{
-                        @include setTransform(scale(1.1));
-                    }
                 }
             }
         }
@@ -312,8 +269,6 @@
                     background-repeat: no-repeat !important;
                     background-size: cover !important;
                     background-position: center center !important;
-                    @include transition(all 0.2s ease);
-                    @include setTransform(scale(1));
                 }
                 &.left{
                     width: 43%;
@@ -362,7 +317,6 @@
                             left: 50%;
                             padding-left: 20px;
                             padding-right: 20px;
-                            @include transition(all 0.2s ease);
                             @include setTransform(translateY(-50%) translateX(-25%));
                             h1{
                                 font-size: 30px;
@@ -376,21 +330,11 @@
                             }
                         }
                     }
-                    a.double.last:hover{
-                        .grid-template-text{
-                            left: 55%;
-                        }
-                    }
                 }
                 > a{
                     display: block;
                     padding: 25px;
                     position: relative;
-                }
-                > a:hover{
-                    .grid-template-cover{
-                        @include setTransform(scale(1.1));
-                    }
                 }   
             }
         }
