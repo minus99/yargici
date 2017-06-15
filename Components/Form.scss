@@ -3,35 +3,40 @@ input[type="text"], input[type="password"], input[type="file"], select, textarea
     outline: none;
     padding:10px 15px;
     width: 100%;
-    height: 40px;
-    line-height: 20px;
-    color: $colorDefault;
-    background: $vlightBg;
+    height: 50px;
+    line-height: 30px;
+    color: $title;
+    background: #fff;
     font-size:15px;
     font-family: $fD;
     border:none;
+    border: 1px solid $borderColor;
     @include transition (all .2s ease-in-out);
 }
 
 input:disabled {background: #ebebe4;}
 
 /*Checkbox Input*/
-span.cStyler {
-    width: 14px; 
-    height: 14px;
-    border: 1px solid $sText;
+span.cStyler, span.rStyler{
+    width: 15px; 
+    height: 15px;
+    border: 1px solid #ccc;
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
     background: #fff;
+    cursor: pointer;
+    float: left;
+    position: relative;
+    top: 3px;
     &.checked {
-        background : $lBlue;
-        border-color:$lBlue;
+        background : $lines;
+        border-color:$borderColor;
     }
 }
 
 .sStylerMainWrp {
-    &.sStylerWrp_checkbox {
+    &.sStylerWrp_checkbox, &.sStylerWrp_radio {
         display: inline-block;
     }
     &.sStylerWrp_select {
@@ -39,20 +44,21 @@ span.cStyler {
         width: 100%;
         display: inline-block; 
         .sStylerWrp {
-            font-size: 18px;
-            padding-top: 30px;
-            line-height: 1; 
-            height: 60px;
-            color: $title;
+            font-size: 15px;
+            line-height: 20px; 
+            height: 50px;
+            color: $colorDefault;
             position: relative;
             &:after{
                 position: absolute;
                 top: 50%;
-                right: 10px;
-                content: '\e933';
+                right: 20px;
+                content: '\e900';
                 font-family: 'icomoon';
-                font-size: 14px;
-                margin-top: -6px;
+                font-size: 12px;
+                margin-top: -3px;
+                color: $colorDefault;
+                line-height: 1;
             }
         }
     }
@@ -62,24 +68,22 @@ span.cStyler {
         top: 0px;
         width: 100%!important;
         height: 100%;
+        cursor: pointer;
         option {
-            font-size: 16px;
-            padding:  10px 0;
+            font-size: 15px;
+            padding: 10px 0;
         }
     }
     .sStylerWrp {
-        box-shadow: none;
-        border: none;
         outline: none;
+        border: 1px solid $borderColor;
         padding: 15px 20px 15px 15px;
         width: 100%;
         height: 50px;
-        line-height: 30px;
-        color: $sText;
-        background: $vlightBg;
+        line-height: 1;
+        color: $colorDefault;
+        background: #fff;
         font-size: 14px;
-        border: none;
-        border-radius: 3px;
         @include transition (all .2s ease-in-out);
     }
 }
@@ -111,15 +115,17 @@ span.cStyler {
             position: relative;
             .ems-form-label {
                 font-family: $fD;
-                font-size: 14px;
-                line-height: 30px;
-                color: $sText;
+                font-size: 15px;
+                line-height: 1;
+                color: #6a6b69;
                 position: absolute;
-                top: 12px;
+                top: 0;
                 left: 0;
-                padding-left: 15px;
+                @include setTransform (translateY(20px) translateX(20px));
                 pointer-events: none;
                 z-index: 1;
+                letter-spacing: 2px;
+                height: auto;
                 @include transition (all .2s ease-in-out);
                 &:empty {
                     display: none;
@@ -132,12 +138,11 @@ span.cStyler {
             }
             &.is-completed{
                 .ems-form-label{
-                    top: 7px;
-                    line-height: 15px;
-                    font-size: 12px;
+                    font-size: 10px;
+                    @include setTransform (translateY(10px) translateX(15px));
                 }
                 .ems-form-obj {
-                    input { height: 60px; color:$title; font-size: 18px; padding-top: 30px; line-height: 1; }
+                    input { height: 60px; }
                 }
             }
         }
@@ -163,57 +168,38 @@ span.cStyler {
                 }
             }
         }
-        [id$="plhLoginSifreUnut1"] {
-            text-align: center;
-        }
-        input[id$="CEPTELEFONALAN"] {
-            width: 20% !important;
-            text-align: center;
-        }
-        input[id$="CEPTELEFONALAN"] + input[id$="CEPTELEFON"] {
-            width: 78% !important;
-            float: right;
-        }
         .ems-login-error {
-                span {
-                    font-size: 14px;
-                    color: #fff;
-                    background: $red;
-                    padding: 15px;
-                    text-align: center;
-                    display: block;
-                }
+            span {
+                font-size: 14px;
+                color: #fff;
+                background: $red;
+                padding: 15px;
+                text-align: center;
+                display: block;
+            }
         }
     }
     &.ems-form-horizontal {
         .ems-form-inner {
+            .address-type-title{
+                width: 100%;
+                span{
+                    font-family: $fB;
+                    display: block;
+                    padding: 10px 0;
+                }
+            }
             .ems-field {
                 width: 100%;
-                margin-bottom: 16px;
                 > * {
                     display: inline-block;
-                }
-                .ems-form-label {
-                    margin-bottom: 0;
-                    /*width: 23%;*/
-                }
-                .ems-form-obj {
-                    width: 77%;
                 }
             }
         }
     }
 }
 
-@media screen and (max-width:960px) {
-    .ems-form.ems-form-horizontal {
-        .ems-form-inner {
-            .ems-field {
-                .ems-form-obj {
-                        width: 100%;
-                        max-width: 425px;
-                }
-            }
-        }
-    }
+/*Mobile grid 960px*/
+@media screen and (max-width:$breakpointSM) {
+    span.cStyler, span.rStyler{ width: 20px; height: 20px; top: 5px; }
 }

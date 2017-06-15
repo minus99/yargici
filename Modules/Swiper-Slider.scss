@@ -1,51 +1,100 @@
-
 .widget-slider-content {
     width: 100%;
-    max-width: 1330px;
-    padding: 0 65px;
-    margin: 0 auto;
-}
-/*Favori urunler*/
-.widget.visilabs-widget.cat-top-seller-widget{
-    margin-bottom: 30px;
-}
-.widget.visilabs-widget {
+    max-width: 1371px;
+    padding: 0 50px;
     margin: 30px auto 0 auto;
-    position: relative;
-    z-index: 1;
-    .swiper-inner {
+    .swiper-container {
+        margin: 0 auto 0 auto;
+        position: relative;
+        z-index: 1;
+        .swiper-header {
+            width: 100%;
+            padding-bottom: 30px;
+            text-align: center;
+            h2{
+                margin: 0;
+                font-size: 18px;
+                font-family: $fD;
+                font-weight: normal;
+                letter-spacing: 2px;
+                color: $lines;
+            }
+        }
+        .swiper-inner {
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+}
+
+/*Main slider*/
+.main-swiper {
+    max-width: 1400px;
+    margin: 0 auto 60px auto;
+    width: 100%;
+    .swiper-header {
+        display: none;
+    }
+    .swiper-inner{
         overflow: hidden;
-        width: calc(100% + 1px);
-        border-width: 1px 1px 0 1px;
-        border-color: $lines;
-        border-style: solid;
-        ul {
-            border: 0;
-            .swiper-slide {
-                .ems-prd-inner {
-                    border-width: 0 1px 1px 0;
-                    border-color: $lines;
-                    border-style: solid;
-                    .ems-prd-price .urunListe_satisFiyat:before {
-                        margin-right:5px;
+        width: 100%;
+        .swiper-slide-img{
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: top left !important;
+            img {
+                vertical-align: middle;
+            }
+        }
+        .swiper-slide-content {
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            @include setTransform(translateY(-50%));
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            > span {
+                display: block;
+                text-align: center;
+                color: $lines;
+                letter-spacing: 2px;
+            }
+            .title-small {
+                font-size: 30px;
+                font-family: $dD;
+            }
+            .title-big {
+                font-family: $fB;
+                font-size: 36px;
+            }
+            .bnr-box-link {
+                font-family: $fB;
+                letter-spacing: 2px;
+                padding: 10px 0;
+                margin-top: 10px;
+                color: $lines;
+                font-size: 14px;
+                display: inline-block;
+                .icon-ico_arw-fill-right{
+                    font-size: 9px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    position: relative;
+                    top: -1px;
+                    margin-left: 10px;
+                    &:before{
+                        font-size: 9px;
                     }
                 }
             }
         }
     }
-}
-.swiper-title {
-    padding-bottom: 20px; 
-    h2{
-        margin: 0;
-        font-size: 24px;
-        font-family: $fM;
-        font-weight: normal;
+    .swiper-direction, .swiper-pagination{
+        display: none;
     }
 }
-.swiper-container-no-flexbox .swiper-slide {
-    float: left;
-}
+
 .swiper-container-vertical > .swiper-wrapper {
     -moz-box-orient: vertical;
     flex-direction: column;
@@ -69,12 +118,6 @@
     margin: 0 auto;
     transition-timing-function: ease-out;
 }
-.page-list .listVslb .category-top-sellers-widget {
-    .swiper-inner {
-        border: 0;
-        width: 100%;
-    }
-}
 .swiper-slide {
     flex-shrink: 0;
     height: 100%;
@@ -83,14 +126,6 @@
     width: 100%;
     margin-bottom: 0;
     min-height: 100px;
-    .ems-prd{
-        &-compare {
-             > span { height: 25px; }
-        }
-        &-price {
-            &-first { display: none; }
-        }
-    }
 }
 .swiper-container-autoheight, .swiper-container-autoheight .swiper-slide {
     height: auto;
@@ -109,37 +144,35 @@
     z-index: -1000;
 }
 .swiper-button-prev, .swiper-button-next {
-    border-radius: 3px;
     cursor: pointer;
-    height: 110px;
-    line-height: 110px;
+    height: 50px;
+    line-height: 55px;
     margin-top: -25px;
     position: absolute;
     text-align: center;
     top: 50%;
-    width: 55px;
+    width: 50px;
     z-index: 1;
-    background: $lightBg;
-    i:before { color:$sText; }
+    i:before { color:$colorDefault; }
 }
 .swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
     display: none;
 }
 .swiper-button-prev {
-    left: -65px;
+    left: -50px;
 }
-.swiper-button-prev i::before {
-    content: "\e918";
+.swiper-button-prev i:before {
+    content: "\e917";
     font-family: "icomoon";
-    font-size: 12px;
+    font-size: 20px;
 }
 .swiper-button-next {
-    right: -65px;
+    right: -50px;
 }
-.swiper-button-next i::before {
-    content: "\e923";
+.swiper-button-next i:before {
+    content: "\e918";
     font-family: "icomoon";
-    font-size: 12px;
+    font-size: 20px;
 }
 .swiper-pagination {
     position: absolute;
@@ -365,144 +398,70 @@ button.swiper-pagination-bullet {
     z-index: 10;
 }
 @keyframes swiper-preloader-spin {
-100% {
-    transform: rotate(360deg);
-}
+    100% {
+        transform: rotate(360deg);
+    }
 }
 @keyframes swiper-preloader-spin {
-100% {
-    transform: rotate(360deg);
-}
-}
-
-// Sepet bundle ürünone
-
-.miss-opp-widget {
-    margin-bottom: 25px;
-    display: inline-block;
-    width: 100%;
-    .swiper-title {
-        text-align: left;
-        border-radius: 10px 10px 0 0;
-        background: $green;
-        padding: 10px 17px;
-        h2 {
-            font-family: "bold";
-            color: #ffffff;
-            font-size: 18px;
-        }
-    }
-    .swiper-inner {
-            border-color: $green;
-            border: none;
-            border-radius: 0 0 10px 10px;
-            border-width: 0 2px 2px 2px;
-            border-style: solid;
-            border-color: $green;
-            overflow: hidden;
-            .ems-prd {
-                text-align: center;
-                &:before{
-                    display: none;
-                }
-                .ems-prd-image {
-                    padding-bottom: 10px;
-                    img {
-                        max-width: 120px;
-                    }
-                }
-                .ems-prd-price {
-                    height: auto;
-                    .urunListe_satisFiyat {
-                        font-size: 30px;
-                        color: $green;
-                        font-family: $fB;
-                        white-space: nowrap;
-                        .d {
-                            font-size: 20px; 
-                            position: relative;
-                            top: 3px;
-                            vertical-align: super;
-                        }
-                    }
-                    .urunListe_brutFiyat {
-                        white-space: nowrap;
-                        font-size: 18px;
-                        color: $text;
-                        text-decoration: line-through;
-                        position: relative;
-                        top: -60px;
-                        &:before {
-                            content: 't';
-                            font-family: 'tl';
-                            font-size: 16px;
-                            font-weight: normal;
-                            display: inline-block;
-                            color: $text;
-                        }
-                    }
-                }
-                .listBottomBtn {
-                    position: static !important;
-                    .urunListe_sepet {
-                        padding: 0 10px;
-                        a.btnSepeteAt {
-                            border-radius: 3px;
-                            background: $green;
-                            padding: 10px 0 9px 0;
-                            height: 40px;
-                            max-width: 120px;
-                            span {
-                                font-family: $fD;
-                                display:none;
-                            }
-                            &:before {
-                                content:'HEMEN EKLE';
-                                font-family: $fD;
-                                font-family: 14px;
-                            }
-
-                        }
-                    }
-                }
-                .ems-prd-name {
-                    height: 55px;
-                    margin-bottom: 50px;
-                    a {
-                        color: $text;
-                    }
-                }
-                &:hover:before {
-                    box-shadow: 0 0px 0 2px $green inset;
-                }
-                
-            }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
-/*Mobile Geçiş*/
+
+/*Mobile 960px*/
 @media screen and (max-width:$breakpointSM) {
-    .widget-slider-content {
+    /*Main slider*/
+    .main-swiper {
         max-width: 100%;
-        padding: 0;
-    }
-    .swiper-button-prev, .swiper-button-next { display: none; }
-    .swiper-slide {
-        .ems-prd-image a, .ems-prd-image img { 
-            margin: 0 auto;
+        margin-bottom: 0;
+        margin-top: 40px;
+        .swiper-inner{
+            .swiper-slide-img{
+                background-size:cover !important;
+                background-position:center center !important;
+                height: 450px;
+                img { display: none; }
+            }
+            .swiper-slide-content{
+                max-width: 100%;
+                position: inherit;
+                top: inherit;
+                right: inherit;
+                @include setTransform(translateY(0));
+                padding: 10px 25px 30px 25px;
+                .title-small{ font-size: 24px; letter-spacing: 2px; }
+                .title-big{ font-size: 20px; letter-spacing: 1.5px; }
+                .bnr-box-link{ margin-top: 0; font-size: 14px; letter-spacing: 2px; }
+            }
         }
     }
-    .swiper-title {
-        padding-bottom: 10px;
-        padding-left: 20px;
-        h2{
-            font-size: 20px;
-            color: #263238;
+    .page-home {
+        .widget-slider-content {
+            padding-left:20px;
+            padding-right:20px;
+            .swiper-container{
+                border-top:1px solid $borderColor;
+                .swiper-header { padding-top: 30px; }
+            }
+            .swiper-direction{ display: none; }
         }
     }
-    // Sepet bundle ürünone
+    .widget-slider-content {
+        .swiper-container{
+            .ems-prd-inner:before{ display: none; }       
+        }
+    }
+}
 
-    .miss-opp-widget {
-        padding: 0 20px;
+/*Mobile 610px*/
+@media screen and (max-width:$breakpointSM) {
+    /*Main slider*/
+    .main-swiper {
+        .swiper-inner{
+            .swiper-slide-img{
+                height: 370px;
+            }
+        }
     }
 }

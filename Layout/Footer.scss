@@ -1,7 +1,6 @@
 .site-footer {
     display: inline-block;
     border-top:1px solid $borderColor;
-    padding-bottom: 60px;
     .ems-footer-social {
         width: $siteContainerWidthFull;
         text-align: center;
@@ -32,13 +31,13 @@
     }
 }
 
-/*Bulten*/
+/*Newsletter*/
 .mod-newsletter {
     display: inline-block;
     vertical-align: top;
     width: 42%;
     &-header{
-        h5{
+        h3{
             font-family: $fB;
             color:$colorDefault; 
             margin: 0 0 20px 0;
@@ -59,7 +58,7 @@
         .ems-form{
             .ems-field {
                 margin: 0;
-                input { padding-right: 30px; }
+                input { padding-right: 30px; height: 40px; line-height: 20px; border: none; background: #f0f0f0; }
                 &.submit{
                     width: 30px;
                     height: 30px;
@@ -76,11 +75,13 @@
                         text-align: center;
                         color: $colorDefault;
                         i.icon-ico_slide-lright{
+                            font-size: 13px;
                             &:before{
                                 font-size: 13px;
                                 color: $colorDefault;
                             }
                         }
+                        &::before{ display: none; }
                     }
                 }
             }
@@ -94,18 +95,17 @@
     }
 }
 
-
 /* Footer Menu */
 .ems-footer-menu {
     width: 100%;
-    max-width: 940px;
+    max-width: 1020px;
     padding: 0 20px 25px 20px;
     margin: 40px auto 0 auto;
     .ems-menu-list {
         width:28.5%;
         display: inline-block;
         vertical-align: top;
-        h5 {
+        h3 {
             font-family: $fB;
             color:$colorDefault; 
             margin: 0 0 20px 0;
@@ -126,7 +126,7 @@
                 font-size:14px;
                 color: $colorDefault;
                 line-height: 1;
-                display: block;
+                display: inline-block;
                 padding: 6px 10px 6px 0;
                 &:hover {
                     color: $title;
@@ -137,11 +137,14 @@
 }
 
 .ems-footer-copyright{
-    border-top: 1px solid $borderColor;
     width: 100%;
     margin-top: 30px;
     &-inner{
-        padding-top: 35px;
+        border-top: 1px solid $borderColor;
+        padding: 35px 10px 50px 10px;
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
         p{
             text-align: center;
             font-size: 14px;
@@ -151,74 +154,52 @@
     }
 }
 
-/*Mobile Gecis*/
+/*Mobile 960px*/
 @media screen and (max-width:$breakpointSM) {
-    .site-footer {
-        padding-bottom: 35px;
-        border-bottom: 4px solid $lBlue;
-        .ems-footer-cargo{
-            &-item{
-                width: 50%;
-                text-align: center;
-            }
-            &-icon{
-                float: none;
-                margin-bottom: 13px;
-            }
-            &-text{
-                padding: 0;
-            }
-        }
-        .ems-footer-call{
-            &-inner {
-                padding: 0 40px 40px 40px;
-            }
-            .ems-store-btn, .ems-call-btn {
-                width: 100%;
-                padding: 0;
-                > a {
-                    /*border: none;*/
-                    background: $vlightBg;
-                    padding: 17px 0;
-                    border-color: $vlightBg;  
-                }
-            }
-            .ems-store-btn {
-                margin-bottom: 20px;
+    .site-footer{
+        .ems-footer-social{
+            > ul{
+                max-width: 480px;
+                padding-top: 10px;
             }
         }
     }
     .ems-footer-menu { 
-        display: none; 
+        .ems-menu-list{ display: none; }
     }
     .mod-newsletter {
+        width: 100%;
+        &-header{
+            text-align: center;
+            h3{ letter-spacing:3px; }
+            span{ font-size:15px; }
+        }
         &-inner {
             max-width: 100%;
             padding: 40px;
-            margin: 0;
+            padding: 0;
             .ems-form {
                 .ems-field {
-                    input {
-                        border:1px solid $lightBg;
-                        background: #ffffff;
+                    input { height: 60px; line-height: 40px; }
+                    &.submit{
+                        width:50px;
+                        height: 60px;
+                        line-height: 60px;
+                        top: 0;
+                        right: 0;
+                        a.btn-send{ width: 50px; height:60px; line-height:60px; }
                     }
                 }
             }
         }
     }
     .ems-footer-copyright{
-        margin-top: 0;
-        border: none;
+        margin: 40px 0 0 0;
+        padding-left: 20px;
+        padding-right: 20px;
         &-inner{
-            padding: 0;
-            .ems-col-left, .ems-col-right {
-                float: none;
-                padding: 0;
-                text-align: center;
-            }
-            .ems-col-right {
-                margin-top: 30px;
-            }
+            padding:25px 0;
+            margin: 0;
         }
     }
 }

@@ -5,7 +5,7 @@
             <div class="ems-footer-menu">
                 <!--Menu-->        
                 <div class="ems-menu-list">
-                    <h5><a href="javascript:void(0);">YARGICI</a></h5>
+                    <h3><a href="javascript:void(0);">YARGICI</a></h3>
                     <ul>
                         <li><a href="javascript:void(0);">Hakkımızda</a></li>
                         <li><a href="javascript:void(0);">Mağazalarımız</a></li>
@@ -15,7 +15,7 @@
                 </div>
                 <!--Menu-->
                 <div class="ems-menu-list">
-                    <h5><a href="javascript:void(0);">YARDIM</a></h5>
+                    <h3><a href="javascript:void(0);">YARDIM</a></h3>
                     <ul>
                         <li><a href="javascript:void(0);">Üyelik Bilgilerim</a></li>
                         <li><a href="javascript:void(0);">Siparişlerim</a></li>
@@ -28,7 +28,7 @@
                     <div class="mod-newsletter">
                         <div class="mod-newsletter-inner">
                             <div class="mod-newsletter-header">
-                                <h5>E-BÜLTEN</h5>
+                                <h3>E-BÜLTEN</h3>
                                 <span>Stil tüyoları, haberler ve daha fazlası için e-mail listemize kaydolun</span>
                             </div>
                             <div class="mod-newsletter-body">
@@ -67,14 +67,50 @@
         </div>
         <!--Row-->
         <div class="ems-row ems-row-3">
+            <div class="mobile-element mobile-element-footer-link">
+                <a href="">YARGICI</a>
+                <a href="">YARDIM</a>
+            </div>
             <div class="ems-footer-copyright">
-                <div class="ems-footer-copyright-inner ems-container clearfix">
-                        <p>Copyright © YARGICI. Tüm Hakları Gizlidir</p>
+                <div class="ems-footer-copyright-inner">
+                        <p>Copyright ©2017 YARGICI. Tüm Hakları Gizlidir</p>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+<div class="mobile-element mobile-element-bottom-menu">
+    <ul>
+        <li class="mobile-element-home">
+            <a href="#"><i class="icon-ico_home-icon"></i></a>
+        </li>
+        <li class="mobile-element-user">
+            <a href="#"><i class="icon-ico_mini-member"></i></a>
+        </li>
+        <li class="mobile-element-phone">
+            <a href="#"><i class="icon-ico_store-icon"></i></a>
+        </li>
+        <li class="mobile-element-store">
+            <a href="#"><i class="icon-ico_call"></i></a>
+        </li>
+    </ul>
 </div>
+</div>
+<div class="responsive-control"></div>
+<div class="vail vail-loading"></div>
+<div class="vail vail-login"></div>
+<div class="vail vail-menu"></div>
+<div class="vail vail-lookbook"></div>
+<div class="vail vail-search"></div>
+<div class="vail vail-cart"></div>
+<div class="vail vail-languages"></div>
+<div class="vail vail-size"></div>
+<div class="vail vail-new-address"></div>
+<div class="vail vail-costs"></div>
+<div class="vail vail-currents"></div>
+<div class="vail vail-mobile-size"></div>
+<div class="vail vail-filter"></div>
+<script type="text/javascript" src="/lab/projects/yargici/js/allScripts.js"></script>
+<script type="text/javascript" src="/lab/projects/yargici/js/dummy.js"></script>
 </body>
 </html>

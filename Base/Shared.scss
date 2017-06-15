@@ -2,7 +2,6 @@
 ::-moz-selection {background: #cc0000; color: #FFFFFF; text-shadow: 0 1px 3px #4a536c;}
 
 body { -webkit-font-smoothing: antialiased; -moz-font-smoothing: none; font-smoothing: antialiased; font-family:$fD; font-size: 15px; color: $colorDefault; }
-span.pb1 {display:none;}
 
 i {	font-style: normal; }
 
@@ -11,8 +10,14 @@ a {	@include transition(all 0.2s ease); outline: none;	}
 b {font-weight: 700;}
 h1,h2,h3,h4,h5,h6 { margin: 0 ; font-weight: normal; }
 
+span.penny {display:none;}
+
+.right {float:right;}
+.left {float:left;}
+
 /*Styler*/
-input.sCheckbox {display:none !important;} 
+input.sCheckbox, input.sRadio {display:none !important;} 
+
 body { overflow-x: hidden; }
 
 .vail {
@@ -20,64 +25,50 @@ body { overflow-x: hidden; }
 	position:fixed; 
 	left:0; 
 	top:0; 
-	z-index:9; 
+	z-index:15; 
 	background:#000; 
 	width:100%; 
 	height:100%;
 	opacity: 0;
-	transition: opacity .2s ease-in-out;
-    -moz-transition: opacity .2s ease-in-out;
-    -webkit-transition: opacity .2s ease-in-out;
+	@include transition (opacity .2s ease-in-out); 
+
+	&-simple-minus-popup{
+		background: #fff;
 	}
+}
 
 .mini-login-ready {
-    .vail.vailLogin {
+    .vail-login {
         visibility: visible;
-        opacity: 0.4;
+        opacity: 0.2;
     }
 }
 
 .mini-lang-ready {
-	.vailLanguages {
+	.vail-languages {
 		visibility: visible;
-        opacity: 0.4;
+        opacity: 0.2;
 	}
 }
 
 .mini-cart-ready {
-	.vailCart {
+	.vail-cart {
 		visibility: visible;
-        opacity: 0.4;
+        opacity: 0.2;
 	}
 }
-.mini-menu-ready  {
-	.vailMenu {
+.mini-menu-ready {
+	.vail-menu {
 		visibility: visible;
-        opacity: 0.4;
+        opacity: 0.2;
 	}
 }
 
-//section head
-.headline {
-	font-family: $fontSite;
-	margin-bottom: 35px;
-	> .title {
-		font-size: 23px;
-		color: #333;
-		font-weight: 700;
-		margin: 0;
-		i {
-			font-style: italic;
-			font-weight: 300;
-		}
-		+ p {
-			margin-top: 15px;
-		}
-	}
-	> p {
-		font-size: 15px;
-		font-weight: 300;
-		margin: 0;
+.mod-lookbook-ready  {
+	.vail-lookbook {
+		visibility: visible;
+        opacity: 0.8;
+		z-index: 20;
 	}
 }
 
@@ -102,6 +93,10 @@ body { overflow-x: hidden; }
 	@include vAlign;
 }
 
+.ems-inline-left{
+	text-align: left;
+}
+
 .filter-ajx-loading {
 	&:after {
 		content:'';
@@ -114,26 +109,6 @@ body { overflow-x: hidden; }
 		left:0;
 		z-index:9998;
 	}
-}
-
-.loading-holder {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 997;
-	background: rgba(0red, 0, 0, .7);
-	.loading-content {
-		@include vAlign;
-		text-align: center;
-		font-family: $fD;
-		font-size: 25px;
-		color: #fff;
-		width: 100%;
-		margin: 0 auto;
-		padding: 20px;
-	}	
 }
 
 .ems-message{
@@ -158,6 +133,15 @@ body { overflow-x: hidden; }
 	background: $red;
 }
 
+.ems-prg-red, .ems-prg-nrm{ line-height: 25px; margin:1px 0; font-size: 15px; font-family:$fD; }
+
+.ems-prg-red{
+	color:#61080f;
+}
+.ems-prg-nrm{
+	color:$colorDefault;
+}
+
 .valid-font {
 	&:before {
 		content: "*";
@@ -166,71 +150,188 @@ body { overflow-x: hidden; }
 	}
 }
 
-.ems-container {
-    padding:0 20px;
+.site-table {
+	width: 100%;
+	border-collapse: collapse;
+	th, td{ text-align: center; padding:5px; }
+	th{ font-family: $fB; }
+	td{ font-family: $fD; }
 }
 
-.mobile-element{ display: none; }
+.mobile-element, .responsive-control{ display: none; }
 
 .page-top-title {
     position: relative;
     display: block;
     font-family: $fM;
     font-size: 24px;
-    + .page-top-desc {
-        margin-top: 20px;
-    }
 }
 .page-top-desc {
-	font-size: 14px;
-	padding-bottom: 34px;
-	color: $text;
+	font-size: 15px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	color: $colorDefault;
 	display: inline-block;
     width: 100%;
-}
-.inner-title {
-	font-size: 20px;
-	padding-bottom: 30px;
+	> span{
+		line-height: 22px;
+	}
 }
 
-.emos-confirm {
-	border-radius: 0 !important;
-	.ui-dialog-titlebar {
-		border: 0 !important;
-		.ui-dialog-title {
-			font-size: 18px;
-			color: $lBlue;
-			font-family: $fM; 
-			font-weight: normal !important;
-			padding: 20px 0 30px 0;
-			text-align: center;
-			display: block;
+
+/*Mobile 960px*/
+@media screen and (max-width: $breakpointSM) {
+	.vail-menu {
+		display: none !important;
+	}
+	/*Mobile elements css*/
+	.mobile-element{
+		&-info{
+			display: inline-block;
+			position: absolute;
+			top: 30px;
+			right: 20px;
+			width: auto;
+			z-index: 2;
+			cursor:pointer;
+			span{
+				color: $colorDefault;
+				font-size: 13px;
+				font-family: $fB;
+				letter-spacing: 2px;
+				text-decoration: underline;
+			}
 		}
-	}
-	.ui-dialog-content {
-		padding: 40px 30px 80px !important;
-		font-size: 14px !important;
-	}
-	.ui-dialog-buttonpane {
-		.ui-dialog-buttonset {
-			button {
-    			border-radius: 3px !important;
-				background: $dBlue !important;
-				&:last-child {
-					border-radius: 3px !important;
-					background: $dBlue !important;
-					border: 0 !important;
-					span {
-						color: #fff !important;
+		&-footer-link{
+			display: table;
+			width: 100%;
+			> a{
+				display: table-cell;
+				vertical-align: middle;
+				width: 50%;
+				text-align: center;
+				font-family: $fB;
+				letter-spacing: 2px;
+				padding: 5px 0;
+			}
+		}
+		&-member-enter{
+			display: block;
+			padding: 20px;
+			.btn-default{
+				width: 100%;
+				background: $colorDefault;
+				margin-top: 10px;
+				padding: 20px;
+			}
+		}
+		/*Mobile Menu lang*/
+		&-member-lang{
+			display: block;
+			text-align: center;
+			padding:10px 20px 30px 20px;
+			a{
+				display: inline-block;
+				text-align: center;
+				padding: 10px 15px;
+				font-family: $fB;
+				letter-spacing: 1px;
+				position: relative;
+				&:first-child{
+					&:after{
+						content: '';
+						display: inline-block;
+						width: 2px;
+						height: 10px;
+						background: $colorDefault;
+						position: absolute;
+						right: 0;
+						top: 13px;
 					}
-					&:hover {
-						border: 0 !important
-					}
-				}
-				&:hover {
-					background: $lBlue;
 				}
 			}
 		}
+		/*Page list mobile filter element*/
+		&-filter{
+           display: block;
+           position: fixed;
+           bottom: 0;
+           left: 0;
+           width: 100%;
+           height: 60px;
+           line-height: 60px;
+           z-index: 19;
+           > a{
+               display: block;
+               width: 100%;
+               height: 60px;
+               line-height: 60px;
+               text-align: center;
+               background: $title;
+               color: #fff;
+               span, i{ display: inline-block; vertical-align: middle; margin-right: 20px; }
+               span{ display: inline-block; font-family: $fB; letter-spacing: 2px; }
+           }
+       }
+	   /*Page detail fixed buton*/
+	   &-detail-fixed{
+		    display: table;
+			position: fixed;
+			width: 100%;
+			background:#fff;
+			bottom: 0;
+			height: 60px;
+			z-index: 21;
+			border-top: 1px solid #e2e2e2;
+			.mobile-size-btn, .mobile-price-btn, .mobile-price-add-to-cart{ display: table-cell; vertical-align: middle; cursor:pointer; }
+			.mobile-size-btn, .mobile-price-btn{ width: 25%; text-align: center; }
+			.mobile-size-btn {
+				border-right: 1px solid #e2e2e2;
+				.icon-ico_triple-pointer{ float: right; top:1px; position: relative; right:10px; }
+			}
+			.mobile-price-add-to-cart{
+				width: 50%;
+				.btn-default{
+					padding-top: 20px;
+					padding-bottom: 19px;
+					background: $title;
+					width: 100%;
+				}
+			}
+	   }
+	   /*footer bottom menu*/
+	   &-bottom-menu{
+		   	display: block;
+			position: fixed;
+			width: 100%;
+			background:$title;
+			bottom: 0;
+			height: 60px;
+			z-index: 15;
+			ul{
+				display: table;
+				width: 100%;
+				li{
+					display: table-cell;
+					vertical-align: middle;
+					width: 25%;
+					text-align: center;
+					border-left: 1px solid #373737;
+					a {
+						display: block;
+						line-height: 60px;
+						i{ display: inline-block; vertical-align: middle; }
+						i, i:before{ font-size: 25px; }
+						i:before{ color: #fff; }
+					}
+					&:first-child{
+						border: none;
+					}
+				}
+			}
+	   }
 	}
+	.mobile-hidden{ display: none; }
+	.responsive-control { display: block; width: 1px; height: 1px; overflow: hidden; font-size: 0; }
+	
 }

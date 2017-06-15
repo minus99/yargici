@@ -4,20 +4,19 @@
     vertical-align: top;
     .btn-signin {
         display: block;
-        padding: 9px 10px;
+        padding: 8px 10px;
         display: none;
         i {
             font-style: normal;
             display: inline-block;
             vertical-align: middle;
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             text-align: center;
         }
         i:before {
-            font-size: 24px;
+            font-size: 20px;
             color: $colorDefault;
-            font-weight: bold;
             @include transition(all 0.2s ease);
         }
         span {
@@ -27,30 +26,42 @@
     }
     .btn-member{
         display: block;
-        padding: 9px 10px;
+        padding: 8px 10px;
+        position: relative;
         i {
             font-style: normal;
             display: inline-block;
             vertical-align: middle;
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             text-align: center;
         }
         i:before {
-            font-size: 24px;
+            font-size: 20px;
             color: $colorDefault;
-            font-weight: bold;
             @include transition(all 0.2s ease);
         }
         span {
             @include transition(all 0.2s ease);
+            font-family: $fD !important;
+            position: absolute;
+            width: 80px;
+            text-align: center;
+            font-size: 13px !important;
+            margin-left: -40px;
+            left: 50%;
+            bottom: -15px;
             display: none;
+        }
+        &:hover{
+            span{
+                display: block;
+            }
         }
     }
 
     .sub .ems-form {display: none;}
     .mod-mini-login-body .sub.login,
-    .mod-mini-login-header span[id$='lbfKUTU_HESABIM'],
     .mod-mini-login-footer {
         display: none;
     }
@@ -90,19 +101,6 @@
                 a.btnFacebookLoginKutu { width: 100%; }
             }
         }
-        &-inner-2{
-            background: $vlightBg;
-            padding: 10px 20px;
-            border-radius: 0 0 3px 3px;
-            span {
-                a.lnkUyeOlmak {
-                    display: block;
-                    text-align: center;
-                    padding: 16px 0;
-                    span{ font-size: 14px; font-family: $fM; color: $dBlue; }
-                }
-            }
-        }
     }
     .mod-mini-login-header {
         position:relative;
@@ -111,258 +109,191 @@
             font-size: 14px; 
             font-family: $fontSite;
         }
-        span[id$="lblUYE_ADSOYAD"] {
-            position:relative;
-            top: -1px;
-            height: 20px;
-            overflow: hidden;
-            float:left;
-            width: 93px;
-            @include transition(all 0.2s ease);
-            display: none;
-        }
-        span[id$="lbfUYE_SAYIN"] {
-            display: block;
-            font-family: $fM;
-            font-size: 16px;
-            color: #ffffff;
-            text-decoration: none;
-            position: relative;
-            padding: 10px;
-            border-radius: 3px;
-            @include transition(all 0.2s ease);
-        i {
-            font-style: normal;
-            display: inline-block;
-            vertical-align: middle;
-            width: 30px;
-            height: 30px;
-            padding: 0;
-            background: #ffffff;
-            border-radius: 100%;
-            text-align: center;
-            border: 2px solid $dBlue;
-        }
-        i:before {
-            content: "\e92c";
-            font-family: 'icomoon';
-            font-size:30px;
-            color:$dBlue;
-            position: relative;
-            top: -2px;
-            left: -2px;
-            @include transition(all 0.2s ease);
-            }
-            .member-account {
-                margin-right: 10px;
-                font-size: 16px;
-                color: #ffffff;
-                font-family: "medium";
-                position: relative;
-                display: inline-block;
-                vertical-align: middle;
-                @include transition(all 0.2s ease);
-            }
-            &:after{
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left: 0;
-                width: 100%;
-                height: 12px;
-                background: $dBlue;
-                @include transition(all 0.2s ease);
-            } 
-        }
     }
     .mod-mini-login-body {
         position:relative;
-            .sub.login {
-                position: absolute;
-                z-index: 2;
-                width:220px;
-                top: 10px;
-                left: 0;
-                padding: 20px;
-                background-color: #ffffff;
-                border-radius: 0 3px 3px 3px;
-                @include transition(all 0.2s ease);
-                span { font-size:14px; color: $title; @include transition(all .2s ease); }
-                & .btnKutuLogout {
-                    text-align: left;
-                    background: none;
-                    padding: 0;
-                    span { color: $red; }
-                }
-                a {
-                    &:hover span {
-                        color: $text; 
-                    }
-                }
+        .sub.login {
+            position: absolute;
+            z-index: 2;
+            width:220px;
+            top: 10px;
+            left: 0;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 0 3px 3px 3px;
+            @include transition(all 0.2s ease);
+            span { font-size:14px; color: $title; @include transition(all .2s ease); }
+            & .btnKutuLogout {
+                text-align: left;
+                background: none;
+                padding: 0;
+                span { color: $red; }
             }
-            .ems-col {
-                margin-bottom:15px;
-                &.title {
-                    display: none;
-                    span {
-                        margin-bottom: 20px;
-                        padding-bottom: 20px;
-                        border-bottom: 1px solid $borderColor;
-                        display: block;
-                        font-family: $fD;
-                        font-size: 14px;
-                    }
+            a {
+                &:hover span {
+                    color: $text; 
                 }
             }
         }
-     /*&.opened { }*/    
+        .ems-col {
+            margin-bottom:15px;
+            &.title {
+                display: none;
+                span {
+                    margin-bottom: 20px;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid $borderColor;
+                    display: block;
+                    font-family: $fD;
+                    font-size: 14px;
+                }
+            }
+        }
+    }   
 }
 
 .mod-mini-fav{
     display: inline-block;
     vertical-align: top;
+    position: relative;
     > a {
         display: block;
-        padding: 9px 10px;
+        padding: 9px 10px 8px 10px;
+        span{
+            position: absolute;
+            width: 80px;
+            text-align: center;
+            font-size: 13px;
+            margin-left: -40px;
+            left: 50%;
+            bottom: -15px;
+            display: none;
+        }
         i.icon-ico_hearth{
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             display: block;
             &:before{
-                font-size: 24px;
+                font-size: 20px;
                 color: $colorDefault;
-                font-weight: bold;
                 @include transition(all 0.2s ease);
             }
         }
+        &:hover{
+            span{
+                display: block;
+            }
+        }
     }
-}
-
-.ems-logoff.mini-login-ready {
-    .mod-mini-login .sub .ems-form { display: block; }
-}
-.ems-login.mini-login-ready {
-    .mod-mini-login .mod-mini-login-body .sub.login { display: block; }
 }
 
 /*login sayfa*/
 .page-login {
-    padding-left: 0;
-    padding-right: 0;
     display: table;
-    table-layout: fixed;
-    .ems-left, .ems-right {
+    width: 100%;
+    .ems-right {
         display: table-cell;
         vertical-align: top;
         width: 50%;
-        max-width: 620px;
+        max-width: 565px;
         text-align: left;
+        background: #fbfbfb;
+        padding: 35px 0 30px 40px;
     }
-    .ems-left {
-        background: #fff;
-        padding: 50px 20px 80px 20px;
-        &:before{
-            position: absolute;
-            bottom: 0;
-            left: 100%;
-            height: 100%;
-            width: 200%;
-            content: '';
-            z-index: -1;
-            background: $vlightBg;
-        }
-    }
-    .ems-right { 
-        background:$vlightBg;
-        &:before{
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            height: 100%;
-            width: 50%;
-            content: '';
-            z-index: -1;
-            background: $vlightBg;
-        }
+    &-inline{
+        background:url(#{$baseHref + "/lab/projects/yargici/upload/banners/page-cover/login-cover.jpg"}) no-repeat;
+        background-size: cover;
+        background-position: top left;
     } 
     .ems-login, .ems-signup {
         &-header {
-            font-family: $fM;
-            font-size: 30px;
+            font-family: $fB;
+            font-size: 18px;
             padding: 0 0 20px 0;
+            letter-spacing: 2px;
         }
         &-desc{
             span{
                 display: inline-block;
-                max-width: 320px;
-                padding-bottom: 35px;
+                padding-bottom: 15px;
             }
         }
+        .ems-form-left, .ems-form-right {
+            width: 50%;
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+        }
+        .ems-message  { margin-bottom: 20px; }
+        
         .ems-form-inner {
-            .ems-login-error {
-                span{ margin-bottom: 40px; }
-            }
-            div[id$="plhLoginSifreUnut1"] {
-                text-align: left;
-            }
-            span[id$="lbfUYE_BENIHATIRLA_FL"]{
-                font-size: 12px;
-            }
             .ems-field { 
                 max-width: 375px;
+                input{ background: #fbfbfb; border: 1px solid $borderColor; }
                 &-check{ 
                     .ems-form-obj {
-                        span { font-size: 12px; display: inline-block; vertical-align: middle; }
+                        span.check-text { font-size:15px; line-height:20px; }
+                        b{ font-weight: normal; }
                     }
-                }
-                &.forget{
-                    font-size: 12px;
-                    padding-left: 24px;
                 }
                 &.remember{
                     text-align: left;
                     font-size: 12px;
                 }
                 &.submit{
-                    margin-bottom: 0;
-                    a.btnLogin{
-                        max-width:185px;
-                        margin-top: 0;
-                    }
-                    .ems-form-left, .ems-form-right {
-                        width: 50%;
-                        display: inline-block;
-                        vertical-align: top;
-                    }
-                    .ems-form-left {
-                        text-align: left;
-                        a {
-                            padding: 18px 0;
-                            display: block;
-                            .lnkSifremiUnuttum{
-                                span{ text-decoration: underline; font-family: $fM; color: $text; font-size: 12px; }
-                            }
+                    a.btn-default{
+                        margin-top: 20px;
+                        background: $colorDefault;
+                        &:hover{
+                            background: $lines;
                         }
-                    }
-                    .ems-form-right{
-                        text-align: right;
-                        a.btnLogin{ max-width: 145px; }
+                        span{ color: #fff; }
                     }
                 }
-                &.enter-link{
-                    margin-bottom: 0;
-                    p{
-                        margin: 40px 0 0 0;
-                        padding: 17px 0;
-                        font-size: 16px;
-                        background: $vlightBg;
-                        text-align: center;
-                        a{
-                            color: $dBlue;
-                            font-size: 14px;
-                            font-family: $fM;
+                &.ems-field-fb{
+                    padding-top:40px;
+                    border-top:1px solid $borderColor;
+                    .btn-default{
+                        background: #304b92;
+                        i.icon-ico_fb{ float: left; }
+                        i.icon-ico_fb, i.icon-ico_fb:before{ font-size: 20px; }
+                    }
+                }
+                &.ems-field-link{
+                    .btn-default { background: none; }
+                    span{ text-decoration: underline; }
+                }
+                &.submit, &.login-control, &.full{
+                    a.btn-default{
+                        width: 100%;
+                        b{
+                            text-decoration: underline;
+                            padding-left: 5px;
+                            font-weight: normal;
                         }
                     }
+                }
+                a.btn-default-member{
+                    background: none;
+                    span{
+                        font-size: 15px;
+                        color: $colorDefault;
+                        font-family: $fD;
+                        text-transform: initial;
+                    }
+                    b{
+                        font-size: 15px;
+                        text-decoration: underline;
+                        padding-left: 5px;
+                        font-weight: normal;
+                        color: $colorDefault;
+                        font-family: $fB;
+                        text-transform: initial;
+                    }
+                    &:hover{background: none; }
+                }
+                &.login-control{
+                    .btn-default:hover { background: none; }
                 }
             }
             .ems-field.mobile-phone{
@@ -375,295 +306,146 @@
                     }    
                 }
             }
-            .control-code.is-active.is-completed {
-                .ems-form-obj{
-                    input{ height: 50px; padding-top: 15px; }
-                }
-            }
         }
     }
-    .ems-signup-body & {
-        .ems-login {
-            display: none;
-        }
-        .ems-signup {
-            display: inline-block;
-        }
-    }
-    [id$="plhUyelikCaptcha1"] {
-        position: relative;
-        margin-top: 20px;
-        br {
-            display: none;
-        }
-        #imgCaptcha {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 50px;
-        }
-        input {
-            padding-left: 220px;
-        }
-        span {
-            margin-bottom: 5px;
-            display: none;
-        }
-    }
-    a.btnYeniUyeKaydet {
-        max-width: 185px;
-        width: 100%;
-    }
-    .fb-login-wrapper {
-        display: none;
-    }
-    /*yeni uyelik*/
+        
+    /*New member*/
     .ems-login, .ems-signup{
         display: inline-block;
         width: 100%;
+        max-width: 375px;
     }
     .ems-signup {
         display: none;
     }
-    .ems-info{
-        padding: 150px 20px 50px 20px;
-        &-inner{
-            max-width: 415px;
-            margin: 0 auto;
-            width: 100%;
-        }
-        .ems-info-title{
-            padding: 5px 0 30px 0;
-            margin-bottom: 30px;
-            border-bottom: 1px solid $borderColor;
-        }
-        i.ems-garanti-badge{
-            background:url(#{$baseHref + "/images/frontend/garanti-badge.png"}) no-repeat;
-            width: 56px;
-            height: 61px;
-            float: left;
-        }
-        p{
-            margin: 0;
-            min-height: 60px;
-            padding: 10px 0 0 80px;
-        }
-        ul{
-            li{
-                margin-top: 50px;
-                i{
-                    border-radius: 100%;
-                    width: 40px;
-                    height: 40px;
-                    float: left;
-                    text-align: center;
-                    &:before{
-                        color: #ffffff;
-                    }
-                }
-                .ems-info-content{
-                    padding-left: 50px;
-                    span{
-                        font-size: 18px;
-                        font-family: $fM;
-                    }
-                    p{
-                        padding: 0;
-                        min-height: inherit;
-                        color: $text;
-                    }
-                }
-                i.icon-ico_moto {
-                    background: $gold;
-                    padding: 9px 10px;
-                    &:before{
-                        font-size: 22px;
-                    }
-                }
-                i.icon-ico_fast {
-                    background: $lBlue;
-                    padding: 10px;
-                    &:before{
-                        font-size: 20px;    
-                    }
-                }
-                i.icon-ico_cargo {
-                    padding: 10px;
-                    background: $dBlue;
-                    &:before{
-                        font-size: 20px;                        
-                    }
-                }
-                i.icon-ico_easy {
-                    padding: 7px;
-                    background: $green;
-                    &:before{
-                        font-size: 26px;    
-                    }
-                }
-            }
-            li:first-child{
-                margin-top: 0;
-            }
-        }
+    .ems-login {
+        display: inline-block;
     }
 }
 
-/*uye sayfa*/
+/*Login enter control*/
+body.member-login-ready {
+    .ems-login {
+        display: none;
+    }
+    .ems-signup {
+        display: inline-block;
+    }
+}
+
+/*Page Member*/
 .page-member {
-    /*layout*/
-    .row-holder-1 {
-            display: table;
-            width: 100%;
-            table-layout: fixed;
-            > div {
-                display: table-cell;
-            }
-    }
-    .row-1 {
-        width: 250px;
-    }
-    .row-2 {
-        padding-left: 90px;
-    }
-    .ems-page-default, .pageDefault {
-        padding: 100px 0 35px 0;
-    }
-    .ems-message, .pageErrorUyeSifre, .pageErrorSifremiUnuttum, .pageSifremiUnuttum_mesaj {
-        /*margin: 100px 0 30px 0;*/
-    }
-    .ems-form {
-        .ems-form-obj {
-            max-width: 425px;
-            a.btnDefault {
-                span {
-                    font-size: 18px;
-                }
-            }
-        }
-        .ems-field {
-            &.button {
-                a.btnDefault {
-                    margin-top: 25px;
-                }
-            }
-        }
-    }
-    .bottom-step {
-        margin-top: 30px;
-    }
-    [id$="lbfDEC_YAYINDANKALDIRILDI"] {
-        display: block;
-        font-size: 14px;
-        margin: 15px 0;
-        float: left;
-    }
 
-    .sStylerMainWrp.member-menu-selecbox.sStylerWrp_select {
-        display:none;
-    }
-
-    //sol menu
-    .member-menu {
-        /*padding-bottom: 50px;*/
-        h4 {
-            font-family: $fM;
-            font-size: 30px;
-            margin: 0;
-            padding-top:40px;
-            font-weight: normal;
-        }
-        ul {
+    /*Member Mobile title*/
+    .page-top-title {
+        display: none;
+        span{
             display: block;
-            position: static;
-            padding-top: 10px;
-            li {
-                position: relative;
-                display: block;
-                padding-left: 0px;
-                a {
-                    display: block;
-                    padding: 15px 0;
-                    font-size: 18px;
-                    font-family: $fM;
-                    &:before {
-                            content:'\e935';
-                            font-family: 'icomoon';
-                            position: absolute;
-                            right: 0;
-                            top: 40%;
-                            font-size: 12px;
-                            color: $sText;
-                        }
-                }
-                &.selected {
-                    display: block;
-                    a {
-                        color: $lBlue;
-                        &:before {
-                            color: $lBlue;
+            padding: 25px 20px 10px 20px;;
+            font-family:$fB; 
+            letter-spacing:1.5px;
+            font-size:20px;
+        }
+    }
+    /*layout*/
+    .ems-row-1 {
+        display: table;
+        width: 100%;
+        .ems-col {
+            display: table-cell;
+            vertical-align: top;
+            &.ems-col-1{
+                width: 210px;
+            }
+            &.ems-col-2{
+                width:calc(100% - 210px);
+            }
+        }
+    }
+    .ems-page-default {
+        padding:0 0 50px 50px;
+        /*Form*/
+        .ems-form {
+            &-inner{
+                .ems-field {
+                    .ems-form-obj{
+                        width: 100%;
+                        max-width: 375px;
+                    }
+                    &.check-list{
+                        padding: 10px 0;
+                    }
+                    &.submit{
+                        .btn-default{
+                            width: 100%;
+                            background: $colorDefault;
                         }
                     }
                 }
             }
         }
-        .mobile-title, .lvl2 {
-            display: none;
+        .page-left-padding{
+            padding-left: 20px;
         }
     }
 
-    //uyelik bilgilerim
-    .ems-page-member-info {}
-
-    //adres bilgilerim
+    /*Address Info*/
     .ems-page-member-address {
+        .ems-grid-address .ems-grid-row .col-1{
+            width: 70%;
+            .ems-address-name{
+                font-family: $fB;
+                font-size: 15px;
+                padding-bottom: 20px;
+            }
+            .ems-address{
+                font-family: $fD;
+                font-size: 15px;
+                line-height: 25px;
+            }
+        }
         .ems-grid-address .ems-grid-row .col-2 {
             border-right-width: 0;
             text-align: right;
+            width: 30%;
             > div {
-                display: inline-block;
-                width: 64%;
-                margin-top: 0;
-                vertical-align: top;
-            }
-            .ems-address {
-                padding-right: 20%;
+                width: 100%;
             }
             .ems-address-buttons {
-                /*width: 36%;*/
                 text-align: right;
-                > a {
+                .btn-default {
+                    width: auto;
+                    display: inline-block;
+                    vertical-align: top;
                     text-align: center;
-                    &.btnAdresListeGuncelle {
-                        color: $lBlue;
+                    background: none;
+                    font-size: 15px;
+                    color: $colorDefault;
+                    font-family: $fB;
+                    &-delete{
+                        color: $red;
                     }
                 }
             }
         }
-        .ems-grid-address .ems-grid-row .col-3 {
-            display: none;
-        }
-        a.btnAdresIptal {
-            right: 0;
-            left:inherit;
-            &:hover i {
-                margin-right:10px !important;  
-            }
-        }
         .add-new-address {
-            .btnAdresEkle {
-                font-size: 14px;
+            .btn-default {
+                font-size: 15px;
                 background: none;
-                border-radius: 0;
-                padding: 15px 0 15px 15px;
+                padding-left: 0;
+                margin: 10px 0;
                 span {
-                    color: #1565c0;
-                    font-size: 14px;
+                    color: $colorDefault;
+                    font-size: 15px;
+                    text-decoration: underline;
+                    font-family: $fD;
+                    letter-spacing: inherit;
+                    z-index: inherit;
                     &:before {
                         display: inline-block;
                         content: '+';
-                        font-size: 14px;
-                        color: #1565c0;
+                        font-size: 15px;
+                        color: $colorDefault;
                         margin-right: 3px;
                     }
                 }
@@ -671,152 +453,56 @@
         }
     }
 
-    //siparislerim
+    /*Order lists*/
     .ems-page-member-order {
-        display: none;
-        .ems-grid-row > div {
-                padding: 0 !important; 
-                &.ems-grid-detail {
-                    a {
-                        background: none !important; 
-                    }
-                }
-            }
-        .sStylerMainWrp.sStylerWrp_select {
-            width: auto;
-            float: left;
-            margin-right: 20px;
-            width: 100%;
-            max-width: 340px;
-            width: calc(100% - 88px);
-        }
-        .sStylerMainWrp.sStylerWrp_select .sStylerWrp {
-            padding: 11px;
-            height:auto;
-        }
         .order-filter {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             display: inline-block;
             width: 100%;
-            > select {
-                max-width: 42%;
-                margin-right: 15px;
-                padding-top: 8px; 
-                padding-bottom: 8px;
+            &-select{
+                float: left;   
+                width: calc(62% - 190px);
+                margin-right: 2%;
+                .sStylerMainWrp.sStylerWrp_select{
+                    .sStylerWrp{ font-family: $fB; }
+                }
             }
-            > a {
-                line-height: 1;
-                padding-top: 13px; 
-                padding-bottom: 13px;
+            &-button{
                 float: left;
-            }
-        }
-        .tumunuGoster {
-            margin: 0;
-        }
-    }
-
-    // Siparişlerim Detay
-  
-    .sprContentHolder {
-        position: relative;
-        min-height: 500px;
-        .ems-page-member-order {
-            position: relative;
-            display:block;
-            .page-top-title {
-                margin-bottom: 20px;
-            }
-            .ems-grid-order {
-                position: relative;
-                &.v2 {
-                        .rowSipHolder {
-                        display:inline-block;
-                        border-top: 1px solid $borderColor;
-                        border-left: 1px solid $borderColor;
-                        border-right: 1px solid $borderColor;
-                        border-radius: 0;
-                        > div {
-                            display:inline-block;
-                            padding: 15px 10px !important;
-                            width: 25%;
-                            float: left;
-                            border: 0;
-                        }
-                        &:last-child { 
-                            border-bottom: 1px solid $borderColor;
-                            border-bottom-right-radius: 3px;
-                            border-bottom-left-radius: 3px;
-                        }
-                        &:nth-child(2) { 
-                            border-top-right-radius: 3px;
-                            border-top-left-radius: 3px; 
-                        }
-                        .btnSiparisDetay {padding: 0;}
-                        .ems-grid-store {display:none !important;}
-                        .detay {float:left; width:100%; padding:10px; display:none;}
-                        &.selected .detay {display:inline-block;}
-                        &.selected .detay.sipKargo {float:right;}
-                    }
-                    &.subGrid {width:100%; margin:0 auto; border-top:none; background:#fff;}
-                    &.subGrid .rowHeader h3 {padding:10px; border-bottom:1px dotted #ddd; background:#2561DC;}
-                    &.subGrid .rowHeader h3 > span {font-size:16px; color:#fff;}
-
-                    /*siparişlerim v2 özel*/
-                    .selected {background:$lightBg;}
-                    > div > div {width:25%; float:left; text-align:center; padding:15px;}
-                    > div > div.magaza {display:none !important;}
-                    .rowHeader > div {font-weight:bold; padding-top:7px; padding-bottom:7px;}
-                    .detay {float:left; width:100%; padding:10px; display:none;}
-                    .selected .detay {display:inline-block;}
-                    .selected .detay.sipKargo {float:right;}
-                    .subGrid {width:100%; margin:0 auto; border-top:none; background:#fff;}
-                    .subGrid .rowHeader {border-bottom: 1px solid $borderColor}
-                    .subGrid .rowHeader h3 {padding:10px; margin: 0; background:$dBlue;}
-                    .subGrid .rowHeader h3 > span {font-size:16px; color:#fff; font-weight: normal; font-family: $fM;}
-                    .subGrid .rowHeader div {display:inline-block; width: 25%; float: left; padding: 10px 0;;}
-                    .subGrid .row {border-bottom: 1px solid $borderColor;}
-                    .subGrid .row div {display:inline-block; width: 25%; float: left; padding: 15px 0;}
-                    .subGrid .rowFooter .toplam {padding: 15px; font-family: $fM;} 
-
-                    .sipKargo .subGrid .rowHeader div {display:inline-block; width: 33.333%; float: left;}
-                    .sipKargo .subGrid .row div {display:inline-block; width: 33.333%; float: left;}
-
-                    .sipKargo .subGrid .sipDurumNot {padding: 15px; display: block;}
+                width: 30%;
+                max-width: 190px;
+                a.btn-default {
+                    width: 100%;
+                    line-height: 1;
+                    background: $colorDefault;
                 }
             }
         }
     }
-    
+    .ems-page-member-return-list,
+    .ems-page-member-return-last,
+    .ems-page-member-return-detail{
+        .content-cover{
+            .content-cover-text{ max-width: 350px; }
+        }
+    }
 
-    //siparis detay
-    .basarisiz.sipSorgu.hidden {display:none;}
+    /*Order detail*/
     .ems-page-member-order-detail {
         .order-detail-info {
-            border-width: 1px 0 0 1px;
-            border-style: solid;
-            border-color: $borderColor;
+            padding-bottom: 20px;
+            padding-top: 20px;
             > div {
-                display: inline-block;
+                float: left;
                 width: 50%;
-                vertical-align: top;
                 > div {
-                    display: inline-block;
-                    vertical-align: top;
+                    float: left;
                     width: 50%;
-                    padding: 15px 30px;
-                    font-size: 16px;
-                    color: $marineBlue;
-                    border-right: 1px solid $borderColor;
+                    padding: 10px 10px 10px 0;
+                    font-size: 15px;
                     word-break: break-word;
-                    &.text {
-                        font-family: $fontSite;
-                        background: #f0f3f5;
-                        border-bottom: 1px solid transparent;
-                    }
-                    &.value {
-                        font-family: $fontSiteReg;
-                        border-bottom: 1px solid $borderColor;
+                    &.text{
+                        font-family: $fB;
                     }
                     &:empty {
                         &:before {
@@ -824,881 +510,317 @@
                         }
                     }
                 }
-                &.cargo-no, &.bank-point {
-                    .text {
-                        border-bottom-color: $borderColor;
-                    }
-                }
             }
         }
         .order-address {
-            border: 1px solid $borderColor;
-            display: inline-block;
-            width: 50%;
-            padding: 30px;
-            font-family: $fontSite;
-            color: $marineBlue;
-            margin: 30px 0;
-            &.order-address-billing {
-                border-left: none;
+            width: 46%;
+            margin-top: 20px;
+            &-delivery{
+                float: left;
+            }
+            &-billing{
+                float: right;
+            }
+            .content{
+                display: block;
+                border: 1px solid $borderColor;
+                padding: 20px;
+            }
+            .title{
+                padding-bottom: 20px;
+                span{ font-family: $fB; font-size: 18px; letter-spacing: 2px; }
             }
             .text {
-                font-size: 13px;
+                font-family: $fB;
                 margin-bottom: 15px;
             }
             .value {
-                font-size: 16px;
+                span{ line-height: 25px; max-height: 45px; overflow: hidden; }
             }
         }
-        .inner-title {
-            font-family: $fontSiteBold;
-            font-size: 16px;
-            text-align: center;
+    }
+    /*İadelerim son sayfa*/
+    .ems-page-member-return-last{
+        .page-left-padding{ padding-top: 40px; }
+    }
+    /*İadelerim detay sayfası*/
+    .ems-page-member-return-detail{
+        padding-bottom: 80px;
+        .page-sip-desc{
+            .page-sip-info, .page-title-sipInfo{                
+                display: inline-block;
+                vertical-align: middle;
+                margin: 30px 0;
+                padding-top: 5px;
+                min-height: 75px;
+                > span{
+                    display: block;
+                    line-height: 25px;
+                    a{ text-decoration: underline; }
+                }
+            }
+            .page-sip-info{
+                padding-right: 20px;
+                width: 55%;
+            }
+            .page-title-sipInfo{
+                width: 44%;
+                padding-left: 30px;
+                border-left:1px solid $borderColor; 
+                > span{
+                    b{ font-family:$fB; font-weight:normal; font-size:15px; color:$colorDefault; }
+                    span.id{ font-family:$fD; font-size:15px; color:$colorDefault; }
+                }
+            }
         }
-        .order-detail-info-payment {
-            border: 1px solid $borderColor;
-            margin-top: -1px;
-            > div {
-                text-align: right;
-                > div {
-                    display: inline-block;
-                    vertical-align: middle;
-                    padding: 10px 30px;
-                    &.text {
-                        width: 300px;
-                        text-align: left;
-                        font-family: $fontSiteReg;
+        .ems-giving-back{
+            border:1px solid $borderColor;
+            padding-bottom: 50px;
+            &-row{
+                padding: 20px;
+            }
+            &-row-1, &-row-2{ border-bottom:1px solid $borderColor; }
+            &-row-2, &-row-3{ padding-left: 120px; }
+            
+            &-list{
+                padding-bottom: 30px;
+                .ems-giving-back-content {padding-top: 30px; }
+                .ems-giving-back-row-2 { border-bottom:none; }
+                .ems-giving-back-selection{
+                    float: left;
+                    width: calc(100% - 100px);
+                }
+            }
+            &-prdImg{
+                float: left;
+                width: 100px;
+                a{
+                    display: block;
+                    img{ max-width: 100px; }
+                }
+            }
+            &-selection{
+                max-width: 375px;
+                padding-bottom: 25px;
+            }
+            &-line{
+                display: block;
+                padding-bottom: 5px;
+            }
+            &-desc{
+                padding-bottom: 20px;
+                textarea { height: 100px; resize: none; }
+            }
+            &-content{
+                float: left;
+                width: calc(100% - 100px);
+            }
+            &-address{
+                .ems-giving-back-line{
+                    .ems-fnt-bld{
+                        display: inline-block;
+                        &:first-child{
+                            width: 110px;
+                        }
+                    }
+                }
+            }
+            .bld-title{ font-family:$fB; display:block; padding-bottom:15px; }
+            .bld-title.red{ color:#61080f; }
+        }
+        .ems-giving-back-btns{
+            .btn-default{
+                margin-top: 30px;
+                &-back{
+                    min-width: 110px;
+                    padding-top:16px;
+                    padding-bottom:16px;
+                    padding-left: 0;
+                    float: left;
+                    text-transform: inherit;
+                    font-size: 15px;
+                    background: none;
+                    span{
+                        text-transform: inherit;
+                        color: $colorDefault;
                         font-size: 15px;
                     }
-                    &.value {
-                        width: 160px;
-                        font-family: $fontSiteBold;
-                        font-size: 18px;
+                    &:hover{background: none; }
+                    .icon-ico_slide-left{
+                        font-size: 11px;
+                        margin-right: 10px;
+                        &:before{ font-size: 11px; color:$colorDefault; }
                     }
                 }
-                &.total {
-                    .text {
-                        font-family: $fontSiteBold;
-                    }
-                    .value {
-                        font-size: 24px;
-                        white-space: nowrap;
-                    }
+                &-continue{
+                    min-width: 275px;
+                    float: right;
                 }
             }
+            .ems-giving-check{
+                width: 100%;
+                padding: 20px 10px 0 0;
+                .object, .text{ display: inline-block; vertical-align: middle; }
+                .object{ width: 20px; margin-right: 10px; }
+                .text{ width: 90%; }
+                span.cStyler { width: 20px; height:20px; margin: 0;  }
+            }
         }
-    }
-
-    //favorilerim
-    .ems-page-member-favorites {
-        .page-top-desc {
+        /*Product return grid*/
+        .ems-grid-return-list{
             width: 100%;
-            display: inline-block;
-            > span {
+            &-row{
+                width: 100%;
+                display: table;
+                table-layout: fixed;
+                border-width: 0 1px 1px 1px;
+                border-style: solid;
+                border-color: $borderColor;
+                &:first-child{ border-top-width: 1px; }
+            }
+            &-column{
+                padding: 10px;
                 display: inline-block;
-                vertical-align: top;
-                width: 75%;
+                vertical-align: middle;
             }
-            > a.btnFavoriListeTumSil {
-                vertical-align: top;
-                width: 25%;
-                max-width: 180px;
-                float: right;
-                padding-left: 30px;
-                padding-right: 30px;
-                font-size: 17px;
-                float: right;
-                display: none;
-                i {
-                    font-size: .8em;
-                    margin-right: 5px;
+            &-column-1{
+                width: 40%;
+            }
+            &-column-2{
+                width: 60%;
+                border-left: 1px solid  $borderColor;
+            }
+            &-items{
+                display: inline-block;
+                vertical-align: middle;
+                padding: 10px;
+                .prd-name, .brand-name{ display: block; }
+                .brand-name{
+                    padding-top: 5px;
+                    font-family:$fB;
+                    small{ font-size: 15px; }
                 }
+               span.cStyler{ width: 20px; height: 20px; } 
             }
-        }
-        .ems-grid-header {
-            .ems-grid-remove {
-                display: none;
-            }
-            div {text-align:center;}
-        }
-
-        .ems-grid-report {
-            > a {
-                margin-top: 15px;
-                &:first-child {
-                    margin-top: 0;
-                }
-                span {color: $lBlue; }
+            &-items-1{ width: 13%; text-align: center; }
+            &-items-2{ width: 20%; padding: 0; }
+            &-items-3{ width: 62%; padding-top: 0; padding-right: 0; }
+            &-items-full{
+                width: 100%;
+                .ems-fnt-bld, .dropdown{ display: inline-block; vertical-align: middle; }
+                .ems-fnt-bld{ width: 35%; }
+                .dropdown{ width: 64%; }
+                &:first-child{ padding-bottom: 0; }
             }
         }
-        .ems-grid-row {
-            .ems-grid-price {
-                font-size: 16px; 
-                color: $text;
-                font-family: $fM;
-                white-space: nowrap;
-                text-align: left;
-                > span:before {
-                    content: 't';
-                    font-family: 'tl';
-                    font-size: 13px;
-                    font-weight: normal;
-                    display: inline-block;
-                    float: left;
-                    position: relative;
-                    left: -5px;
-                    top: 3px;
-                }
-                .d {
-                        font-size: 11px; 
-                        position: relative;
-                        top: 3px;
-                        vertical-align: super;
-                    }
-                span:empty {
-                    &:before {display:none;} 
-                }
-            }
-            .ems-grid-piece {
-                input {width: 100% !important; max-width: 44px; text-align: center; padding: 0 5px;} 
-            }
-            .ems-grid-remove {
-                a {
-                    span {
-                        color: $red;
-                        font-size: 14px;
-                        font-family: $fM;
-                    }
-                }
-            }
-        }
-    }
-
-    //iadelerim
-    .ems-page-member-refund {
-        .page-top-desc {
-            .btnDefault { 
-                display: inline-block !important; 
-                float: right;
-                margin-top: -40px;
-                padding-left: 30px;
-                padding-right: 30px;
-            } 
-        }
-    }
-    .IadeTalep {
-        .dvIadeForm {
-            li {
-                margin-top: 15px;
-                &:first-child {
-                    margin-top: 0;
-                }
-                > span {
-                    display: inline-block;
-                    width: 23%;
-                    font-family: $fontSite;
-                    font-size: 13px;
-                    margin-bottom: 5px;
-                }
-                > div {
-                    display: inline-block;
-                    width: 77%;
-                    max-width: 425px;
-                }
-                &.IADE_BILDIR {
-                    margin-top: 25px;
-                    padding-left: 23%;
-                }
-                &.subTitle > span {
-                    position: relative;
-                    display: block;
-                    font-family: "MPR";
-                    font-size: 35px;
-                    color: #002b5c;
-                    width: auto;
-                }
-            }
-        }
-        &.success {
-            .ulIadeFormu {
-                li {
-                    display: none;
-                    &.subTitle {
-                        display: block;
-                    }
-                }
-            }
-        }
-    }
-    [id$="lbfIadeTalepBasarili"], [id$="lbfIadeTalepKargoRefNo"] {
-        display: inline-block;
-        font-family: $fontSite;
-        font-size: 17px;
-        margin-top: 20px;
-    }
-
-    //takip listem
-    .ems-page-member-follow-list {
-        .report-holder {
-            .remove-list {
-                display: none;
-                float: right;
-                margin: -40px 0 20px 0;
-                > a {
-                    padding-left: 30px;
-                    padding-right: 30px;
-                    font-size: 16px;
-                    i {
-                        font-size: .8em;
-                        margin-right: 5px;
-                    }
-                }
-            }
-            &.stock-report {
-                margin-top: 50px;
-                padding-top: 30px;
-                /*border-top: 1px dashed $borderColor;*/
-                .inner-title {
-                    padding: 0;
-                    padding: 0;
-                    font-size: 14px;
-                    font-family: $fB;
-                    color: $text;
-                    margin-bottom: 20px;
-                }
-            }
-            &.price-report {
-                .inner-title {
-                    padding: 0;
-                    font-size: 14px;
-                    font-family: $fB;
-                    color: $text;
-                    margin-bottom: 20px;
-                }
-            }
-            .ems-grid-row {
-                .ems-grid-price {
-                    font-size: 16px;
-                    color: $text;
-                    font-family: $fM;;
-                    white-space: nowrap;
-                    text-align: left;
-                    padding-left: 30px !important;
-                    > span:before {
-                        content: 't';
-                        font-family: 'tl';
-                        font-size: 13px;
-                        font-weight: normal;
-                        display: inline-block;
-                        float: left;
-                        position: relative;
-                        left: -4px;
-                        top: 4px; 
-                    }
-                    .d {
-                        font-size: 12px; 
-                        position: relative;
-                        top: 3px;
-                        vertical-align: super;
-                    }
-                    span:empty {
-                        &:before {display:none;} 
-                    }
-                }
-                .ems-grid-remove {
-                    span {
-                        color: $red;
-                    }
-                }
-            }
-        }
-    }
-
-    .ems-page-member-password {
-        .ems-form-label {
-            width: auto !important; 
-        }
-    }
-
-    .ems-page-member-follow-list .page-top-desc {
-        margin-top: 25px;
-        span {}
-    }
-
-    //mesajlarim
-    .ems-page-member-message {
-        .kutuMesaj .kutuBodyMesaj {display:table;} 
-        .msg-qty {
+        .dropdown{
             position: relative;
-            margin-left: 10px;
-            > i {
-                font-size: 21px;
-            }
-            > b {
-                position: absolute;
-                right: -1em;
-                top: 0.7em;
-                font-family: $fontSite;
-                font-size: 10px;
-                color: #fff;
-                font-weight: normal;
-                line-height: 10px;
-                padding: 5px;
-                background: $marineBlue;
-                border-radius: 100%;
-                min-width: 20px;
-                min-height: 20px;
-                text-align: center;
-            }
-        }
-        .page-top-desc {
-            padding-bottom: 20px;
-            span {
-               color: $text; 
-            }
-        }
-        .ems-grid-message {
-            .ems-grid-read {
-                width: 10%;
-            }
-            .ems-grid-date {
-                width:25%;
-            }
-            .ems-grid-title {
-                width:50%;
-            }
-            .ems-grid-icon {
-                width: 15%;
-                a {
-                    padding: 0 !important;
-                }
-            }
-        }
-    }
-
-
-    /* Mesaj Gönder */
-
-    .pageMesajGonder {
-        .tableTitleMesajGonder {display:none;}
-        .tableMesajGonder_aciklama {padding: 20px 0 34px 0;}
-        .tableMesajGonder {
-            textarea {
-                height:100px;
-                resize: none;
-            }
-        table {
-                width: 100%;
-                max-width: 400px;
-                text-align: left;
-                display: inline-block;
-            tbody {
-                width: 100%;
-                display: inline-block;
-                tr {
-                    width: 100%;
-                    display: inline-block;
-                th {
-                    width: 100%;
-                    display: inline-block;
-                  >  span {display:none;} 
-                }
-                td {
-                    width: 100%;
-                    display: inline-block;
-                    margin-bottom: 16px;
-                    &.tableMesaj_thlbfUYE_CEPTELEFON {
-                        input {
-                            width: 100% !important;
-                        } 
-                    }
-                }
-            }
-
-            }
-        }
-            
-        }
-        .pageMesajGonder_CaptchaImage1 {
-            br {display:none;}
-            img {
-                float: left;
-                width: 100%;
-                max-width: 200px;
-                }
-            span {
-                display: none;
-                padding-left: 210px;
-    
-            }
-            input {
-                width: auto;
-                margin-left: 210px;
-                display: block; 
-            }
-        }
-        .pageMesajGonder_btnMesajGonder {
-            margin-top: 25px;
-            a {
-                width: 100%; 
-                max-width: 400px;
-                span {
-                    font-size: 18px;
-                }
-            }
-        }
-
-        /* Mesaj Başarılı */
-
-        .pageErrorMesajGonder {
-            background :$green;
-            display: block;
-            padding: 20px 20px 20px 100px;
-            border-radius: 3px;
-            margin-top: 20px;
-            span {
-                font-size: 14px;
-                color: #fff;
+            .trigger{
+                cursor:pointer;
+                display: block;
                 position: relative;
-                &:before {
-                    content:'\e932';
-                    font-family: 'icomoon';
+                color: #6a6b69;
+                .icon-ico_arrow1{
                     position: absolute;
-                    left: -65px;
-                    top: 20px;
-                    font-size: 30px;
-                }
-            }
-        }
-        .kutuMesaj .kutuBodyMesaj {display: table;}
-    }
-
-
-    /* Mesaj Menu */
-
-    .kutuMesaj {
-        .kutuHeaderMesaj {
-            display:none;
-        }
-        .kutuBodyMesaj {
-            width: 100%;
-            display: table;
-            border-bottom: 1px solid $lines;
-            margin: 30px 0;
-            display: none;
-            > div {
-                float: left;
-                display: table-cell;
-                padding-right: 40px;
-                a {
-                    font-family: $fM;
-                    padding-bottom: 17px;
-                    display: block;
-                    position: relative;
-                    text-align: center;
-                    &:hover {
-                        color:$lBlue; 
-                    }
-                }
-                &.active {
-                    color: $dBlue;
-                    a:before {
-                        content:'\e929';
-                        font-family: 'icomoon';
-                        font-size: 10px;
-                        position: absolute;
-                        bottom: -3px;
-                        left: 50%;
-                        color: $lines;
+                    top: 50%;
+                    right: 20px;
+                    margin-top: -4px;
+                    font-size: 11px;
+                    &:before{
+                        content:'\e900';
+                        font-size: 11px;
+                        color:$colorDefault; 
                     }
                 }
             }
-            .popupKutuMesaj_yeni.emos_invisible {display:none;}
-        }
-    }
-
-    // Mesaj detay
-
-    .page-member-message-detail {  
-        .ems-message-type {
-            span {
-                font-family: $fM;
-                width: 200px;
-            }
-        }
-    }
-
-
-    .ems-page-member-message-detail {
-        ul.ems-message-type {
-            width: 100%;
-            position: relative;
-            border: 1px solid $borderColor;
-            border-radius: 3px;
-            margin-top: 20px;
-            display: inline-block;
-                li {
-                    display: table;
-                    width: 100%;
-                    border-bottom: 1px solid $borderColor;
-                    span {
-                    padding: 15px;
-                    border-right: 1px solid $borderColor;
-                    display:table-cell;
-                        &:last-child {
-                            border-right: 0;
-                        }
-                         &:first-child {
-                            width: 20%;
-                        }
-                    }
-                    &:last-child {
-                            border-bottom: 0;
-                        }
-                }
-
-            
-        }
-    }
-
-    .ems-message-detail-form {
-        .msgDtList {
-            margin-bottom: 20px;
-            .msgDtHeader {
-                ul {
-                    display: table;
-                    width: 100%;
-                    li {
-                        display: table-cell;
-                        width: 50%;
-                        span {
-                            font-size: 12px;
-                            color: $sText;
-                            padding: 5px;
-                            text-align: left;
-                            text-transform: uppercase;
-                            display: block;
-                        }
-                    }
-                }
-            }
-            .msgDtContent {
-                width: 100%;
-                position: relative;
-                border: 1px solid $borderColor;
-                border-radius: 3px;
-                display: inline-block;
-                ul {
-                    display: table;
-                    width: 100%;
-                    li {
-                        width: 50%;
-                        padding: 15px;
-                        border-right: 1px solid $borderColor;
-                        display:table-cell;
-                        &:last-child {
-                            border: 0;
-                        }
-                    }
-                }
-            }
-        }
-        a.btnMesajKonuYeniGonder {
-            margin-right: 10px;
-            }
-        a {
-            span {
-                font-size: 18px;
-            }
-        }
-    }
-
-    // Mesajlarım İletişim Formu
-
-    .popupYeniMesaj {
-        margin-top: 40px;
-        .yeniMesajBaslik {display:none;}
-           .newMessageForm {
-               margin-top: 20px;
-               max-width: 425px;
-               ul {
-                   li {
-                       margin-bottom: 16px;
-                      > span {margin-bottom: 10px; display: block;}
-                      input.geneltelefon {width: 100% !important;}
-                   }
-               }
-               .messageArea {
-                   span {display:block; margin-bottom: 10px;}
-                   textarea {width: 100% !important; height: auto; margin-bottom: 16px; resize: none;}
-               }
-               .messageSend {
-                   a {
-                       margin-top: 16px; 
-                       width: 100%;
-                       span {
-                           font-size: 18px;
-                       }
-                   }
-                   br {display:none;}
-                   div[id$="divCaptcha"] {
-                       img {
-                           width: 50%; 
-                           float:left;
-                           padding-right: 10px;
-                           height: 67px;
-                        }
-                        span {
-                            float:right;
-                            width: 50%;
-                            color: $text;
-                        }
-                        input {
-                            float:right;
-                            width: 50%;
-                        }
-                    }
-               }
-           }  
-    }
-
- 
-    //sifre degistir
-    .ems-page-member-password {
-        .page-top-desc {
-            margin-top: 0;
-            .pageDescUyeSifre {
+            ul{
                 display: none;
-            }
-            .pageErrorUyeSifre {
-                margin-bottom: 0;
-            }
-        }
-        .ems-form {
-            [id$="plhYeniSifreAciklama1"].ems-form-label {
+                position: absolute;
+                left: 0;
+                top: 50px;
                 width: 100%;
-                margin-top: 10px;
-                color: #999;
-            }
-        }
-    }
-
-    //sifremi unuttum
-    .pageSifremiUnuttum {
-        .pageErrorSifremiUnuttum {
-            margin-top: 0;
-        }
-    }
-
-    .ems-grid-header {
-        span {
-            /*font-family: $fB;
-            font-size: 12px;
-            color:#ababab;*/
-        }
-    }
-
-}
-
-body.sip-ajx-loading {
-        .sprContentHolder:before { 
-            content:'';
-            width: 60px;
-    		height: 60px;
-            border-radius: 100%;
-            background:url(#{$baseHref + "/images/frontend/preloader.gif"}) no-repeat;
-            position: absolute !important;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            @include vAlign;
-            display: block; 
-        }
-    }
-
-//yeni adres
-.ems-page-new-address {
-    position: relative;
-    padding: 0;
-    &.lnkAdrTip_1 {
-        .tcCheck {
-            margin-top: 0 !important;
-            .ems-form-label {
-                top: 12px !important;  
-                span {
-                    color: $sText;
-                }
-            }
-        }
-        .checkbox {
-            display:none; 
-        }
-    }
-    .page-member & {
-        padding: 0;
-    }
-    .page-top-title {
-        display: block !important;
-        padding-bottom: 25px;
-        > span {
-            color: $dBlue;
-        }
-    }
-    .page-top-desc {
-        display: none !important;
-    }
-    .pageErrorDefault {
-        margin-bottom: 30px;
-    }
-    .ems-form-inner .ems-field .ems-form-label[id$="plhAdresTipiLabel1"] {
-        font-size: 13px;
-        color: $dBlue;
-        width: 23%;
-        margin-bottom: 10px; 
-    }
-    .ems-form-inner .ems-field.adresTip {
-        margin-bottom: 30px;
-        .ems-form-label {
-            display:none;
-        }
-    }
-    [id$="plhAdresTipi1"] {
-        a {
-            font-size: 15px;
-            font-family: $fM;
-            margin-right: 20px;
-            &:before {
-                margin-right: 7px;
-                font-weight: bold !important;
-            }
-            &.emos_selected {
-                color: $dBlue;
-            }
-            &#lnkAdrTip_1 {
-                /*display:none; */
-            }
-        }
-    }
-    [id$="plhAdresLabel1"], [id$="plhAdres1"] {
-        vertical-align: top;
-    }
-    textarea {
-        resize: none;
-        height: auto;
-        font-size: 18px; 
-        color: $title;
-    }
-    .ems-form .ems-form-inner .ems-field .ems-form-obj {
-        max-width: 425px;
-    }
-
-    .ems-field.tcCheck {
-        margin: 40px 0 10px 0;
-        .ems-form-label {
-            width: auto !important;
-            top: 0;
-            font-size: 14px;
-            color: $text;
-            padding-left: 20px;
-        }
-    }
-    a.btnAdresIptal {
-        position: absolute;
-        left: 0;
-        top: 1px;
-        z-index: 2;
-        padding: 1px 0;
-        .addrsClose {
-            span {
-                color: $text;
-                font-family: $fD;
-                margin-right: 5px;
-                font-size: 12px !important;
-            }
-        }
-        i {
-            font-size: 14px; 
-            color: $dBlue;
-            display: inline-block;
-            margin-right: 10px;
-            position: relative;
-            top: 1px;
-            @include setTransform(rotate(180deg));
-            @include transition(all .2s ease);
-            &:before{
-                color: $dBlue;
-                font-size: 14px;
-            }
-        }
-        &:hover {
-            i{
-                margin-right: 15px;
-            }
-        }
-        span {
-            font-size: 14px;
-            font-family: $fM;
-            color: $dBlue;
-        }
-    }
-    a.btnAdresKaydet {
-        margin-top: 25px;
-        background: $green;
-        &:hover{
-            background: $hGreen;
-        }
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    //uye sayfa
-    .page-member {
-        .row-1 {
-            width: 25%;
-        }
-        //adres bilgilerim
-        .ems-page-member-address {
-            .ems-grid-address {
-                .ems-grid-row .col-2 {
-                    border: 0;
-                    > div {
+                background: #fff;
+                border-width:0 1px 1px 1px;
+                border-color: $borderColor;
+                border-style: solid;
+                padding:10px 5px; 
+                z-index: 1;
+                li{
+                    a{
                         display: block;
-                        width: 100%;
-                        text-align: left;
-                        &.ems-address {
-                            padding-right: 0;
-                        }
-                        &.ems-address-buttons {
-                            width: 100%;
-                            margin-top: 12px;
-                        }
+                        padding: 10px;
+                        color: #6a6b69;
                     }
                 }
             }
+            &.opened{
+                ul{  display: block; }
+            }
         }
     }
 }
+
+/*Member page campaign banner hidden*/
+.page-member-layout{
+    .campaign-bnr{ display: none; }
+}
+
+/*Mobile 1100px*/
+@media screen and (max-width: 1100px) {
+    .page-member {
+        /*Product return grid*/
+        .ems-page-member-return-detail{
+            .ems-grid-return-list{
+                &-items-full{
+                    .ems-fnt-bld, .dropdown{ width: 100%; }
+                    .ems-fnt-bld{ padding-bottom: 10px; }
+                }
+            }
+        }
+    }
+}
+
+/*Mobile 960px*/
 @media screen and (max-width: $breakpointSM) {
-    //login sayfa
+
+    /*Mobile Hidden control*/
+    .mod-mini-fav, .mod-mini-login { display: none; }
+
+    .page-login-layout{
+        .site-footer, .campaign-bnr{ display: none; }
+    }
+
+    /*Login page*/
     .page-login {
-        .ems-right { display: none; }
-        .ems-right, .ems-left{ width: 100%; max-width: 100%; }
-        .ems-right:before, .ems-left:before{ display: none; }
+        &-inline{
+            background: #fbfbfb;
+            padding: 20px;
+        }
+        .ems-right {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            background: #fbfbfb;
+        }
         .ems-login, .ems-signup {
             margin: 0;
             max-width: 100%;
             padding: 0;
             &-header {
-                text-align: center;
+                color: $lines;
                 font-size: 24px;
-                padding-bottom: 25px;
             }
             .ems-form{
                 &-inner{
                     .ems-field{
                         max-width: 100%;
+                        input, select, textarea{ background: #fbfbfb; }
                         &.submit {
+                            .btn-default{ padding-top: 20px; padding-bottom: 19px; }
                             a.btnYeniUyeKaydet, a.btnLogin{ max-width: 100%; }
+                        }
+                        &.ems-field-fb{
+                            .btn-default{ padding-top: 20px; padding-bottom: 19px; }
                         }
                         &.enter-link {
                             background: $vlightBg;
@@ -1711,335 +833,180 @@ body.sip-ajx-loading {
         }
     }
 
-    //uye sayfa
+    /*Member page hidden object*/
+    .page-member-layout {
+        .site-footer,
+        .campaign-bnr,
+        .mobile-element-bottom-menu{ display: none; }
+    }
+
+    /*Page member*/
     .page-member {
-        &.ems-container {
-            padding: 0;
+
+        /*Layout*/
+        .page-top-title { display: block; }
+
+        &.ems-container{ max-width: 100%; padding: 0; }
+
+        .ems-row-1{
+            .ems-col{ display: block; }
+            .ems-col.ems-col-1 { width: 100%; position: relative; z-index: 2; }
+            .ems-col.ems-col-2{ width: 100%; }
         }
-        .row-holder-1 {
-            > div {
-                display: block;
-            }
-        }
-        .row-1 {
-            width: 100%;
-        }
-        .row-2 {
+
+        .page-top-desc { padding:10px 20px 20px; margin-top: 0; }
+
+        .ems-page-default{
             padding-left: 0;
-        }
-        .ems-page-default, .pageDefault {
-            padding: 25px 0 70px;
-        }
-        .inner-title {
-            font-size: 20px;
-        }
-        .page-top-title, .pageHeaderDefault, .page-top-desc, .pageDescDefault, .ems-form, .ems-page-member-address .add-new-address, .ems-page-member-order .order-filter, .inner-title {
-            padding: 0 20px 20px 20px !important;
-            margin: 0 !important;           
-        }
-        .ems-page-member-order-detail .order-detail-info, .ems-page-member-order-detail .order-address, [id$="lbfDEC_YAYINDANKALDIRILDI"], .IadeTalep, .ems-page-member-order-detail .order-detail-info-payment, .bottom-step {
-            margin-left: 30px;
-            margin-right: 30px;
-        }
-        .page-top-desc-border {
-            border-bottom: 0;
-            margin-bottom: 0;
-            margin-top: 0;
-        }
-        .ems-message, .pageErrorUyeSifre, .pageErrorSifremiUnuttum, .pageSifremiUnuttum_mesaj {
-            margin: 0 30px 30px;
-        }
-
-        .member-menu-selecbox {
-            display: inline-block !important;
-            .sStylerWrp {
-                border-bottom: 1px solid $lines;
-                background: none;
-                height: 78px;
-                padding: 40px 20px 15px 20px; 
-                &:after {
-                        right: 30px;
-                        font-size: 12px;
+            padding-bottom: 30px;
+            .page-left-padding{ padding-right: 20px; }
+            .ems-form { padding: 0 20px; }
+            .ems-form-inner {
+                .ems-field{
+                    .ems-form-label { top:5px; }
+                    .ems-form-obj{
+                        max-width: 100%;
+                        input[type=text] { height:60px; line-height: 40px; }
                     }
-                .sStyleHolder {
-                    span {
-                        font-size: 24px;
-                        font-family: $fM;
+                    &.check-list{
+                        > span{ float: left; }
+                        .checkbox-text { padding-top: 5px; width: 90%; }
+                    }
+                    &.submit{
+                        .btn-default{ padding-top: 19px; padding-bottom: 20px; }
                     }
                 }
             }
         }
-
-        .member-menu {
-            /*padding-bottom: 0;
-            border-bottom: 1px solid $lines;*/
-            height: 0;
-            position: relative;
-            top: -80px;
-            z-index: 1;
-            h4 {
-                /*display: none;*/
-                padding: 15px 20px 5px 20px;
-                margin: 0;
-                font-size: 14px;
-                color: $sText;
-
+        /*New address*/
+        .ems-page-member-address{
+            .page-top-title{
+                span{ padding-left: 0; }
             }
-            ul {display:none;}
-            /*
-            ul {
-                display: none;
-                padding-top: 0;
-                li {
-                    padding-left: 0;
-                    a {
-                        background: $lines;
-                        padding: 20px 30px;
-                        font-size: 16px;
-                        text-transform: uppercase;
-                        font-family: $fD;
-                        &:before {
-                            right: 20px;
-                        }
-                    }
-                    &.selected {
-                        display: none;
-                    }
-                }
-            }
-            .mobile-title {
-                position: relative;
-                display: block;
-                cursor: pointer;
-                padding: 0 20px 10px 20px;
-                font-size: 24px;
-                height: auto;
-                text-transform: uppercase;
-                border: none;
-                background: #fff;
-                font-family: $fM;
-                color: $title;
-                font-weight: normal;
-                &:before {
-                    content: "\e933"; 
-                    font-family: 'icomoon';
-                    position: absolute;
-                    right: 30px;
-                    top: -5px;
-                    font-size: 12px;
-                    margin-top: -6px;
-                    color: inherit;
-                }
-            }
-            &.opened {
-                ul {
-                    display: block;
-                }
-            }*/
+            .add-new-address .btn-default{ margin-top: 0; }
         }
-
-        //adres bilgilerim
-        .ems-page-member-address {
-            .add-new-address {
-                a.btnAdresEkle {
-                    display: block;
-                }
-            }
-        }
-
-        //siparislerim
-        
-        .ems-page-member-order {
-            .order-filter {
-                > select {
-                    display: block;
+        /*Order list page*/
+        .ems-page-member-order{
+            .order-filter{
+                margin-bottom: 20px;
+                .order-filter-select, .order-filter-button { width: 100%; max-width:100%; }
+                .order-filter-select {
                     margin-right: 0;
-                    max-width: none;
                 }
-                > a {
-                    display: block;
-                    /*margin-top: 20px;*/
+                .order-filter-select {
+                    .sStylerWrp{ height:60px; line-height:30px; }
                 }
-            }   
-            .ems-grid-header {
-                width: 90px;
-            } 
-            .ems-grid-row {
-                width: calc(100% - 90px);
+                .order-filter-button {
+                    margin-top: 20px;
+                    .btn-default{ padding-top:21px; padding-bottom:21px; }
+                }
             }
         }
-
-        //siparis detay
-        .ems-page-member-order-detail {
+        /*Order detail page*/
+        .ems-page-member-order-detail{
             .order-detail-info {
-                > div {
-                    display: block;
-                    width: 100%;
-                    > div {
-                        padding: 13px 20px;
-                        margin-top: 0;
-                    }
-                }
+                padding-bottom: 0;
+                > div{ float: none; width: 100%; }
             }
             .order-address {
-                display: block;
-                width: auto;
-                &.order-address-delivery {
-                    margin-bottom: 0;
-                }
-                &.order-address-billing {
-                    border-left: 1px solid $borderColor;
-                    border-top: none;
-                    margin-top: 0;
-                }
+                &-delivery, &-billing{ float: none; width: 100%; }
+                &-billing{ margin-top:30px; }
             }
-            .order-detail-info-payment {
-                margin-top: 30px;
+            .order-detail-info-payment{
+                &-summry{ width: 100%; border-left-width: 0; border-right-width: 0; border-bottom-width: 0; }
             }
-            
+            .page-top-desc{ padding-top: 20px; }
         }
-        .ems-page-member-order {
-            .ems-grid-order.v2 {
-                .rowSipHolder {
-                    .detay {height: auto;}
-                    }
-                    .ems-grid-header {
-                        float:left;
-                    }
-                }
-        }
-        
 
-        //favorilerim
-        .ems-page-member-favorites {
-            .page-top-desc {
-                > span, > a.btnFavoriListeTumSil {
-                    display: block;
+        /*Gift cart layout*/
+        .ems-page-member-order-detail{
+            .page-top-title span,
+            .page-top-desc{ padding-left: 0; padding-right: 0; }
+        }
+        /*Password change*/
+        .ems-page-member-password-change{
+            .page-left-padding{ padding-left: 0; padding-right: 0; }
+        }
+
+        /*İade sayfası*/
+        .ems-page-member-return-detail{
+            .page-left-padding { padding-top:20px; }
+            .page-top-title {
+                span{ padding: 10px 0 20px 0; }
+            }
+            .page-sip-desc{
+                .page-sip-info, .page-title-sipInfo{
                     width: 100%;
-                    max-width: none;
-                    float: none;
+                    margin: 0;
+                    min-height: auto;
+                    padding-bottom:30px;
                 }
-                > a.btnFavoriListeTumSil {
-                    margin-top: 30px;
-                }
+                .page-title-sipInfo{ border: none; padding-left: 0; }
             }
-        }
-
-        //iadelerim
-        .ems-page-member-refund {
-            .page-top-desc {
-                .btnDefault {
-                    display: block !important;
-                    float: none;
-                    margin-top: 0;
-                }
-            }
-        }
-        .IadeTalep {
-            .dvIadeForm {
-                li.subTitle {
-                    span {
-                        margin-bottom: 35px;
+            .ems-grid-return-list{
+                &-column{ width: 100%; }
+                &-column-2{ border-left: 0; }
+                &-items-full{
+                    .ems-fnt-bld{ display: none; }
+                    .ems-fnt-reg{ display: inline-block; vertical-align: middle; }
+                    .dropdown { margin-top:10px; margin-bottom:10px; }
+                    &:first-child{
+                        padding-top: 0;
+                        text-align: center;
+                        .ems-fnt-bld{ width: inherit; padding-bottom: 0; display: inline-block; }
                     }
                 }
-                li > div {
+            }
+            .ems-giving-back{
+                border: none;
+                padding-bottom: 10px;
+                &-row-1{ border: 1px solid $borderColor; }
+                &-row-2{ border: none; }
+                &-row-2, &-row-3{ padding-left: 0; padding-right: 0; }
+                &-row-3{ border-top:1px solid $borderColor; border-bottom:1px solid $borderColor; }
+
+                &-list{
+                    .ems-giving-back-row { border:1px solid $borderColor; }
+                    .ems-giving-back-row-2 { border:none; }
+                    .ems-giving-back-content {padding-top: 30px; }
+                    .ems-giving-back-selection{
+                        padding-top: 20px;
+                        .bld-title{ display: none; }
+                        padding-bottom: 10px;
+                        width: 100%;
+                        float: none;
+                        max-width: 100%;
+                        clear: both;
+                    }
+                }
+            }
+            .ems-giving-back-btns {
+                .btn-default{
                     width: 100%;
-                }
-            }
-        }
-        [id$="lbfIadeTalepBasarili"] {
-            margin-left: 30px;
-        }
-
-        //takip listem
-        .ems-page-member-follow-list {
-            .report-holder {
-                .remove-list {
                     float: none;
-                    margin: 0 20px 15px;
-                    > a {
-                        display: block;
-                    }
-                }
-            }  
-        }
-        .site-content .ems-page-member-follow-list .ems-grid-row .ems-grid-price {
-                padding-left:20px !important;   
-            } 
-        //sifre degistir
-        .ems-page-member-password {
-            .pageDescUyeSifre {
-                padding-left: 0;
-                padding-right: 0;
-                padding-bottom: 0;
-            }
-            .pageErrorUyeSifre {
-                margin: 30px 0 0;
-            }
-        }
-
-        //Mesaj Gönder
-
-        .ems-page-member-message {
-            .ems-grid-header {
-                max-width:90px;
-            }
-            .ems-grid-row {
-                width: calc(100% - 90px);
-            }
-                
-
-        }
-        .pageMesajGonder {
-            padding:25px 20px 70px 20px;
-            .pageHeaderMesaj {
-                padding:0 !important;
-            }
-        }
-
-        .kutuMesaj {
-            padding: 0 20px;
-            .kutuBodyMesaj {
-                display: inline-block;
-                border: 0;
-                margin: 0 0 30px 0;
-                > div {
-                    display:inline-block;
-                    width: 100%;
-                    text-align: left; 
-                    padding: 0;
-                    border-bottom: 1px solid $borderColor;
-                    a {
-                        text-align:left;
-                        padding: 10px 0;
-                    }
-                    &.active a:before { 
-                        left: 50px;
-                    }
+                    padding-top: 19px;
+                    padding-bottom: 20px;
+                    &-continue{ background:$colorDefault; }
+                    &-back{ margin-top: 10px; }
                 }
             }
-            .kutuHeaderMesaj {
-                padding: 20px 0 25px 0;
-                display:none;
-                }
         }
 
-        .ems-message-detail-form {
-            padding: 0 20px;
-        }
-
-    }
-    .page-top-title {
-        display: none;
     }
 }
 
-@media screen and (max-width:600px) {
-    .page-member .ems-page-member-address .ems-grid-address .ems-grid-row .col-2 > div.ems-address-buttons {
-        a {
-            display: block;
-            margin: 0;
-            text-align: right;
+/*Mobile 610px*/
+@media screen and (max-width:$breakpointXS) {
+
+    /*Page member*/
+    .page-member{
+
+        /*Address info*/
+        .ems-page-member-address{
+            .ems-grid-address .ems-grid-row .col-1,
+            .ems-grid-address .ems-grid-row .col-2{ width: 100%; }
+            .ems-grid-address .ems-grid-row .col-2 { padding-top: 5px; padding-bottom: 15px; }
+            .ems-grid-address .ems-grid-row .col-2 .ems-address-buttons { text-align: left; }
         }
     }
 

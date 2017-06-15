@@ -2,9 +2,5 @@
 @include fontFace('italic', '/lab/projects/yargici/styles/fonts/avenir/italic/AvenirNextLTProIt', normal);
 @include fontFace('bold', '/lab/projects/yargici/styles/fonts/avenir/bold/AvenirNextLTProDemi', normal);
 @include fontFace('didot', '/lab/projects/yargici/styles/fonts/didot/Didot', normal);
+@include fontFace('brush', '/lab/projects/yargici/styles/fonts/brush/BrushScriptStd', normal);
 @include fontFace('tl', '/lab/projects/yargici/styles/fonts/tl/abakutlsymsans', normal);
-
-/*Old Fonts*/
-/*@include fontFace('regular', '/styles/fonts/roboto/regular/RobotoRegular', normal);
-@include fontFace('medium', '/styles/fonts/roboto/medium/RobotoMedium', normal);
-@include fontFace('bold', '/styles/fonts/roboto/bold/RobotoBold', normal);*/
