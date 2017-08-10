@@ -1022,6 +1022,8 @@
 /*Grid double banner type 1*/
 .grid-template{
     width: 100%;
+    &-img{ overflow: hidden; }
+    &-img video{ position: absolute; top: 0; width: 100%; }
     &-type-1{
         max-width: 1440px;
         margin: 0 auto;

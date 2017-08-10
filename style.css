@@ -10033,6 +10033,12 @@ body.suggestion-popup-ready .vail-cart {
 .grid-template {
   width: 100%;
   /*type 2*/ }
+  .grid-template-img {
+    overflow: hidden; }
+  .grid-template-img video {
+    position: absolute;
+    top: 0;
+    width: 100%; }
   .grid-template-type-1 {
     max-width: 1440px;
     margin: 0 auto;
