@@ -75,7 +75,7 @@ var bdy = $('body'),
 		lazyLoad: function( o, callback ){
 			var _t = this, ID = $( o['ID'] );
 			if( _t.detectEl( $('.lazy', ID) ) )
-				$('.lazy', ID).lazyload({ effect: 'fadeIn', container: o['container'] || window, load: function(){ 
+				$('.lazy', ID).lazyload({ effect: 'fadeIn', container: o['container'] || window, threshold : -200, load: function(){ 
 					$( this )
 					.removeClass('lazy')
 					.addClass('loaded'); 
@@ -235,6 +235,46 @@ var bdy = $('body'),
 		}	
 	},
 	plugin = {
+		intlTelInput: {
+			cls: { active: 'active-dropDown-plugin' },
+			arr: [				
+				{ 'ID': '#Phone', 'prop': { 'utilsScript': 'js/phone-utils.js' } }
+			],
+			setMask: function( o ){
+				var _t = this, ID = o['ID'], val = ( ID.attr('placeholder') || '' ).replace(/[0-9]/g, '9');
+				if( val != '' )
+					ID
+					.val('')
+					.unmask()
+					.mask( val );
+			},
+			set: function( o ){
+				var _t = this, ID = $( o['ID'] ); 
+				if( uty.detectEl( ID ) ){
+					if( !ID.hasClass( _t['cls']['active'] ) ){
+						ID.addClass( _t['cls']['active'] );
+						ID.intlTelInput( o['prop'] || {} );
+						
+						ID
+						.parents('.intl-tel-input')
+						.find('.flag-container .country')
+						.bind('click', function(){ setTimeout(function(){ _t.setMask({ ID: ID }); }, 10); });
+						
+						setTimeout(function(){ _t.setMask({ ID: ID }); }, 1000);
+						
+						ID
+						.bind('blur', function(){
+							console.log( ID.intlTelInput('getNumber') )
+						});
+					}
+				}
+			},
+			init: function(){
+				var _t = this;
+				for( var i = 0; i < _t.arr.length; ++i )
+					_t.set( _t.arr[ i ] );
+			}
+		},
 		menu: {
 			cls: { active: 'active-menu-plugin' },
 			arr: [
@@ -375,19 +415,37 @@ var bdy = $('body'),
 					_t.set( _t.arr[ i ] );
 			}
 		},
+		simpleSticky: {
+			arr: [				
+				{ 'ID': '.page-cart .ems-page-default-right-inner', 'prop': { 'begin': '.page-cart .ems-page-default-right', 'attachment': '.page-cart .ems-page-default-inner' } },
+			],
+			set: function( o ){
+				var _t = this, ID = $( o['ID'] ), prop = o['prop'] || {}; 
+				if( uty.detectEl( ID ) ){
+					ID.each(function(){
+						var ths = $( this );
+							ths.minusSimpleSticky( prop );
+					});
+				}
+			},
+			init: function(){
+				var _t = this;
+				for( var i = 0; i < _t.arr.length; ++i )
+					_t.set( _t.arr[ i ] );
+			}
+		},
 		customFormInput: {
 			el: '.ems-form input[type="text"]:not("#tags"), .ems-form input[type="password"], .ems-form textarea',
 			allow: '.ems-form select, .ems-form input[type="checkbox"]',
-			cls: { active: 'is-active', completed: 'is-completed' },
+			cls: { active: 'is-active', completed: 'is-completed', allowed: 'is-allowed' },
 			addEvent: function(){
 				var _t = this, el = $( _t.el );
 				if( uty.detectEl( el ) )
 					el
 					.each(function(){
-                        var ths = $( this ), val = uty.cleanText( ths.val() );
-						if( val != '' )
-							ths
-							.closest('.ems-field')
+                        var ths = $( this ), prts = ths.closest('.ems-field'), val = uty.cleanText( ths.val() );
+						if( val != '' || prts.hasClass( _t.cls['allowed'] ) )
+							prts
 							.addClass( _t.cls['active'] )
 							.addClass( _t.cls['completed'] );
                     })
@@ -400,10 +458,9 @@ var bdy = $('body'),
 					})
 					.unbind('focusout')
 					.bind('focusout', function(){
-						var ths = $( this );
-						if( ths.val() == '' )
-							ths
-							.closest('.ems-field')
+						var ths = $( this ), prts = ths.closest('.ems-field');
+						if( ths.val() == '' && !prts.hasClass( _t.cls['allowed'] ) )
+							prts
 							.removeClass( _t.cls['active'] )
 							.removeClass( _t.cls['completed'] )
 					})
@@ -456,6 +513,7 @@ var bdy = $('body'),
 		},
 		init: function(){
 			var _t = this;
+				_t.intlTelInput.init();
 				_t.menu.init();
 				_t.slider.init();
 				_t.tabMenu.init();
@@ -463,6 +521,7 @@ var bdy = $('body'),
 				_t.customDropDown.init();
 				_t.styler.init();
 				_t.sticky.init();
+				_t.simpleSticky.init();
 				_t.pp.init();
 				_t.customFormInput.init();
 		}
@@ -1249,6 +1308,7 @@ var bdy = $('body'),
 		init: function(){
 			var _t = this;
 				_t.bdyClicked();
+				
 			win.load( _t.loaded );
 			win.resize( _t.onResize ).resize();
 			win.bind('resizestop', _t.onResizeStop);
