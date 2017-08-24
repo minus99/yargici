@@ -3935,7 +3935,9 @@ span.cStyler, span.rStyler {
   .site-header-inner {
     position: relative; }
     .site-header-inner .logo {
-      text-align: center; }
+      text-align: center;
+      z-index: 2;
+      position: relative; }
       .site-header-inner .logo a {
         display: inline-block;
         margin-top: 0px;
@@ -4184,24 +4186,28 @@ span.cStyler, span.rStyler {
         background-repeat: no-repeat !important;
         background-position: center center !important; }
 
+.search-focused .logo {
+  position: fixed;
+  width: 100%; }
+
 /* Fixed Header */
-.header-fixed-animate {
+.header-fixed-animate:not(.search-focused) {
   /*Header animate*/ }
-  .header-fixed-animate .nav-main .cat-menu-holder > ul > li > a {
+  .header-fixed-animate:not(.search-focused) .nav-main .cat-menu-holder > ul > li > a {
     padding: 20px 5px; }
-  .header-fixed-animate .mod-mini-login {
+  .header-fixed-animate:not(.search-focused) .mod-mini-login {
     position: fixed;
     top: 15px;
     right: 44px; }
-  .header-fixed-animate .mod-mini-login .btn-member:hover span {
+  .header-fixed-animate:not(.search-focused) .mod-mini-login .btn-member:hover span {
     display: none; }
-  .header-fixed-animate .mod-mini-cart {
+  .header-fixed-animate:not(.search-focused) .mod-mini-cart {
     position: fixed;
     top: 15px;
     right: 10px; }
-  .header-fixed-animate .site-header {
+  .header-fixed-animate:not(.search-focused) .site-header {
     /*Scroll top*/ }
-    .header-fixed-animate .site-header-wrapper {
+    .header-fixed-animate:not(.search-focused) .site-header-wrapper {
       position: fixed;
       top: 0;
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
@@ -4209,10 +4215,10 @@ span.cStyler, span.rStyler {
       -moz-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
       border: none;
       padding: 0 70px; }
-      .header-fixed-animate .site-header-wrapper .ems-row-1, .header-fixed-animate .site-header-wrapper .ems-row-2 {
+      .header-fixed-animate:not(.search-focused) .site-header-wrapper .ems-row-1, .header-fixed-animate:not(.search-focused) .site-header-wrapper .ems-row-2 {
         overflow: hidden;
         height: 0; }
-      .header-fixed-animate .site-header-wrapper:before {
+      .header-fixed-animate:not(.search-focused) .site-header-wrapper:before {
         display: block;
         content: "";
         background: url(/lab/projects/yargici/images/frontend/header-logo.svg);
@@ -4222,7 +4228,7 @@ span.cStyler, span.rStyler {
         position: absolute;
         left: 30px;
         top: 14px; }
-    .header-fixed-animate .site-header .mobile-element-scroll {
+    .header-fixed-animate:not(.search-focused) .site-header .mobile-element-scroll {
       display: inline-block;
       text-align: center;
       position: fixed;
@@ -4234,9 +4240,9 @@ span.cStyler, span.rStyler {
       background: #ddd;
       cursor: pointer;
       margin-top: -8px; }
-      .header-fixed-animate .site-header .mobile-element-scroll .icon-ico_arw-empty-top {
+      .header-fixed-animate:not(.search-focused) .site-header .mobile-element-scroll .icon-ico_arw-empty-top {
         font-size: 20px; }
-        .header-fixed-animate .site-header .mobile-element-scroll .icon-ico_arw-empty-top:before {
+        .header-fixed-animate:not(.search-focused) .site-header .mobile-element-scroll .icon-ico_arw-empty-top:before {
           font-size: 15px;
           line-height: 40px; }
 
@@ -4791,9 +4797,11 @@ span.cStyler, span.rStyler {
         -o-transition: all 0.2s ease; }
     .mod-mini-search-body .ems-search-suggestion {
       position: absolute;
-      width: 550px;
-      top: 38px;
-      right: 0;
+      width: 700px;
+      /*
+            top: 38px;
+            right: 0;
+            */
       z-index: 20;
       display: none; }
       .mod-mini-search-body .ems-search-suggestion .suggestion-wrapper {
@@ -4868,13 +4876,20 @@ span.cStyler, span.rStyler {
 body.search-focused {
   /*Homeworks search*/ }
   body.search-focused .mod-mini-search-body {
-    position: absolute;
-    width: 400px;
+    position: fixed;
+    width: 100%;
     right: 0;
+    background: #fff;
+    height: 300px;
+    top: 0;
     z-index: 1;
     border-bottom: 1px solid #d8d8d8; }
     body.search-focused .mod-mini-search-body .ems-field input {
       width: 100%; }
+    body.search-focused .mod-mini-search-body .ems-form {
+      max-width: 700px;
+      margin: 200px auto 0;
+      border-bottom: 1px solid #ddd; }
   body.search-focused .site-header-homeworks .mod-mini-search-body {
     width: 400px; }
 
@@ -4893,9 +4908,13 @@ body.search-keyup {
   body.search-focused {
     /*Homeworks search*/ }
     body.search-focused .mod-mini-search-body {
-      width: 350px; }
+      width: 100%;
+      height: 300px;
+      top: 0;
+      position: fixed;
+      background: #fff; }
     body.search-focused .mod-mini-search .ems-search-suggestion {
-      width: 350px; }
+      width: 700px; }
     body.search-focused .site-header-homeworks .mod-mini-search-body .ems-search-suggestion {
       width: 400px; } }
 
@@ -4908,7 +4927,9 @@ body.search-keyup {
     height: auto; }
     .mod-mini-search-body .ems-form {
       background: #f0f0f0;
-      padding: 20px; }
+      padding: 20px;
+      margin: 0 !important;
+      max-width: none !important; }
     .mod-mini-search-body .ems-field input {
       width: 100%;
       height: 50px;

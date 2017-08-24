@@ -70,9 +70,11 @@
         }
         .ems-search-suggestion{
             position: absolute;
-            width: 550px;
+            width: 700px;
+            /*
             top: 38px;
             right: 0;
+            */
             z-index: 20;
             display: none;
             .suggestion-wrapper{
@@ -162,12 +164,19 @@
 body.search-focused {
     .mod-mini-search {
         &-body{
-            position: absolute;
-            width: 400px;
+            position: fixed;
+            width: 100%;
             right: 0;
+            background: #fff;
+            height: 300px;
+            top: 0;
             z-index: 1;
             border-bottom:1px solid $borderColor;
             .ems-field input{ width: 100%; }
+            .ems-form{
+                max-width: 700px; margin: 200px auto 0;
+                border-bottom: 1px solid #ddd;
+            }
         }
     }
     /*Homeworks search*/
@@ -195,8 +204,14 @@ body.search-keyup{
     /*Search focused*/
     body.search-focused {
         .mod-mini-search {
-            &-body{ width: 350px; }
-            .ems-search-suggestion{ width: 350px; }
+            &-body{
+                width: 100%;
+                height: 300px;
+                top: 0;
+                position: fixed;
+                background: #fff;
+                }
+            .ems-search-suggestion{ width: 700px; }
         }
         /*Homeworks search*/
         .site-header-homeworks{
@@ -220,6 +235,8 @@ body.search-keyup{
             .ems-form{
                 background: #f0f0f0;
                 padding:20px;
+                margin: 0 !important;
+                max-width: none !important;
             }
             .ems-field{
                 input{ width: 100%; height:50px; line-height: 25px; padding-left: 60px; }

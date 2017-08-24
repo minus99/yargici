@@ -695,8 +695,9 @@ var bdy = $('body'),
 				})
 				.bind('blur', function(){
 					var ths = $( this ), val = uty.cleanText( ths.val() || '' );
-					if( val.length == 0 )
+					if( val.length == 0 ){
 						bdy.removeClass( _t.cls['focused'] ).removeClass( _t.cls['keyup'] ).removeClass( _t.cls['ready'] );
+					}
 				});	
 				
 				
@@ -717,8 +718,9 @@ var bdy = $('body'),
 			},
 			destroy: function(){
 				var _t = this;
-				if( bdy.hasClass( _t.cls['focused'] ) )
+				if( bdy.hasClass( _t.cls['focused'] ) ){
 					bdy.removeClass( _t.cls['focused'] ).removeClass( _t.cls['keyup'] ).removeClass( _t.cls['ready'] );
+				}
 			},
 			init: function(){
 				var _t = this;
@@ -1268,6 +1270,42 @@ var bdy = $('body'),
 				_t.k = false;
 		}
 	},
+	video = {
+		onScroll: function(){
+			if( uty.detectEl( $('video') ) )
+			{
+				$("video").each(function(){
+					
+					var v_offset = $(this).offset().top,
+						v_height = $(this).outerHeight();
+					
+					if ( v_offset < wst + window.innerHeight && v_offset + v_height > wst ) {
+						
+						this.play($(this));
+						
+                    }
+					else
+					{
+						this.pause($(this));
+					}
+					
+				});
+			}
+		},
+		play:function(vid){
+			if (!vid.hasClass("playing")) {
+                vid[0].play();
+				vid.addClass("playing");
+            }
+		},
+		pause:function(vid){
+			if (vid.hassClass("playing")) {
+                vid[0].pause();
+				vid.removeClass("playing");
+            }
+		}
+		
+	},
 	events = {
 		bdyClicked: function(){
 			$('body, html').bind('click touchstart', function( e ){
@@ -1299,6 +1337,8 @@ var bdy = $('body'),
 		onScroll: function(){
 			wst = parseFloat( win.scrollTop() );
 			sRatio = wst / ( doc.height() - ht );
+			
+			video.onScroll();
 			
 			management.onScroll();
 			modules.onScroll();
